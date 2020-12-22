@@ -1,0 +1,9 @@
+/**/DROP/
+/**/TEMP/
+/**/packages/
+/**/bin/
+/**/obj/
+_site/
+/.html
+/.vs
+.vscode/settings.json
