@@ -52,30 +52,14 @@ The following parameters are available for configuring a RDBMS data source:
 | Parameter                     | Required | Type      | Description |
 |-------------------------------|----------|-----------|-------------|
 | **DSN** | Required | `string` | The Data Source Name (DSN) that represents an ODBC connection. |
-| **Queries** | Required | `array` | List of queries to run on the data source.<br><br>For more information, see [Query parameters](xref:query-parameters). |
 | **UserName** | Optional | `string` | Optional username based on the DSN configuration. For Windows authentication, this would be left blank. |
 | **Password** | Optional | `string` | Optional password based on the DSN configuration. For Windows authentication, this would be left blank. |
 | **StartTime** | Optional | `string` | Optional time to designate the start of history recovery process.<br>Expected format: `yyyy-MM-ddTHH:mm:ss.fffK` |
 | **EndTime** | Optional | `string` | Optional time to designate when to stop the history recovery process and shutdown the Adapter. If no time is specified, the adapter will continue to collect real time data on the configured schedule.<br>Expected format: `yyyy-MM-ddTHH:mm:ss.fffK` |
-| **CollectionInterval** | Optional | `string` | Maximum period of time for which the adapter will request data at once during history recovery. It is advised to set this property when doing history recovery so the adapter and data source do not get overloaded.<br><br>The expected format is HH:MM:SS.###. * |
-| **UTC** | Optional | `boolean` | If true, timestamps from the data source will be interpreted as UTC time. If false, local time relative to the adapter will be assumed.<br><br>Allowed value: true or false<br>Default value: true |
+| **RequestInterval** | Optional | `string` | Maximum period of time for which the adapter will request data at once during history recovery. It is advised to set this property when doing history recovery so the adapter and data source do not get overloaded.<br><br>The expected format is HH:MM:SS.###. * |
+| **UTC** | Optional | `string` | If "UTC", timestamps from the data source will be interpreted as UTC time. If "Local", local time relative to the adapter will be assumed.<br><br>Allowed value: "UTC" or "Local"<br>Default value: "UTC" |
 | **StreamIdPrefix** | Optional | `string` | Specifies what prefix is used for stream IDs. The naming convention is `{StreamIdPrefix}{StreamId}`.An empty string means no prefix will be added to the stream IDs and names. A `null` value defaults to **ComponentID** followed by a period.<br><br>Example: `RDBMS1.TBD`<br><br>**Note:** If you change the **StreamIdPrefix** of a configured adapter, for example when you delete and add a data source, you need to restart the adapter for the changes to take place. New streams are created on adapter restart and pre-existing streams are no longer updated.
 | **DefaultStreamIdPattern** | Optional | `string` | Specifies the default stream ID pattern to use.  An empty or `null` value results in the default value. Possible parameters: `QueryId`, `ValueColumn`, `SourceId`, `IdColumn`, and `DSN`.<br><br>Allowed value: any string<br>Default value: `{QueryId}.{ValueColumn}`. |
-
-## Query parameters
-
-The following parameters are available to configure queries to be sent to the ODBC driver. The supported query syntax will depend on the ODBC driver you are using. These queries will be sent to the driver exactly as they are defined here, and the adapter will use what is returned by that query to collect data.
-Consult the documentation for your ODBC driver for supported query syntax.
-
-Placeholder values are provided by the adapter to make query configuration more streamlined. Make sure to surround the placeholders with question marks so the adapter knows to read them as placeholders. Those placeholders include:
-* ?LST?: Last Scan Time
-* ?ET?: End Time 
-* ?ST?: Start Time
-
-| Parameter                     | Required | Type      | Description |
-|-------------------------------|----------|-----------|-------------|
-| QueryString | Required | `string` | The SQL query to run. |
-| Id | Required | `string` | String identifier of the query to be referenced by data selection items. |
 
 ## RDBMS data source examples
 
@@ -89,17 +73,7 @@ The following are examples of valid RDBMS data source configurations:
     "DefaultStreamIdPattern": "{QueryId}.{ValueColumn}",
     "Id": "MyDSN",
     "UserName": "MyUserName",
-    "Password": "MyPassword",
-    "Queries": [
-      {
-        "QueryId": "Tank1",
-        "QueryString": "SELECT TEMPERATURE, PRESSURE, VOLUME, SAMPLETIME FROM TANK1 WHERE SAMPLETIME > ?LST? ORDER BY SAMPLETIME ASC"
-      },
-      {
-        "QueryId": "Tanks",
-        "QueryString": "SELECT ASSET, TEMPERATURE, PRESSURE, VOLUME, SAMPLETIME FROM TANK1 WHERE SAMPLETIME > ?LST? ORDER BY SAMPLETIME ASC"
-      }
-    ]
+    "Password": "MyPassword"
   }
 ]
 ```
@@ -115,16 +89,6 @@ The following are examples of valid RDBMS data source configurations:
     "Password": "MyPassword",
     "StartTime": "2019-11-11T19:01:55Z",
     "EndTime": "2020-11-11T19:01:55Z"
-    "Queries": [
-      {
-        "QueryId": "Tank1",
-        "QueryString": "SELECT TEMPERATURE, PRESSURE, VOLUME, SAMPLETIME FROM TANK1 WHERE SAMPLETIME > ?LST? ORDER BY SAMPLETIME ASC"
-      },
-      {
-        "QueryId": "Tanks",
-        "QueryString": "SELECT ASSET, TEMPERATURE, PRESSURE, VOLUME, SAMPLETIME FROM TANK1 WHERE SAMPLETIME > ?LST? ORDER BY SAMPLETIME ASC"
-      }
-    ]
   }
 ]
 ```
