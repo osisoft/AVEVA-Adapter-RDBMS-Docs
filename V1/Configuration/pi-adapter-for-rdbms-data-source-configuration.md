@@ -51,13 +51,14 @@ The following parameters are available for configuring a RDBMS data source:
 
 | Parameter                     | Required | Type      | Description |
 |-------------------------------|----------|-----------|-------------|
-| **DSN** | Required | `string` | The Data Source Name (DSN) that represents an ODBC connection. |
+| **ConnectString** | Required | `string` | Connection string to connect to the data source through an ODBC driver.<br><br> You may use the tokens [username] and [password] as placeholders for authentication properties. UserName and Password properties will be subbed in for these tokens.<br><br> If you have a preconfigured DSN, you may simply specify "DSN={YourDSN}" for this property. |
 | **UserName** | Optional | `string` | Optional username based on the DSN configuration. For Windows authentication, this would be left blank. |
 | **Password** | Optional | `string` | Optional password based on the DSN configuration. For Windows authentication, this would be left blank. |
+| **ConnectTimeout** | Optional | `string` | Optional timeout for connections to the data source.<br><br>The expected format is HH:MM:SS.###. * |
 | **StartTime** | Optional | `string` | Optional time to designate the start of history recovery process.<br>Expected format: `yyyy-MM-ddTHH:mm:ss.fffK` |
 | **EndTime** | Optional | `string` | Optional time to designate when to stop the history recovery process and shutdown the Adapter. If no time is specified, the adapter will continue to collect real time data on the configured schedule.<br>Expected format: `yyyy-MM-ddTHH:mm:ss.fffK` |
 | **RequestInterval** | Optional | `string` | Maximum period of time for which the adapter will request data at once during history recovery. It is advised to set this property when doing history recovery so the adapter and data source do not get overloaded.<br><br>The expected format is HH:MM:SS.###. * |
-| **UTC** | Optional | `string` | If "UTC", timestamps from the data source will be interpreted as UTC time. If "Local", local time relative to the adapter will be assumed.<br><br>Allowed value: "UTC" or "Local"<br>Default value: "UTC" |
+| **UTC** | Optional | `bool` | If "true", timestamps from the data source will be interpreted as UTC time. If "false", local time relative to the adapter will be assumed.<br><br>Allowed value: true or false<br>Default value: true |
 | **StreamIdPrefix** | Optional | `string` | Specifies what prefix is used for stream IDs. The naming convention is `{StreamIdPrefix}{StreamId}`.An empty string means no prefix will be added to the stream IDs and names. A `null` value defaults to **ComponentID** followed by a period.<br><br>Example: `RDBMS1.TBD`<br><br>**Note:** If you change the **StreamIdPrefix** of a configured adapter, for example when you delete and add a data source, you need to restart the adapter for the changes to take place. New streams are created on adapter restart and pre-existing streams are no longer updated.
 | **DefaultStreamIdPattern** | Optional | `string` | Specifies the default stream ID pattern to use.  An empty or `null` value results in the default value. Possible parameters: `QueryId`, `ValueColumn`, `SourceId`, `IdColumn`, and `DSN`.<br><br>Allowed value: any string<br>Default value: `{QueryId}.{ValueColumn}`. |
 
