@@ -34,7 +34,7 @@ The RDBMS adapter creates a stream with two properties for each selected RDBMS i
 | Property name | Data type | Description |
 |---------------|-----------|-------------|
 | `Timestamp`   | String    | The time read from the result set. If no time is read, this will be the local time the adapter read the value. |
-| `Value`       | Specified by the data selection | The value read from the result set. |
+| `Value`       | The type on the data source converted to an OMF type | The value read from the result set. |
 
 Certain metadata are sent with each stream created. The following metadata are common for every adapter type:
 
@@ -51,4 +51,4 @@ Each stream created for the selected measurement has a unique identifier (stream
 <AdapterComponentID>.<QueryId>.<ValueColumn>
 ```
 
-**Note:** Naming convention is affected by `StreamIdPrefix` and `DefaultStreamIdPattern` settings in the data source configuration. For more information, see [PI Adapter for MQTT data source configuration](xref:PIAdapterForMQTTDataSourceConfiguration).
+**Note:** Naming convention is affected by `StreamIdPrefix` and `DefaultStreamIdPattern` settings in the data source configuration. For more information, see [PI Adapter for RDBMS data source configuration](xref:PIAdapterForRDBMSDataSourceConfiguration).
