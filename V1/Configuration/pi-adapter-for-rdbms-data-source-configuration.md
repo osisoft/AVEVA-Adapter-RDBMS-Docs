@@ -52,8 +52,9 @@ The following parameters are available for configuring a RDBMS data source:
 | Parameter                     | Required | Type      | Description |
 |-------------------------------|----------|-----------|-------------|
 | **ConnectString** | Required | `string` | Connection string to connect to the data source through an ODBC driver.<br><br> You may use the tokens [username] and [password] as placeholders for authentication properties. UserName and Password properties will be subbed in for these tokens.<br><br> If you have a preconfigured DSN, you may simply specify "DSN={YourDSN}" for this property. |
-| **UserName** | Optional | `string` | Optional username based on the DSN configuration. For Windows authentication, this would be left blank. |
-| **Password** | Optional | `string` | Optional password based on the DSN configuration. For Windows authentication, this would be left blank. |
+| **UserName** | Optional | `string` | Optional username based on the DSN configuration.<br><br>**Note**: If you are using Windows authentication, you must add your domain to the UserName.<br>Example: YourDomain\\YourUserName |
+| **Password** | Optional | `string` | Optional password based on the ConnectString/DSN configuration. |
+| **WindowsAuth** | Optional | `bool` | False by default. If true, Windows Authentication will be used. |
 | **ConnectTimeout** | Optional | `string` | Optional timeout for connections to the data source.<br><br>The expected format is HH:MM:SS.###. * |
 | **StartTime** | Optional | `string` | Optional time to designate the start of history recovery process.<br>Expected format: `yyyy-MM-ddTHH:mm:ss.fffK` |
 | **EndTime** | Optional | `string` | Optional time to designate when to stop the history recovery process and shutdown the Adapter. If no time is specified, the adapter will continue to collect real time data on the configured schedule.<br>Expected format: `yyyy-MM-ddTHH:mm:ss.fffK` |
@@ -66,15 +67,13 @@ The following parameters are available for configuring a RDBMS data source:
 
 The following are examples of valid RDBMS data source configurations:
 
-### RDBMS data source configuration without history recovery
+### RDBMS minimum data source configuration without history recovery
 
 ```json
 [
   {
     "DefaultStreamIdPattern": "{QueryId}.{ValueColumn}",
-    "Id": "MyDSN",
-    "UserName": "MyUserName",
-    "Password": "MyPassword"
+    "ConnectString": "DSN=MyDSN"
   }
 ]
 ```
@@ -85,11 +84,35 @@ The following are examples of valid RDBMS data source configurations:
 [
   {
     "DefaultStreamIdPattern": "{QueryId}.{ValueColumn}",
-    "Id": "MyDSN",
-    "UserName": "MyUserName",
-    "Password": "MyPassword",
+    "ConnectString": "DSN=MyDSN",
     "StartTime": "2019-11-11T19:01:55Z",
     "EndTime": "2020-11-11T19:01:55Z"
+  }
+]
+```
+### RDBMS data source configuration with username and password
+
+```json
+[
+  {
+    "DefaultStreamIdPattern": "{QueryId}.{ValueColumn}",
+    "ConnectString": "Driver={ODBC Driver 17 for SQL Server}; Server=ServerName\\SQLEXPRESS; UID=[username]; PWD=[password]",
+    "UserName": "MyUser",
+    "Password": "MyPassword
+  }
+]
+```
+
+### RDBMS data source configuration with Window authentication
+
+```json
+[
+  {
+    "DefaultStreamIdPattern": "{QueryId}.{ValueColumn}",
+    "ConnectString": "Driver={ODBC Driver 17 for SQL Server}; Server=ServerName\\SQLEXPRESS; trusted_connection=yes",
+    "UserName": "MyUser",
+    "Password": "MyPassword,
+    "WindowsAuth": true
   }
 ]
 ```
