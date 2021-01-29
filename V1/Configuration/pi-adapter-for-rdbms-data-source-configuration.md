@@ -111,7 +111,7 @@ The following are examples of valid RDBMS data source configurations:
     "DefaultStreamIdPattern": "{QueryId}.{ValueColumn}",
     "ConnectString": "Driver={ODBC Driver 17 for SQL Server}; Server=ServerName\\SQLEXPRESS; trusted_connection=yes",
     "UserName": "MyUser",
-    "Password": "MyPassword,
+    "Password": "MyPassword",
     "WindowsAuth": true
   }
 ]
