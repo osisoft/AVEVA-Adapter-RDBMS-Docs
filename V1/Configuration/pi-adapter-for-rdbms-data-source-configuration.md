@@ -11,11 +11,11 @@ Each adapter component may connect to one DSN.
 
 ## Configure RDBMS Data Files data source
 
-**Note:** To modify a RDBMS data source configuration, you must use the REST endpoints to add or edit the configuration.
+**Note:** To modify an RDBMS data source configuration, you must use the REST endpoints to add or edit the configuration.
 
-Complete the following steps to configure a RDBMS data source:
+Complete the following steps to configure an RDBMS data source:
 
-1. Use any text editor to create a file that contains a RDBMS data source in the JSON format.
+1. Use any text editor to create a file that contains an RDBMS data source in the JSON format.
     - For content structure, see [RDBMS data source examples](#rdbms-data-source-examples).
     - For a table of all available parameters, see [RDBMS data source parameters](#rdbms-data-source-parameters).
 2. Save the file. For example, `ConfigureDataSource.json`.
@@ -47,12 +47,12 @@ Linux: `/opt/OSIsoft/Adapters/RDBMS/Schemas`
 
 ## RDBMS data source parameters
 
-The following parameters are available for configuring a RDBMS data source:
+The following parameters are available for configuring an RDBMS data source:
 
 | Parameter                     | Required | Type      | Description |
 |-------------------------------|----------|-----------|-------------|
-| **ConnectString** | Required | `string` | Connection string to connect to the data source through an ODBC driver.<br><br> You may use the tokens [username] and [password] as placeholders for authentication properties. the UserName and Password properties will be used by the adapter in place of these tokens.<br><br> If you have a preconfigured DSN, you may simply specify "DSN={YourDSN}" for this property, along with any other required parameters.<br><br>For more information, refer to the documentation for your relational database. |
-| **UserName** | Optional | `string` | Optional username to be used in ConnectString. This value will replace the [username] token.<br><br>**Note**: If you are using Windows authentication, you must add your domain to the UserName.<br>Example: YourDomain\\YourUserName |
+| **ConnectString** | Required | `string` | Connection string to connect to the data source through an ODBC driver.<br><br> You may use the tokens [username] and [password] as placeholders for authentication properties. the UserName and Password properties will be used by the adapter in place of these tokens.<br><br> If you have a pre-configured DSN, you may simply specify "DSN={YourDSN}" for this property, along with any other required parameters.<br><br>For more information, refer to the documentation for your relational database. |
+| **UserName** | Optional | `string` | Optional username to be used in ConnectString. This value will replace the [username] token.<br><br>**Note**: If you are using Windows authentication, you must add your domain to the UserName.<br><br>**This user should be configured to have the minimum permissions needed to read the desired data from your database. It is not recommended to use an admin user or even a user with write permissions.**<br><br>Example: YourDomain\\YourUserName |
 | **Password** | Optional | `string` | Optional password to be used in ConnectString. This value will replace the [password] token. |
 | **WindowsAuth** | Optional | `bool` | False by default. If true, and if UserName and Password are specified, the adapter will impersonate the account whose credentials are in the UserName and Password fields in order to use Windows Authentication. |
 | **ConnectTimeout** | Optional | `string` | Optional timeout for connections to the data source.<br><br>The expected format is HH:MM:SS.###. * |
