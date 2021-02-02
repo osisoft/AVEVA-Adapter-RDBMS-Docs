@@ -19,10 +19,10 @@ Complete the following steps to configure RDBMS queries:
 3. Use any of the [Configuration tools](xref:ConfigurationTools1-3) capable of making HTTP requests to run either a POST or PUT command to their appropriate endpoint:
 
 **Note:** The following examples use RDBMS1 as the adapter component name. For more information on how to add a component, see [System components configuration](xref:SystemComponentsConfiguration1-3).
-  
-    `5590` is the default port number. If you selected a different port number, replace it with that value.
+    
+   `5590` is the default port number. If you selected a different port number, replace it with that value.
 
-    - **POST** endpoint: `http://localhost:5590/api/v1/configuration/<componentId>/Queries/`
+   - **POST** endpoint: `http://localhost:5590/api/v1/configuration/<componentId>/Queries/`
 
       Example using `curl`:
 
@@ -30,17 +30,17 @@ Complete the following steps to configure RDBMS queries:
       curl -d "@ConfigureQueries.json" -H "Content-Type: application/json" -X POST "http://localhost:5590/api/v1/configuration/RDBMS1/Queries"
       ```
 
-      **Note:** Run this command from the same directory where the file is located.
+   **Note:** Run this command from the same directory where the file is located.
 
     - **PUT** endpoint: `http://localhost:5590/api/v1/configuration/<componentId>/Queries/<QueryId>`
 
-      Example using `curl`:
+   Example using `curl`:
 
         ```bash
         curl -d "@ConfigureQuery.json" -H "Content-Type: application/json" -X PUT "http://localhost:5590/api/v1/configuration/RDBMS1/Queries"
         ```
 
-        **Note:** Run this command from the same directory where the file is located.
+   **Note:** Run this command from the same directory where the file is located.
 
 ## RDBMS query schema
 
