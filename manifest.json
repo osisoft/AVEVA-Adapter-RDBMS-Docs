@@ -121,12 +121,26 @@
       "version": ""
     },
     {
+      "log_codes": [
+        "UidNotFound"
+      ],
       "type": "Conceptual",
       "source_relative_path": "V1/Release-notes/release-notes.md",
       "output": {
         ".html": {
           "relative_path": "V1/Release-notes/release-notes.html",
-          "hash": "z3qhG/E2ecj9xfSyZpuzxw=="
+          "hash": "kADMMEoRtGQ0u6nkr8LZ+A=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "V1/images/pi-adapter-for-rdbms-architecture-diagram.png",
+      "output": {
+        "resource": {
+          "relative_path": "V1/images/pi-adapter-for-rdbms-architecture-diagram.png"
         }
       },
       "is_incremental": false,
@@ -138,7 +152,7 @@
       "output": {
         ".html": {
           "relative_path": "V1/index.html",
-          "hash": "H3OiWqZb3dAUfeDBZCrIgg=="
+          "hash": "aboLIRhiC7pfLNR1N3kChQ=="
         }
       },
       "is_incremental": false,
@@ -277,9 +291,6 @@
       "version": ""
     },
     {
-      "log_codes": [
-        "DuplicateUids"
-      ],
       "type": "Conceptual",
       "source_relative_path": "V1/main/V1.3/Configuration/configure-a-network-proxy.md",
       "output": {
@@ -316,6 +327,9 @@
       "version": ""
     },
     {
+      "log_codes": [
+        "DuplicateUids"
+      ],
       "type": "Conceptual",
       "source_relative_path": "V1/main/V1.3/Configuration/egress-endpoint-configuration/configure-a-network-proxy.md",
       "output": {
