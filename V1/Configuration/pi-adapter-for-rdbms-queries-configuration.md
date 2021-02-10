@@ -32,13 +32,13 @@ Complete the following steps to configure RDBMS queries:
 
    **Note:** Run this command from the same directory where the file is located.
 
-    - `PUT` endpoint: `http://localhost:5590/api/v1/configuration/<ComponentId>/Queries/<QueryId>`
+   - `PUT` endpoint: `http://localhost:5590/api/v1/configuration/<ComponentId>/Queries/<QueryId>`
 
-   Example using `curl`:
+      Example using `curl`:
 
-        ```bash
-        curl -d "@ConfigureQuery.json" -H "Content-Type: application/json" -X PUT "http://localhost:5590/api/v1/configuration/RDBMS1/Queries"
-        ```
+      ```bash
+      curl -d "@ConfigureQuery.json" -H "Content-Type: application/json" -X PUT "http://localhost:5590/api/v1/configuration/RDBMS1/Queries"
+      ```
 
    **Note:** Run this command from the same directory where the file is located.
 
