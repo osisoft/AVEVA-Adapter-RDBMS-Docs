@@ -157,9 +157,6 @@ references:
 - uid: HealthEndpointConfiguration1-4
   name: Health endpoint configuration
   href: V1/main/V1.4/Configuration/health-endpoint-configuration.html
-- uid: index
-  name: PI Adapter for RDBMS overview
-  href: V1/index.html
 - uid: Installation
   name: Installation
   href: V1/main/V1/Installation/Installation.html
@@ -214,6 +211,9 @@ references:
 - uid: PIAdapterForRDBMSDataSourceConfiguration
   name: PI Adapter for RDBMS data source configuration
   href: V1/Configuration/pi-adapter-for-rdbms-data-source-configuration.html
+- uid: PIAdapterForRDBMSOverview
+  name: PI Adapter for RDBMS overview
+  href: V1/index.html
 - uid: PIAdapterForRDBMSPrinciplesOfOperation
   name: PI Adapter for RDBMS principles of operation
   href: V1/PI-Adapter-for-RDBMS-overview/pi-adapter-for-rdbms-principles-of-operation.html

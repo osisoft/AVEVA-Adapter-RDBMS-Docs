@@ -121,15 +121,12 @@
       "version": ""
     },
     {
-      "log_codes": [
-        "UidNotFound"
-      ],
       "type": "Conceptual",
       "source_relative_path": "V1/Release-notes/release-notes.md",
       "output": {
         ".html": {
           "relative_path": "V1/Release-notes/release-notes.html",
-          "hash": "kADMMEoRtGQ0u6nkr8LZ+A=="
+          "hash": "uhTHv25xoHusIuDkfbs5MQ=="
         }
       },
       "is_incremental": false,
@@ -152,7 +149,7 @@
       "output": {
         ".html": {
           "relative_path": "V1/index.html",
-          "hash": "aboLIRhiC7pfLNR1N3kChQ=="
+          "hash": "dWZmd0npKM3UEVqtOtyibg=="
         }
       },
       "is_incremental": false,
@@ -291,6 +288,9 @@
       "version": ""
     },
     {
+      "log_codes": [
+        "DuplicateUids"
+      ],
       "type": "Conceptual",
       "source_relative_path": "V1/main/V1.3/Configuration/configure-a-network-proxy.md",
       "output": {
@@ -327,9 +327,6 @@
       "version": ""
     },
     {
-      "log_codes": [
-        "DuplicateUids"
-      ],
       "type": "Conceptual",
       "source_relative_path": "V1/main/V1.3/Configuration/egress-endpoint-configuration/configure-a-network-proxy.md",
       "output": {
@@ -906,9 +903,6 @@
       "version": ""
     },
     {
-      "log_codes": [
-        "DuplicateUids"
-      ],
       "type": "Conceptual",
       "source_relative_path": "V1/main/V1.4/Configuration/configure-a-network-proxy.md",
       "output": {
@@ -945,6 +939,9 @@
       "version": ""
     },
     {
+      "log_codes": [
+        "DuplicateUids"
+      ],
       "type": "Conceptual",
       "source_relative_path": "V1/main/V1.4/Configuration/egress-endpoint-configuration/configure-a-network-proxy.md",
       "output": {
