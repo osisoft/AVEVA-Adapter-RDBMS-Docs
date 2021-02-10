@@ -1,5 +1,5 @@
 ---
-uid: index
+uid: PIAdapterForRDBMSOverview
 ---
 
 # PI Adapter for RDBMS overview
