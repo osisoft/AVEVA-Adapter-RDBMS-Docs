@@ -6,7 +6,7 @@ uid: PIAdapterForRDBMSDataSelectionConfiguration
 
 In addition to the data source configuration, you need to provide a data selection configuration to specify the data you want the adapter to collect from the data sources.
 
-Each data selection item references a Query whose results contain the value(s) for that item. For more information on queries, see [Queries configuration](xref: PIAdapterForRDBMSQueriesConfiguration).
+Each data selection item references a query whose results contain the value(s) for that item. For more information on queries, see [Queries configuration](xref: PIAdapterForRDBMSQueriesConfiguration).
 
 ## Configure RDBMS data selection
 
@@ -18,7 +18,7 @@ Complete the following steps to configure the RDBMS data selection:
     - For content structure, see [RDBMS data selection examples](#rdbms-data-selection-examples).
     - For a table of all available parameters, see [RDBMS data selection parameters](#rdbms-data-selection-parameters).
 2. Save the file. For example, `ConfigureDataSelection.json`.
-3. Use any of the [Configuration tools](xref:ConfigurationTools1-3) capable of making HTTP requests to run either a POST or PUT command to their appropriate endpoint:
+3. Use any of the [Configuration tools](xref:ConfigurationTools1-3) capable of making HTTP requests to run either a `POST` or `PUT` command to their appropriate endpoint:
 
     **Note:** The following examples use RDBMS1 as the adapter component name. For more information on how to add a component, see [System components configuration](xref:SystemComponentsConfiguration1-3).
   
@@ -41,7 +41,6 @@ Complete the following steps to configure the RDBMS data selection:
         ```bash
         curl -d "@ConfigureDataSelection.json" -H "Content-Type: application/json" -X PUT "http://localhost:5590/api/v1/configuration/RDBMS1/DataSelection"
         ```
-
         **Note:** Run this command from the same directory where the file is located.
 
 ## RDBMS data selection schema
@@ -60,21 +59,21 @@ Linux: `/opt/OSIsoft/Adapters/RDBMS/Schemas`
 | **IdColumn** | Optional | `string` | Name of the column that contains the SourceId. Used to identify which rows of the query results belong to the selection item. |
 | **IndexColumn** | Optional | `string` | Column that contains the timestamp. If no column is specified, the timestamp will be the time that the adapter read the value. |
 | **Name** | Optional | `string` | The optional friendly name of the data item collected from the data source. If not configured, the default value is the stream ID. |
-| **QueryId** | Required | `string` | Identifier of the query configured in the Queries section of Data Source configuration. |
+| **QueryId** | Required | `string` | The identifier of the query configured. |
 | **ScheduleId** | Required | `string` | The identifier of a schedule defined in the Schedules configuration. |
-| **Selected** | Optional | `boolean` | If true, data for this item is collected and sent to one or more configured OMF endpoints.<br><br>Allowed value: `true` or `false`<br>Default value:`true` |
-| **SourceId** | Optional | `string` | Unique identifier on the source. Should be in the database column specified in IdColumn. Used to identify which rows of the query results belong to the selection item. |
-| **StreamId** | Optional | `string` | The custom identifier used to create the streams. If not specified, the RDBMS adapter generates a default value based on the `DefaultStreamIdPattern` in the [PI Adapter for RDBMS data source configuration](xref:PIAdapterForRDBMSDataSourceConfiguration). |
-| **ValueColumn** | Required | `string` | The database column to read data values from. |
+| **Selected** | Optional | `boolean` | If `true`, data for this item is collected and sent to one or more configured OMF endpoints.<br><br>Allowed value: `true` or `false`<br>Default value:`true` |
+| **SourceId** | Optional | `string` | The unique identifier of the source. Should be in the database column specified in **IdColumn**. Used to identify which rows of the query results belong to the selection item. |
+| **StreamId** | Optional | `string` | The custom identifier used to create the stream. If not specified, the RDBMS adapter generates a default value based on the **DefaultStreamIdPattern** in the [PI Adapter for RDBMS data source configuration](xref:PIAdapterForRDBMSDataSourceConfiguration). |
+| **ValueColumn** | Required | `string` | The database column to read data values. |
 
 ## RDBMS data selection examples
 There are two main ways to configure a selection item. The first and simplest method is used when the columns of the result set are all that is needed to uniquely identify a stream. The second and most common method is used when each row of the result set contains information necessary to uniquely identify a stream.  
 The following are examples of valid RDBMS data selection configurations:
 
-### Column As Identifier
+### Column as an identifier
 This configuration is used when you have a table whose columns identify each stream in the result set. In the simplest of cases, there is one value column and one timestamp column; however, there could be multiple values and multiple timestamps. A separate data selection item needs to be defined for each timestamp value pair.
 
-Example Data: 
+Example data: 
 
 | Temperature | Pressure | Volume | SampleTime |
 |-------------|----------|--------|------------|
@@ -125,6 +124,7 @@ Volume:
 This configuration is used when each row of the result set contains information needed to identify each stream. In the simplest case, there could be one column for the identifier, one column for the timestamp, and one column for the value. However, result sets could contain multiple timestamp columns and multiple value columns. This configuration requires that the user specify the IdColumn and SourceId properties.
 
 Example Data:
+
 | Asset | Temperature | Pressure | Volume | SampleTime |
 |-------|-------------|----------|--------|------------|
 | Tank1 | 25 | 100 | 50.6 | 11/11/2020 3:56:00 AM |
@@ -169,11 +169,11 @@ Tank2.Temperature:
 
 | Relative URL | HTTP verb | Action |
 | ------------ | --------- | ------ |
-| api/v1/configuration/_ComponentId_/DataSelection  | GET | Retrieves the RDBMS data selection configuration |
-| api/v1/configuration/_ComponentId_/DataSelection  | PUT | Configures or updates the RDBMS data selection configuration |
-| api/v1/configuration/_ComponentId_/DataSelection | DELETE | Deletes the RDBMS data selection configuration |
-| api/v1/configuration/_ComponentId_/DataSelection | PATCH | Allows partial updating of configured data selection items. <br>**Note:** The request must be an array containing one or more data selection items. Each data selection item in the array must include its *StreamId*. |
-| api/v1/configuration/_ComponentId_/DataSelection/_StreamId_ | PUT | Updates or creates a new data selection with the specified *StreamId*|
-| api/v1/configuration/_ComponentId_/DataSelection/_StreamId_ | DELETE | Deletes a specific data selection item of the RDBMS data selection configuration |
+| api/v1/configuration/\<ComponentId\>/DataSelection | `GET` | Retrieves the RDBMS data selection configuration |
+| api/v1/configuration/\<ComponentId\>/DataSelection | `PUT` | Configures or updates the RDBMS data selection configuration |
+| api/v1/configuration/\<ComponentId\>/DataSelection | `DELETE` | Deletes the RDBMS data selection configuration |
+| api/v1/configuration/\<ComponentId\>/DataSelection | `PATCH` | Allows partial updating of configured data selection items. <br>**Note:** The request must be an array containing one or more data selection items. Each data selection item in the array must include its **StreamId**. |
+| api/v1/configuration/\<ComponentId\>/DataSelection/\<StreamId\> | `PUT` | Updates or creates a new data selection with the specified **StreamId**|
+| api/v1/configuration/\<ComponentId\>/DataSelection/\<StreamId\>| `DELETE` | Deletes a specific data selection item of the RDBMS data selection configuration |
 
-**Note:** Replace _ComponentId_ with the Id of your RDBMS component, for example RDBMS1.
+**Note:** Replace \<ComponentId\> with the Id of your RDBMS component, for example RDBMS1.
