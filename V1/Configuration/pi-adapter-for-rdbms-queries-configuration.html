@@ -1,0 +1,194 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>PI Adapter for RDBMS query configuration </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="PI Adapter for RDBMS query configuration ">
+    <meta name="generator" content="docfx 2.56.5.0">
+    
+    <link rel="shortcut icon" href="../../favicon.ico">
+    <link rel="stylesheet" href="../../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../../styles/docfx.css">
+    <link rel="stylesheet" href="../../styles/main.css">
+    <meta property="docfx:navrel" content="../../toc.html">
+    <meta property="docfx:tocrel" content="../toc.html">
+    
+    <meta property="docfx:rel" content="../../">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" href="../../V1/index.html" width="46">
+                <img id="logo" src="../../V1/main/V1/images/atlas_icon.png" height="46" width="46" alt="OSIsoft Edge System"> 
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+        
+        <div id="search-results">
+          <div class="search-list"></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination"></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="PIAdapterForRDBMSQueriesConfiguration">
+<h1 id="pi-adapter-for-rdbms-query-configuration">PI Adapter for RDBMS query configuration</h1>
+
+<p>Queries configuration holds a list of queries to run on the data source.</p>
+<h2 id="configure-rdbms-queries">Configure RDBMS queries</h2>
+<p><strong>Note:</strong> You cannot modify RDBMS query configurations manually. You must use REST endpoints to add or edit the configuration.</p>
+<p>Complete the following steps to configure RDBMS queries:</p>
+<ol>
+<li>Use any text editor to create a file that contains a RDBMS query in the JSON format<ul>
+<li>For content structure, see <a href="#rdbms-queries-example">RDBMS queries example</a>. </li>
+<li>For a table of all available parameters, see <a href="#rdbms-query-parameters">RDBMS query parameters</a>.</li>
+</ul>
+</li>
+<li>Save the file. For example, <code>ConfigureQueries.json</code>.</li>
+<li>Use any of the <a class="xref" href="../main/V1.3/Configuration/configuration-tools.html">Configuration tools</a> capable of making HTTP requests to run either a <code>POST</code> or <code>PUT</code> command to their appropriate endpoint:</li>
+</ol>
+<p><strong>Note:</strong> The following examples use RDBMS1 as the adapter component name. For more information on how to add a component, see <a class="xref" href="../main/V1.3/Configuration/system-components-configuration.html">System components configuration</a>.</p>
+<p>   <code>5590</code> is the default port number. If you selected a different port number, replace it with that value.</p>
+<ul>
+<li><p><code>POST</code> endpoint: <code>http://localhost:5590/api/v1/configuration/&lt;ComponentId&gt;/Queries/</code></p>
+<p> Example using <code>curl</code>:</p>
+<pre><code class="lang-bash">curl -d &quot;@ConfigureQueries.json&quot; -H &quot;Content-Type: application/json&quot; -X POST &quot;http://localhost:5590/api/v1/configuration/RDBMS1/Queries&quot;
+</code></pre><p><strong>Note:</strong> Run this command from the same directory where the file is located.</p>
+</li>
+<li><p><code>PUT</code> endpoint: <code>http://localhost:5590/api/v1/configuration/&lt;ComponentId&gt;/Queries/&lt;QueryId&gt;</code></p>
+<p> Example using <code>curl</code>:</p>
+<pre><code class="lang-bash">curl -d &quot;@ConfigureQuery.json&quot; -H &quot;Content-Type: application/json&quot; -X PUT &quot;http://localhost:5590/api/v1/configuration/RDBMS1/Queries&quot;
+</code></pre><p><strong>Note:</strong> Run this command from the same directory where the file is located.</p>
+</li>
+</ul>
+<h2 id="rdbms-query-schema">RDBMS query schema</h2>
+<p>The full schema definition for the RDBMS query configuration is in the <code>RDBMS_Queries_schema.json</code> file located in one of the following folders:</p>
+<p>Windows: <code>%ProgramFiles%\OSIsoft\Adapters\RDBMS\Schemas</code></p>
+<p>Linux: <code>/opt/OSIsoft/Adapters/RDBMS/Schemas</code></p>
+<h2 id="rdbms-query-parameters">RDBMS query parameters</h2>
+<p>The following parameters are available to configure queries to be sent to the ODBC driver. The supported query syntax will depend on the ODBC driver you are using. These queries will be sent to the driver exactly as they are defined here, and the adapter will use what is returned by that query to collect data.
+Consult the documentation for your ODBC driver for supported query syntax.</p>
+<p>Placeholder values are provided by the adapter to make query configuration more streamlined. Make sure to surround the placeholders with question marks so the adapter knows to read them as placeholders. Those placeholders include:</p>
+<ul>
+<li>?LST?: Last Scan Time</li>
+<li>?ET?: End Time </li>
+<li>?ST?: Start Time</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Required</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>QueryString</td>
+<td>Required</td>
+<td><code>string</code></td>
+<td>The SQL query to run.</td>
+</tr>
+<tr>
+<td>Id</td>
+<td>Required</td>
+<td><code>string</code></td>
+<td>String identifier of the query to be referenced by data selection items.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="rdbms-queries-example">RDBMS queries example</h2>
+<pre><code class="lang-json">[
+    {
+        &quot;QueryId&quot;: &quot;Tank1&quot;,
+        &quot;QueryString&quot;: &quot;SELECT TEMPERATURE, PRESSURE, VOLUME, SAMPLETIME FROM TANK1 WHERE SAMPLETIME &gt; ?LST? ORDER BY SAMPLETIME ASC&quot;
+    },
+    {
+        &quot;QueryId&quot;: &quot;Tanks&quot;,
+        &quot;QueryString&quot;: &quot;SELECT ASSET, TEMPERATURE, PRESSURE, VOLUME, SAMPLETIME FROM TANK1 WHERE SAMPLETIME &gt; ?LST? ORDER BY SAMPLETIME ASC&quot;
+    }
+]
+</code></pre></article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/osisoft/PI-Adapter-RDBMS-Docs/blob/master/V1/Configuration/pi-adapter-for-rdbms-queries-configuration.md/#L1" class="contribution-link">Improve this Doc</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span><a href="https://www.osisoft.com/copyright/">© 2019 - 2021 OSIsoft, LLC. All rights reserved.</a></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../styles/main.js"></script>
+  </body>
+</html>
