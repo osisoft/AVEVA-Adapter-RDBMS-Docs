@@ -24,7 +24,7 @@ Complete the following steps to configure the RDBMS data selection:
   
     `5590` is the default port number. If you selected a different port number, replace it with that value.
 
-    - **POST** endpoint: `http://localhost:5590/api/v1/configuration/<componentId>/DataSelection/`
+    - `POST` endpoint: `http://localhost:5590/api/v1/configuration/<componentId>/DataSelection/`
 
       Example using `curl`:
 
@@ -34,7 +34,7 @@ Complete the following steps to configure the RDBMS data selection:
 
       **Note:** Run this command from the same directory where the file is located.
 
-    - **PUT** endpoint: `http://localhost:5590/api/v1/configuration/<componentId>/DataSelection/<StreamId>`
+    - `PUT` endpoint: `http://localhost:5590/api/v1/configuration/<componentId>/DataSelection/<StreamId>`
 
       Example using `curl`:
 
