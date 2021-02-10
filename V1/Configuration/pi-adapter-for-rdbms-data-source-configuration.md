@@ -49,7 +49,6 @@ The following parameters are available for configuring an RDBMS data source:
 
 | Parameter                     | Required | Type      | Description |
 |-------------------------------|----------|-----------|-------------|
-
 | **ConnectString** | Required | `string` | Connection string to connect to the data source through an ODBC driver.<br><br> You may use the tokens `[username]` and `[password]` as placeholders for authentication properties. The **UserName** and **Password** parameters will be used by the adapter in place of these tokens.<br><br> If you have a pre-configured DSN, you may simply specify `DSN={YourDSN}` for this property, along with any other required parameters.<br><br>For more information, refer to the documentation for your relational database. |
 | **UserName** | Optional | `string` | Optional username to be used in **ConnectString**. This value will replace the `[username]` token.<br><br>**Note**: If you are using Windows authentication, you must add your domain to the **UserName**<br><br>Example: YourDomain\\YourUserName.<br><br>**Note:** This user should be configured to have the minimum permissions needed to read the desired data from your database. It is not recommended to use an admin user or even a user with write permissions. |
 | **Password** | Optional | `string` | Optional password to be used in **ConnectString**. This value will replace the `[password]` token. |
