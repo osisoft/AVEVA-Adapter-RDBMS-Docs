@@ -56,15 +56,15 @@ Linux: `/opt/OSIsoft/Adapters/RDBMS/Schemas`
 | Parameter        | Required | Type      | Description |
 |------------------|----------|-----------|-------------|
 | **DataFilterId** | Optional | `string` | The identifier of a data filter defined in the [Data filters configuration](xref:DataFiltersConfiguration). By default, no filter is applied. |
-| **IdColumn** | Optional | `string` | Name of the column that contains the SourceId. Used to identify which rows of the query results belong to the selection item. |
+| **ValueColumn** | Required | `string` | The database column to read data values from. |
 | **IndexColumn** | Optional | `string` | Column that contains the timestamp. If no column is specified, the timestamp will be the time that the adapter read the value. |
+| **IdColumn** | Optional | `string` | Name of the column that contains the IdField. Used to identify which rows of the query results belong to the selection item. |
+| **IdField** | Optional | `string` | The unique identifier of the source. Should be in the database column specified in **IdColumn**. Used to identify which rows of the query results belong to the selection item. |
 | **Name** | Optional | `string` | The optional friendly name of the data item collected from the data source. If not configured, the default value is the stream ID. |
 | **QueryId** | Required | `string` | The identifier of the query configured. |
 | **ScheduleId** | Required | `string` | The identifier of a schedule defined in the Schedules configuration. |
 | **Selected** | Optional | `boolean` | If `true`, data for this item is collected and sent to one or more configured OMF endpoints.<br><br>Allowed value: `true` or `false`<br>Default value:`true` |
-| **SourceId** | Optional | `string` | The unique identifier of the source. Should be in the database column specified in **IdColumn**. Used to identify which rows of the query results belong to the selection item. |
 | **StreamId** | Optional | `string` | The custom identifier used to create the stream. If not specified, the RDBMS adapter generates a default value based on the **DefaultStreamIdPattern** in the [PI Adapter for RDBMS data source configuration](xref:PIAdapterForRDBMSDataSourceConfiguration). |
-| **ValueColumn** | Required | `string` | The database column to read data values. |
 
 ## RDBMS data selection examples
 There are two main ways to configure a selection item. The first and simplest method is used when the columns of the result set are all that is needed to uniquely identify a stream. The second and most common method is used when each row of the result set contains information necessary to uniquely identify a stream.  
@@ -121,7 +121,7 @@ Volume:
 ```
 
 ### Identifier in Row
-This configuration is used when each row of the result set contains information needed to identify each stream. In the simplest case, there could be one column for the identifier, one column for the timestamp, and one column for the value. However, result sets could contain multiple timestamp columns and multiple value columns. This configuration requires that the user specify the IdColumn and SourceId properties.
+This configuration is used when each row of the result set contains information needed to identify each stream. In the simplest case, there could be one column for the identifier, one column for the timestamp, and one column for the value. However, result sets could contain multiple timestamp columns and multiple value columns. This configuration requires that the user specify the IdColumn and IdField properties.
 
 Example Data:
 
@@ -142,7 +142,7 @@ Tank1.Temperature:
     "ValueColumn": "Temperature",
     "IndexColumn": "SampleTime",
     "IdColumn": "Asset",
-    "SourceId": "Tank1",
+    "IdField": "Tank1",
     "ScheduleId": "1min",
     "QueryId": "Tanks",
     "Selected": true
@@ -157,7 +157,7 @@ Tank2.Temperature:
     "ValueColumn": "Temperature",
     "IndexColumn": "SampleTime",
     "IdColumn": "Asset",
-    "SourceId": "Tank2",
+    "IdField": "Tank2",
     "ScheduleId": "1min",
     "QueryId": "Tanks",
     "Selected": true
