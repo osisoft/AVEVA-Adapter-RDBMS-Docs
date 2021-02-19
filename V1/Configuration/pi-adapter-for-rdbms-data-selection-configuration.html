@@ -129,16 +129,28 @@
 <td>The identifier of a data filter defined in the <a class="xref" href="../main/V1/Configuration/data-filters-configuration.html">Data filters configuration</a>. By default, no filter is applied.</td>
 </tr>
 <tr>
-<td><strong>IdColumn</strong></td>
-<td>Optional</td>
+<td><strong>ValueColumn</strong></td>
+<td>Required</td>
 <td><code>string</code></td>
-<td>Name of the column that contains the SourceId. Used to identify which rows of the query results belong to the selection item.</td>
+<td>The database column to read data values from.</td>
 </tr>
 <tr>
 <td><strong>IndexColumn</strong></td>
 <td>Optional</td>
 <td><code>string</code></td>
 <td>Column that contains the timestamp. If no column is specified, the timestamp will be the time that the adapter read the value.</td>
+</tr>
+<tr>
+<td><strong>IdColumn</strong></td>
+<td>Optional</td>
+<td><code>string</code></td>
+<td>Name of the column that contains the IdField. Used to identify which rows of the query results belong to the selection item.</td>
+</tr>
+<tr>
+<td><strong>IdField</strong></td>
+<td>Optional</td>
+<td><code>string</code></td>
+<td>The unique identifier of the source. Should be in the database column specified in <strong>IdColumn</strong>. Used to identify which rows of the query results belong to the selection item.</td>
 </tr>
 <tr>
 <td><strong>Name</strong></td>
@@ -165,22 +177,10 @@
 <td>If <code>true</code>, data for this item is collected and sent to one or more configured OMF endpoints.<br><br>Allowed value: <code>true</code> or <code>false</code><br>Default value:<code>true</code></td>
 </tr>
 <tr>
-<td><strong>SourceId</strong></td>
-<td>Optional</td>
-<td><code>string</code></td>
-<td>The unique identifier of the source. Should be in the database column specified in <strong>IdColumn</strong>. Used to identify which rows of the query results belong to the selection item.</td>
-</tr>
-<tr>
 <td><strong>StreamId</strong></td>
 <td>Optional</td>
 <td><code>string</code></td>
 <td>The custom identifier used to create the stream. If not specified, the RDBMS adapter generates a default value based on the <strong>DefaultStreamIdPattern</strong> in the <a class="xref" href="pi-adapter-for-rdbms-data-source-configuration.html">PI Adapter for RDBMS data source configuration</a>.</td>
-</tr>
-<tr>
-<td><strong>ValueColumn</strong></td>
-<td>Required</td>
-<td><code>string</code></td>
-<td>The database column to read data values.</td>
 </tr>
 </tbody>
 </table>
@@ -247,7 +247,7 @@
   }
 ]
 </code></pre><h3 id="identifier-in-row">Identifier in Row</h3>
-<p>This configuration is used when each row of the result set contains information needed to identify each stream. In the simplest case, there could be one column for the identifier, one column for the timestamp, and one column for the value. However, result sets could contain multiple timestamp columns and multiple value columns. This configuration requires that the user specify the IdColumn and SourceId properties.</p>
+<p>This configuration is used when each row of the result set contains information needed to identify each stream. In the simplest case, there could be one column for the identifier, one column for the timestamp, and one column for the value. However, result sets could contain multiple timestamp columns and multiple value columns. This configuration requires that the user specify the IdColumn and IdField properties.</p>
 <p>Example Data:</p>
 <table>
 <thead>
@@ -311,7 +311,7 @@
     &quot;ValueColumn&quot;: &quot;Temperature&quot;,
     &quot;IndexColumn&quot;: &quot;SampleTime&quot;,
     &quot;IdColumn&quot;: &quot;Asset&quot;,
-    &quot;SourceId&quot;: &quot;Tank1&quot;,
+    &quot;IdField&quot;: &quot;Tank1&quot;,
     &quot;ScheduleId&quot;: &quot;1min&quot;,
     &quot;QueryId&quot;: &quot;Tanks&quot;,
     &quot;Selected&quot;: true
@@ -324,7 +324,7 @@
     &quot;ValueColumn&quot;: &quot;Temperature&quot;,
     &quot;IndexColumn&quot;: &quot;SampleTime&quot;,
     &quot;IdColumn&quot;: &quot;Asset&quot;,
-    &quot;SourceId&quot;: &quot;Tank2&quot;,
+    &quot;IdField&quot;: &quot;Tank2&quot;,
     &quot;ScheduleId&quot;: &quot;1min&quot;,
     &quot;QueryId&quot;: &quot;Tanks&quot;,
     &quot;Selected&quot;: true

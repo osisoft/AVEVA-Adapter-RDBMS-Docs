@@ -42,7 +42,7 @@
       "output": {
         ".html": {
           "relative_path": "V1/Configuration/pi-adapter-for-rdbms-data-selection-configuration.html",
-          "hash": "pUjjDq1P5bmZHR3aDAooYw=="
+          "hash": "yN52fRJpNklYrB91nklo/g=="
         }
       },
       "is_incremental": false,
@@ -54,7 +54,7 @@
       "output": {
         ".html": {
           "relative_path": "V1/Configuration/pi-adapter-for-rdbms-data-source-configuration.html",
-          "hash": "1wSJphAcrtG59Y8efxZC7A=="
+          "hash": "RVRju0kbH38ZQ/uM4huH+w=="
         }
       },
       "is_incremental": false,
@@ -90,7 +90,7 @@
       "output": {
         ".html": {
           "relative_path": "V1/Installation/system-requirements.html",
-          "hash": "vFDcbYN6Ssw0llZvYMG4lA=="
+          "hash": "zwh/P/5OhnRKb6EWoLHjug=="
         }
       },
       "is_incremental": false,
@@ -281,7 +281,7 @@
       "output": {
         ".html": {
           "relative_path": "V1/main/V1.3/Configuration/configuration-tools.html",
-          "hash": "TZdf0fPvblPz8aynOTPcYQ=="
+          "hash": "IYXKTHSIvWlSr0vf8EqFIQ=="
         }
       },
       "is_incremental": false,
@@ -320,7 +320,7 @@
       "output": {
         ".html": {
           "relative_path": "V1/main/V1.3/Configuration/discovery-configuration.html",
-          "hash": "ph47v1bmY4h7Jnij6P416g=="
+          "hash": "kF0czy5E+9tNx/cvgEmCfA=="
         }
       },
       "is_incremental": false,
@@ -908,7 +908,7 @@
       "output": {
         ".html": {
           "relative_path": "V1/main/V1.4/Configuration/configure-a-network-proxy.html",
-          "hash": "S1xS99DyhFSbfIhm+xl3ag=="
+          "hash": "ze8xlE10ZvqIFYUBbXB8cQ=="
         }
       },
       "is_incremental": false,
@@ -932,7 +932,7 @@
       "output": {
         ".html": {
           "relative_path": "V1/main/V1.4/Configuration/discovery-configuration.html",
-          "hash": "DZFsUK1ZXlsD2DipjMSIcw=="
+          "hash": "/TNs4if226VDhqEwZYqBBQ=="
         }
       },
       "is_incremental": false,
@@ -1932,6 +1932,33 @@
       "version": ""
     },
     {
+      "log_codes": [
+        "UidNotFound"
+      ],
+      "type": "Conceptual",
+      "source_relative_path": "V1/main/V1/introduction-to-pi-adapters.md",
+      "output": {
+        ".html": {
+          "relative_path": "V1/main/V1/introduction-to-pi-adapters.html",
+          "hash": "ekR8ddKe3rcdZwBkFf2VWg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "V1/main/V1/pi-adapter-users.md",
+      "output": {
+        ".html": {
+          "relative_path": "V1/main/V1/pi-adapter-users.html",
+          "hash": "aYAPsmED69DNLIFk9vUjvA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
       "type": "Conceptual",
       "source_relative_path": "V1/main/V1/technical-support-and-feedback.md",
       "output": {
@@ -2006,7 +2033,7 @@
         "ConceptualDocumentProcessor": {
           "can_incremental": false,
           "incrementalPhase": "build",
-          "total_file_count": 120,
+          "total_file_count": 122,
           "skipped_file_count": 0
         },
         "ResourceDocumentProcessor": {
