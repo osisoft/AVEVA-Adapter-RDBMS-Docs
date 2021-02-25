@@ -54,9 +54,6 @@ The following parameters are available for configuring an RDBMS data source:
 | **Password** | Optional | `string` | Optional password to be used in **ConnectString**. This value will replace the `[password]` token. |
 | **WindowsAuth** | Optional | `bool` | False by default. If true, and if **UserName** and **Password** are specified, the adapter will impersonate the account whose credentials are in the **UserName** and **Password** fields in order to use Windows Authentication. |
 | **CommandTimeout** | Optional | `string` | Optional timeout for running queries on the data source.<br><br>Expected format: `HH:MM:SS.###`<br><br>Default Value: 00:00:30 (30 seconds) |
-| **StartTime** | Optional | `string` | Optional time to designate the start of history recovery process.<br><br>Expected format: `yyyy-MM-ddTHH:mm:ss.fffK` |
-| **EndTime** | Optional | `string` | Optional time to designate when to stop the history recovery process and shutdown the adapter. If no time is specified, the adapter will continue to collect real time data on the configured schedule.<br<br>Expected format: `yyyy-MM-ddTHH:mm:ss.fffK` |
-| **RequestInterval** | Optional | `string` | Maximum period of time for which the adapter will request data at once during history recovery. It is advised to set this property when doing history recovery so the adapter and data source do not get overloaded.<br><br>Expected format: `HH:MM:SS.###`* |
 | **UTC** | Optional | `bool` | If `true`, timestamps from the data source will be interpreted as UTC time. If `false`, local time relative to the adapter will be assumed.<br><br>Allowed value: `true` or `false`<br>Default value: `true` |
 | **StreamIdPrefix** | Optional | `string` | Specifies what prefix is used for stream IDs. The naming convention is `{StreamIdPrefix}{StreamId}`.An empty string means no prefix will be added to the stream IDs and names. A `null` value defaults to **ComponentID** followed by a period.<br><br>Example: `RDBMS1.TBD`<br><br>**Note:** If you change the **StreamIdPrefix** of a configured adapter, for example when you delete and add a data source, you need to restart the adapter for the changes to take place. New streams are created on adapter restart and pre-existing streams are no longer updated.
 | **DefaultStreamIdPattern** | Optional | `string` | Specifies the default stream ID pattern to use.  An empty or `null` value results in the default value. Possible parameters: `QueryId`, `ValueColumn`, `SourceId`, `IdColumn`, and `DSN`.<br><br>Allowed value: any string<br><br>Default value: `{QueryId}.{ValueColumn}`. |
@@ -65,7 +62,7 @@ The following parameters are available for configuring an RDBMS data source:
 
 The following are examples of valid RDBMS data source configurations:
 
-### RDBMS minimum data source configuration without history recovery
+### RDBMS minimum data source configuration
 
 ```json
 [
@@ -76,18 +73,6 @@ The following are examples of valid RDBMS data source configurations:
 ]
 ```
 
-### RDBMS data source configuration with history recovery
-
-```json
-[
-  {
-    "DefaultStreamIdPattern": "{QueryId}.{ValueColumn}",
-    "ConnectString": "DSN=MyDSN",
-    "StartTime": "2019-11-11T19:01:55Z",
-    "EndTime": "2020-11-11T19:01:55Z"
-  }
-]
-```
 ### RDBMS data source configuration with username and password
 
 ```json
