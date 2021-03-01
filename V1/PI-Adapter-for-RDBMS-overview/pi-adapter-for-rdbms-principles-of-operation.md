@@ -43,7 +43,8 @@ Certain metadata are sent with each stream created. The following metadata are c
 
 Metadata specific to the RDBMS adapter:
 
-- **TBD**
+- **ScheduleId**: Specifies the schedule used to collect data for the stream. For RDBMS, this correlates to the ScheduleId property of the selection item. For example, schedule1
+- **SourceId**: Specifies the information used to uniquely identify the stream on the source system. For RDBMS, this it is {QueryId}.{IdField}.{ValueColumn}. For example, TankQuery.Tank1.Temperature. If there is no IdField specified for a given selection item, IdField will be left out of SourceId. For example, Query1.Temperature.
 
 Each stream created for the selected measurement has a unique identifier (stream ID). If you specify a custom stream ID for the measurement in the data selection configuration, the adapter uses that stream ID to create the stream. Otherwise, the adapter constructs the stream ID using the following format:
 
