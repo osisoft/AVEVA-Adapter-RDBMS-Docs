@@ -123,7 +123,8 @@
 </ul>
 <p>Metadata specific to the RDBMS adapter:</p>
 <ul>
-<li><strong>TBD</strong></li>
+<li><strong>ScheduleId</strong>: Specifies the schedule used to collect data for the stream. For RDBMS, this correlates to the ScheduleId property of the selection item. For example, <code>schedule1</code>.</li>
+<li><strong>SourceId</strong>: Specifies the information used to uniquely identify the stream on the source system. For RDBMS it is <code>{QueryId}.{IdField}.{ValueColumn}</code>. For example, <code>TankQuery.Tank1.Temperature</code>. If there is no IdField specified for a given selection item, IdField is left out of SourceId. For example, <code>Query1.Temperature</code>.</li>
 </ul>
 <p>Each stream created for the selected measurement has a unique identifier (stream ID). If you specify a custom stream ID for the measurement in the data selection configuration, the adapter uses that stream ID to create the stream. Otherwise, the adapter constructs the stream ID using the following format:</p>
 <pre><code class="lang-code">&lt;AdapterComponentID&gt;.&lt;QueryId&gt;.&lt;ValueColumn&gt;

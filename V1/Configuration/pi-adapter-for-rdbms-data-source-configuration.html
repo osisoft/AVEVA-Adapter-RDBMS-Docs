@@ -142,34 +142,10 @@
 <td>False by default. If true, and if <strong>UserName</strong> and <strong>Password</strong> are specified, the adapter will impersonate the account whose credentials are in the <strong>UserName</strong> and <strong>Password</strong> fields in order to use Windows Authentication.</td>
 </tr>
 <tr>
-<td><strong>ConnectTimeout</strong></td>
-<td>Optional</td>
-<td><code>string</code></td>
-<td>Optional timeout for connections to the data source.<br><br>Expected format: <code>HH:MM:SS.###</code><br><br>Default Value: 00:00:30 (30 seconds)</td>
-</tr>
-<tr>
 <td><strong>CommandTimeout</strong></td>
 <td>Optional</td>
 <td><code>string</code></td>
 <td>Optional timeout for running queries on the data source.<br><br>Expected format: <code>HH:MM:SS.###</code><br><br>Default Value: 00:00:30 (30 seconds)</td>
-</tr>
-<tr>
-<td><strong>StartTime</strong></td>
-<td>Optional</td>
-<td><code>string</code></td>
-<td>Optional time to designate the start of history recovery process.<br><br>Expected format: <code>yyyy-MM-ddTHH:mm:ss.fffK</code></td>
-</tr>
-<tr>
-<td><strong>EndTime</strong></td>
-<td>Optional</td>
-<td><code>string</code></td>
-<td>Optional time to designate when to stop the history recovery process and shutdown the adapter. If no time is specified, the adapter will continue to collect real time data on the configured schedule.&lt;br<br>Expected format: <code>yyyy-MM-ddTHH:mm:ss.fffK</code></td>
-</tr>
-<tr>
-<td><strong>RequestInterval</strong></td>
-<td>Optional</td>
-<td><code>string</code></td>
-<td>Maximum period of time for which the adapter will request data at once during history recovery. It is advised to set this property when doing history recovery so the adapter and data source do not get overloaded.<br><br>Expected format: <code>HH:MM:SS.###</code>*</td>
 </tr>
 <tr>
 <td><strong>UTC</strong></td>
@@ -193,20 +169,11 @@
 </table>
 <h2 id="rdbms-data-source-examples">RDBMS data source examples</h2>
 <p>The following are examples of valid RDBMS data source configurations:</p>
-<h3 id="rdbms-minimum-data-source-configuration-without-history-recovery">RDBMS minimum data source configuration without history recovery</h3>
+<h3 id="rdbms-minimum-data-source-configuration">RDBMS minimum data source configuration</h3>
 <pre><code class="lang-json">[
   {
     &quot;DefaultStreamIdPattern&quot;: &quot;{QueryId}.{ValueColumn}&quot;,
     &quot;ConnectString&quot;: &quot;DSN=MyDSN&quot;
-  }
-]
-</code></pre><h3 id="rdbms-data-source-configuration-with-history-recovery">RDBMS data source configuration with history recovery</h3>
-<pre><code class="lang-json">[
-  {
-    &quot;DefaultStreamIdPattern&quot;: &quot;{QueryId}.{ValueColumn}&quot;,
-    &quot;ConnectString&quot;: &quot;DSN=MyDSN&quot;,
-    &quot;StartTime&quot;: &quot;2019-11-11T19:01:55Z&quot;,
-    &quot;EndTime&quot;: &quot;2020-11-11T19:01:55Z&quot;
   }
 ]
 </code></pre><h3 id="rdbms-data-source-configuration-with-username-and-password">RDBMS data source configuration with username and password</h3>
