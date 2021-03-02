@@ -5,6 +5,8 @@
   topicHref: ../main/V1/Configuration/system-components-configuration.md
 - name: PI Adapter for RDBMS data source configuration 
   href: pi-adapter-for-rdbms-data-source-configuration.md
+- name: Schedules configuration
+  href: ../main/V1.3/Configuration/schedules-configuration.md
 - name: PI Adapter for RDBMS data selection configuration
   href: pi-adapter-for-rdbms-data-selection-configuration.md
 - name: Data filters configuration
