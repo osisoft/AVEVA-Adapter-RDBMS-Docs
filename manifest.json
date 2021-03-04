@@ -54,7 +54,7 @@
       "output": {
         ".html": {
           "relative_path": "V1/Configuration/pi-adapter-for-rdbms-data-source-configuration.html",
-          "hash": "QcUQE18yN9eIKpFODrp/Rg=="
+          "hash": "h/QygmGu8DiAFuco54DjIA=="
         }
       },
       "is_incremental": false,
@@ -240,6 +240,66 @@
       "version": ""
     },
     {
+      "type": "Toc",
+      "source_relative_path": "V1/main/V1.3/Configuration/Text-parser/All-file-types/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "V1/main/V1.3/Configuration/Text-parser/All-file-types/toc.html",
+          "hash": "+oxGA9S3veLADY7S+Vw+nw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "V1/main/V1.3/Configuration/Text-parser/JSONpath/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "V1/main/V1.3/Configuration/Text-parser/JSONpath/toc.html",
+          "hash": "9P9otdxVR+p9WkMCVtTEBg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "V1/main/V1.3/Configuration/Text-parser/jsonpath-syntax-for-value-retrieval.md",
+      "output": {
+        ".html": {
+          "relative_path": "V1/main/V1.3/Configuration/Text-parser/jsonpath-syntax-for-value-retrieval.html",
+          "hash": "5Da3R1pTTQ5R00pd72Z+rA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "V1/main/V1.3/Configuration/Text-parser/text-parser.md",
+      "output": {
+        ".html": {
+          "relative_path": "V1/main/V1.3/Configuration/Text-parser/text-parser.html",
+          "hash": "x4VOukeC32AzNeuvJXZGXQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "V1/main/V1.3/Configuration/Text-parser/xpath-and-csv-syntax-for-value-retrieval.md",
+      "output": {
+        ".html": {
+          "relative_path": "V1/main/V1.3/Configuration/Text-parser/xpath-and-csv-syntax-for-value-retrieval.html",
+          "hash": "I7FiUd1FkuU0bxHHcW+u6g=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
       "type": "Conceptual",
       "source_relative_path": "V1/main/V1.3/Configuration/buffering-configuration.md",
       "output": {
@@ -264,9 +324,6 @@
       "version": ""
     },
     {
-      "log_codes": [
-        "DuplicateUids"
-      ],
       "type": "Conceptual",
       "source_relative_path": "V1/main/V1.3/Configuration/configure-a-network-proxy.md",
       "output": {
@@ -303,6 +360,9 @@
       "version": ""
     },
     {
+      "log_codes": [
+        "DuplicateUids"
+      ],
       "type": "Conceptual",
       "source_relative_path": "V1/main/V1.3/Configuration/egress-endpoint-configuration/configure-a-network-proxy.md",
       "output": {
@@ -843,6 +903,9 @@
       "version": ""
     },
     {
+      "log_codes": [
+        "DuplicateUids"
+      ],
       "type": "Conceptual",
       "source_relative_path": "V1/main/V1.4/Configuration/configure-a-network-proxy.md",
       "output": {
@@ -879,9 +942,6 @@
       "version": ""
     },
     {
-      "log_codes": [
-        "DuplicateUids"
-      ],
       "type": "Conceptual",
       "source_relative_path": "V1/main/V1.4/Configuration/egress-endpoint-configuration/configure-a-network-proxy.md",
       "output": {
@@ -2021,7 +2081,7 @@
         "ConceptualDocumentProcessor": {
           "can_incremental": false,
           "incrementalPhase": "build",
-          "total_file_count": 122,
+          "total_file_count": 125,
           "skipped_file_count": 0
         },
         "ResourceDocumentProcessor": {

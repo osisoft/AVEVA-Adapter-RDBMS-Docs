@@ -121,25 +121,19 @@
 <td><strong>ConnectString</strong></td>
 <td>Required</td>
 <td><code>string</code></td>
-<td>Connection string to connect to the data source through an ODBC driver.<br><br> You may use the tokens <code>[username]</code> and <code>[password]</code> as placeholders for authentication properties. The <strong>UserName</strong> and <strong>Password</strong> parameters will be used by the adapter in place of these tokens.<br><br> If you have a pre-configured DSN, you may simply specify <code>DSN={YourDSN}</code> for this property, along with any other required parameters.<br><br>For more information, refer to the documentation for your relational database.</td>
+<td>Connection string to connect to the data source through an ODBC driver.<br><br> If you have a pre-configured DSN, you may simply specify <code>DSN={YourDSN}</code> for this property, along with any other required parameters.<br><br>For more information, refer to the documentation for your relational database.</td>
 </tr>
 <tr>
-<td><strong>UserName</strong></td>
+<td><strong>WindowsUser</strong></td>
 <td>Optional</td>
 <td><code>string</code></td>
-<td>Optional username to be used in <strong>ConnectString</strong>. This value will replace the <code>[username]</code> token.<br><br><strong>Note</strong>: If you are using Windows authentication, you must add your domain to the <strong>UserName</strong><br><br>Example: YourDomain\YourUserName.<br><br><strong>Note:</strong> This user should be configured to have the minimum permissions needed to read the desired data from your database. It is not recommended to use an admin user or even a user with write permissions.</td>
+<td>Optional username to use with Windows Authentication. <br><br><strong>Note</strong>: You must add your domain to the <strong>WindowsUser</strong><br><br>Example: YourDomain\YourUserName.<br><br><strong>Note:</strong> This user should be configured to have the minimum permissions needed to read the desired data from your database. It is not recommended to use an admin user or even a user with write permissions.</td>
 </tr>
 <tr>
-<td><strong>Password</strong></td>
+<td><strong>WindowsPassword</strong></td>
 <td>Optional</td>
 <td><code>string</code></td>
-<td>Optional password to be used in <strong>ConnectString</strong>. This value will replace the <code>[password]</code> token.</td>
-</tr>
-<tr>
-<td><strong>WindowsAuth</strong></td>
-<td>Optional</td>
-<td><code>bool</code></td>
-<td>False by default. If true, and if <strong>UserName</strong> and <strong>Password</strong> are specified, the adapter will impersonate the account whose credentials are in the <strong>UserName</strong> and <strong>Password</strong> fields in order to use Windows Authentication.</td>
+<td>Optional password to be used with Windows Authentication</td>
 </tr>
 <tr>
 <td><strong>CommandTimeout</strong></td>
