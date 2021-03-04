@@ -1,6 +1,6 @@
 {
   "homepages": [],
-  "source_base_path": "C:/agent/_work/1/s",
+  "source_base_path": "C:/Agent/_work/1/s",
   "xrefmap": "xrefmap.yml",
   "files": [
     {
@@ -324,6 +324,9 @@
       "version": ""
     },
     {
+      "log_codes": [
+        "DuplicateUids"
+      ],
       "type": "Conceptual",
       "source_relative_path": "V1/main/V1.3/Configuration/configure-a-network-proxy.md",
       "output": {
@@ -360,9 +363,6 @@
       "version": ""
     },
     {
-      "log_codes": [
-        "DuplicateUids"
-      ],
       "type": "Conceptual",
       "source_relative_path": "V1/main/V1.3/Configuration/egress-endpoint-configuration/configure-a-network-proxy.md",
       "output": {
@@ -2036,7 +2036,7 @@
       "output": {
         ".html": {
           "relative_path": "V1/toc.html",
-          "hash": "U/jhECsLWkA8TMakei6Iqg=="
+          "hash": "ZJ5f4OpLzMzT7PYGmQcuDg=="
         }
       },
       "is_incremental": false,
