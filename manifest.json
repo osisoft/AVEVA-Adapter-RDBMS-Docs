@@ -26,11 +26,26 @@
     },
     {
       "type": "Conceptual",
+      "source_relative_path": "V1/Configuration/configuration-examples.md",
+      "output": {
+        ".html": {
+          "relative_path": "V1/Configuration/configuration-examples.html",
+          "hash": "UM9mFv3y9HLcc3ZGcqPceg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "log_codes": [
+        "UidNotFound"
+      ],
+      "type": "Conceptual",
       "source_relative_path": "V1/Configuration/configuration.md",
       "output": {
         ".html": {
           "relative_path": "V1/Configuration/configuration.html",
-          "hash": "nakcrQr+1f8ej06pkKYv/Q=="
+          "hash": "hjc0HEAS3+VgoGc0MiuHkw=="
         }
       },
       "is_incremental": false,
@@ -42,7 +57,7 @@
       "output": {
         ".html": {
           "relative_path": "V1/Configuration/pi-adapter-for-rdbms-data-selection-configuration.html",
-          "hash": "yN52fRJpNklYrB91nklo/g=="
+          "hash": "mwqgbHLbzDbXm5+imPNVVw=="
         }
       },
       "is_incremental": false,
@@ -476,7 +491,7 @@
       "output": {
         ".html": {
           "relative_path": "V1/main/V1.3/Diagnostics/adapter-diagnostics.html",
-          "hash": "V0SJd8sbHBV/ygZJS0GrRQ=="
+          "hash": "AJ1loaCk70nkd7l7T8/PSw=="
         }
       },
       "is_incremental": false,
@@ -548,7 +563,7 @@
       "output": {
         ".html": {
           "relative_path": "V1/main/V1.3/Health/adapter-health.html",
-          "hash": "+90SzVeXn6R2YELa3udJig=="
+          "hash": "LdXxwmmKxbH20gPtNXuN6A=="
         }
       },
       "is_incremental": false,
@@ -572,7 +587,7 @@
       "output": {
         ".html": {
           "relative_path": "V1/main/V1.3/Health/health-and-diagnostics.html",
-          "hash": "afhpN+mxA07iY6JDzVjA2w=="
+          "hash": "0V7a4JxuKYWtq+2bLXGtEw=="
         }
       },
       "is_incremental": false,
@@ -652,32 +667,10 @@
     },
     {
       "type": "Resource",
-      "source_relative_path": "V1/main/V1.3/images/Diagnostics.PNG",
+      "source_relative_path": "V1/main/V1.3/images/adapter-health-af-hierarchy.png",
       "output": {
         "resource": {
-          "relative_path": "V1/main/V1.3/images/Diagnostics.PNG"
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "Resource",
-      "source_relative_path": "V1/main/V1.3/images/Metadata.png",
-      "output": {
-        "resource": {
-          "relative_path": "V1/main/V1.3/images/Metadata.png"
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "Resource",
-      "source_relative_path": "V1/main/V1.3/images/adapter-health-af-hierarchy.PNG",
-      "output": {
-        "resource": {
-          "relative_path": "V1/main/V1.3/images/adapter-health-af-hierarchy.PNG"
+          "relative_path": "V1/main/V1.3/images/adapter-health-af-hierarchy.png"
         }
       },
       "is_incremental": false,
@@ -707,6 +700,17 @@
     },
     {
       "type": "Resource",
+      "source_relative_path": "V1/main/V1.3/images/diagnostics.png",
+      "output": {
+        "resource": {
+          "relative_path": "V1/main/V1.3/images/diagnostics.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
       "source_relative_path": "V1/main/V1.3/images/forward-proxy.png",
       "output": {
         "resource": {
@@ -718,10 +722,10 @@
     },
     {
       "type": "Resource",
-      "source_relative_path": "V1/main/V1.3/images/health-data.PNG",
+      "source_relative_path": "V1/main/V1.3/images/health-data.png",
       "output": {
         "resource": {
-          "relative_path": "V1/main/V1.3/images/health-data.PNG"
+          "relative_path": "V1/main/V1.3/images/health-data.png"
         }
       },
       "is_incremental": false,
@@ -733,6 +737,17 @@
       "output": {
         "resource": {
           "relative_path": "V1/main/V1.3/images/logs-folder.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "V1/main/V1.3/images/metadata.png",
+      "output": {
+        "resource": {
+          "relative_path": "V1/main/V1.3/images/metadata.png"
         }
       },
       "is_incremental": false,
@@ -1067,7 +1082,7 @@
       "output": {
         ".html": {
           "relative_path": "V1/main/V1.4/Diagnostics/adapter-diagnostics.html",
-          "hash": "GFrGuOkGBE2acbjVIlNalQ=="
+          "hash": "P6KX0mue7p3UPvb+1g7jDw=="
         }
       },
       "is_incremental": false,
@@ -1139,7 +1154,7 @@
       "output": {
         ".html": {
           "relative_path": "V1/main/V1.4/Health/adapter-health.html",
-          "hash": "Dg/gONh1y1thz/Tk7YYWXQ=="
+          "hash": "X3X5yhXz82dlb+XPlMawUA=="
         }
       },
       "is_incremental": false,
@@ -1163,7 +1178,7 @@
       "output": {
         ".html": {
           "relative_path": "V1/main/V1.4/Health/health-and-diagnostics.html",
-          "hash": "HHTqv1x/tS6q1Pccgdh+ZA=="
+          "hash": "VYYjjEi5yl0ZqiFNr0SXYg=="
         }
       },
       "is_incremental": false,
@@ -1267,17 +1282,6 @@
     },
     {
       "type": "Resource",
-      "source_relative_path": "V1/main/V1.4/images/Diagnostics.PNG",
-      "output": {
-        "resource": {
-          "relative_path": "V1/main/V1.4/images/Diagnostics.PNG"
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "Resource",
       "source_relative_path": "V1/main/V1.4/images/Metadata.png",
       "output": {
         "resource": {
@@ -1289,10 +1293,10 @@
     },
     {
       "type": "Resource",
-      "source_relative_path": "V1/main/V1.4/images/adapter-health-af-hierarchy.PNG",
+      "source_relative_path": "V1/main/V1.4/images/adapter-health-af-hierarchy.png",
       "output": {
         "resource": {
-          "relative_path": "V1/main/V1.4/images/adapter-health-af-hierarchy.PNG"
+          "relative_path": "V1/main/V1.4/images/adapter-health-af-hierarchy.png"
         }
       },
       "is_incremental": false,
@@ -1322,6 +1326,17 @@
     },
     {
       "type": "Resource",
+      "source_relative_path": "V1/main/V1.4/images/diagnostics.png",
+      "output": {
+        "resource": {
+          "relative_path": "V1/main/V1.4/images/diagnostics.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
       "source_relative_path": "V1/main/V1.4/images/forward-proxy.png",
       "output": {
         "resource": {
@@ -1333,10 +1348,10 @@
     },
     {
       "type": "Resource",
-      "source_relative_path": "V1/main/V1.4/images/health-data.PNG",
+      "source_relative_path": "V1/main/V1.4/images/health-data.png",
       "output": {
         "resource": {
-          "relative_path": "V1/main/V1.4/images/health-data.PNG"
+          "relative_path": "V1/main/V1.4/images/health-data.png"
         }
       },
       "is_incremental": false,
@@ -1694,7 +1709,7 @@
       "output": {
         ".html": {
           "relative_path": "V1/main/V1/Diagnostics/adapter-diagnostics.html",
-          "hash": "c1wE1mh77QF4n1LRGAhHSA=="
+          "hash": "2EuPsq0yKQSPIUV/Tl5D/w=="
         }
       },
       "is_incremental": false,
@@ -1754,7 +1769,7 @@
       "output": {
         ".html": {
           "relative_path": "V1/main/V1/Health/adapter-health.html",
-          "hash": "ml34m8iYeHfrVf8qnxZbwA=="
+          "hash": "V0Rup2GG+kAUQATOESpFrA=="
         }
       },
       "is_incremental": false,
@@ -1778,7 +1793,7 @@
       "output": {
         ".html": {
           "relative_path": "V1/main/V1/Health/health-and-diagnostics.html",
-          "hash": "tI1oLiBXVkcTQMC3OMrOIw=="
+          "hash": "I6AY5rbIdTD21GZ3UibYsw=="
         }
       },
       "is_incremental": false,
@@ -1882,32 +1897,10 @@
     },
     {
       "type": "Resource",
-      "source_relative_path": "V1/main/V1/images/Diagnostics.PNG",
+      "source_relative_path": "V1/main/V1/images/adapter-health-af-hierarchy.png",
       "output": {
         "resource": {
-          "relative_path": "V1/main/V1/images/Diagnostics.PNG"
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "Resource",
-      "source_relative_path": "V1/main/V1/images/Metadata.png",
-      "output": {
-        "resource": {
-          "relative_path": "V1/main/V1/images/Metadata.png"
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "Resource",
-      "source_relative_path": "V1/main/V1/images/adapter-health-af-hierarchy.PNG",
-      "output": {
-        "resource": {
-          "relative_path": "V1/main/V1/images/adapter-health-af-hierarchy.PNG"
+          "relative_path": "V1/main/V1/images/adapter-health-af-hierarchy.png"
         }
       },
       "is_incremental": false,
@@ -1937,10 +1930,21 @@
     },
     {
       "type": "Resource",
-      "source_relative_path": "V1/main/V1/images/health-data.PNG",
+      "source_relative_path": "V1/main/V1/images/diagnostics.png",
       "output": {
         "resource": {
-          "relative_path": "V1/main/V1/images/health-data.PNG"
+          "relative_path": "V1/main/V1/images/diagnostics.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "V1/main/V1/images/health-data.png",
+      "output": {
+        "resource": {
+          "relative_path": "V1/main/V1/images/health-data.png"
         }
       },
       "is_incremental": false,
@@ -1952,6 +1956,17 @@
       "output": {
         "resource": {
           "relative_path": "V1/main/V1/images/logs-folder.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "V1/main/V1/images/metadata.png",
+      "output": {
+        "resource": {
+          "relative_path": "V1/main/V1/images/metadata.png"
         }
       },
       "is_incremental": false,
@@ -1980,15 +1995,12 @@
       "version": ""
     },
     {
-      "log_codes": [
-        "UidNotFound"
-      ],
       "type": "Conceptual",
       "source_relative_path": "V1/main/V1/introduction-to-pi-adapters.md",
       "output": {
         ".html": {
           "relative_path": "V1/main/V1/introduction-to-pi-adapters.html",
-          "hash": "ekR8ddKe3rcdZwBkFf2VWg=="
+          "hash": "S1RcEayTO6LQPtHWrXTrjg=="
         }
       },
       "is_incremental": false,
@@ -2036,7 +2048,7 @@
       "output": {
         ".html": {
           "relative_path": "V1/toc.html",
-          "hash": "ZJ5f4OpLzMzT7PYGmQcuDg=="
+          "hash": "tWBFXuBqRcQPGhEmISO2Eg=="
         }
       },
       "is_incremental": false,
@@ -2081,7 +2093,7 @@
         "ConceptualDocumentProcessor": {
           "can_incremental": false,
           "incrementalPhase": "build",
-          "total_file_count": 125,
+          "total_file_count": 126,
           "skipped_file_count": 0
         },
         "ResourceDocumentProcessor": {
