@@ -8,32 +8,38 @@ To use the adapter, you must configure the data source to receive data. The data
 
 ## Configure RDBMS Data Files data source
 
-**Note:** To modify an RDBMS data source configuration, you must use the REST endpoints to add or edit the configuration.
+Complete the following steps to configure an RDBMS data source. Use the `PUT` method in conjunction with the `api/v1/configuration/<ComponentId>/DataSource` REST endpoint to initialize the configuration.
 
-Complete the following steps to configure an RDBMS data source:
+1. Using a text editor, create an empty text file.
 
-1. Use any text editor to create a file that contains a RDBMS data source in JSON format.
+2. Copy and paste an example configuration for an RDBMS data source into the file.
 
-    - For content structure, see [RDBMS data source examples](#rdbms-data-source-examples).
-    - For a table of all available parameters, see [RDBMS data source parameters](#rdbms-data-source-parameters).
-2. Save the file. For example, `ConfigureDataSource.json`.
-3. Use any of the [Configuration tools](xref:ConfigurationTools1-3) capable of making HTTP requests to run a `PUT` command with the contents of that file to the following endpoint: `http://localhost:5590/api/v1/configuration/<ComponentId>/DataSource/`.
+    For sample JSON, see [RDBMS data source examples](#RDBMS-data-source-examples).
 
-      **Note:** The following example uses RDBMS1 as the adapter component name. For more information on how to add a component, see [System components configuration](xref:SystemComponentsConfiguration1-3).
+3. Update the example JSON parameters for your environment.
 
-    `5590` is the default port number. If you selected a different port number, replace it with that value.
+    For a table of all available parameters, see [RDBMS data source parameters](#RDBMS-data-source-parameters).
 
-    Example using `curl`:
+4. Save the file. For example, as `ConfigureDataSource.json`.
+
+5. Open a command line session. Change directory to the location of `ConfigureDataSource.json`.
+
+6. Enter the following cURL command (which uses the `PUT` method) to initialize the data source configuration.
 
     ```bash
     curl -d "@ConfigureDataSource.json" -H "Content-Type: application/json" -X PUT "http://localhost:5590/api/v1/configuration/RDBMS1/DataSource"
     ```
 
-    **Note:** Run this command from the same directory where the file is located.
+    **Notes:**
+  
+    * If you installed the adapter to listen on a non-default port, update `5590` to the port number in use.
+    * If you use a component ID other than `RDBMS1`, update the endpoint with your chosen component ID.
+    * For a list of other REST operations you can perform, like updating or deleting a data source configuration, see [REST URLs](#rest-urls).
+    * You can decide to have a default data selection file generated automatically or you can create the data selection file yourself.
+    <br/>
+    <br/>
 
-4. Configure data selection. For more information, see [PI Adapter for RDBMS data selection configuration](xref:PIAdapterForRDBMSDataSelectionConfiguration).
-
-    **Note:** You can decide to have a default data selection file generated automatically or you can create the data selection file yourself.
+7. Configure data selection.
 
 ## RDBMS data source schema
 
