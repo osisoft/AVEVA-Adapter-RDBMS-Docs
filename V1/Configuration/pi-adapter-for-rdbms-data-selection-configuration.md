@@ -6,7 +6,7 @@ uid: PIAdapterForRDBMSDataSelectionConfiguration
 
 In addition to the data source configuration, you need to provide a data selection configuration to specify the data you want the adapter to collect from the data sources.
 
-Each data selection item references a query whose results contain the value(s) for that item. For more information on queries, see [Queries configuration](xref: PIAdapterForRDBMSQueriesConfiguration).
+Each data selection item references a query whose results contain the value(s) for that item. For more information on queries, see [PI Adapter for RDBMS queries configuration](xref:PIAdapterForRDBMSQueriesConfiguration).
 
 ## Configure RDBMS data selection
 
