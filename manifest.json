@@ -25,18 +25,6 @@
       "version": ""
     },
     {
-      "type": "Conceptual",
-      "source_relative_path": "V1/Configuration/configuration-examples.md",
-      "output": {
-        ".html": {
-          "relative_path": "V1/Configuration/configuration-examples.html",
-          "hash": "UM9mFv3y9HLcc3ZGcqPceg=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
       "log_codes": [
         "UidNotFound"
       ],
@@ -53,11 +41,23 @@
     },
     {
       "type": "Conceptual",
+      "source_relative_path": "V1/Configuration/pi-adapter-for-rdbms-configuration-examples.md",
+      "output": {
+        ".html": {
+          "relative_path": "V1/Configuration/pi-adapter-for-rdbms-configuration-examples.html",
+          "hash": "kooRM8ht/pfmG005oGzaAw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
       "source_relative_path": "V1/Configuration/pi-adapter-for-rdbms-data-selection-configuration.md",
       "output": {
         ".html": {
           "relative_path": "V1/Configuration/pi-adapter-for-rdbms-data-selection-configuration.html",
-          "hash": "mwqgbHLbzDbXm5+imPNVVw=="
+          "hash": "qdWahHgLNNo6zdbd08Dq/w=="
         }
       },
       "is_incremental": false,
@@ -69,7 +69,7 @@
       "output": {
         ".html": {
           "relative_path": "V1/Configuration/pi-adapter-for-rdbms-data-source-configuration.html",
-          "hash": "h/QygmGu8DiAFuco54DjIA=="
+          "hash": "x1v76aGVzd6Ox9aB78Wx2w=="
         }
       },
       "is_incremental": false,
@@ -81,7 +81,7 @@
       "output": {
         ".html": {
           "relative_path": "V1/Configuration/pi-adapter-for-rdbms-queries-configuration.html",
-          "hash": "UCKIOBC6hpb8eiphcx/tcA=="
+          "hash": "pM5brVFuT58ZPsthgW6aAA=="
         }
       },
       "is_incremental": false,
@@ -2048,7 +2048,7 @@
       "output": {
         ".html": {
           "relative_path": "V1/toc.html",
-          "hash": "tWBFXuBqRcQPGhEmISO2Eg=="
+          "hash": "MwX8oYrlcfp0pQCT+Rxthg=="
         }
       },
       "is_incremental": false,
