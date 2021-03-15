@@ -41,6 +41,8 @@ Complete the following steps to configure an RDBMS data source. Use the `PUT` me
 
 7. Configure data selection.
 
+    For more information, see [PI Adapter for RDBMS data selection configuration](xref:PIAdapterForRDBMSDataSelectionConfiguration)
+
 ## RDBMS data source schema
 
 The full schema definition for the RDBMS data source configuration is in the `RDBMS_DataSource_schema.json` file located in one of the following folders:

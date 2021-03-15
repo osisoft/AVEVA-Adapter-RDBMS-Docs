@@ -10,7 +10,7 @@ Each data selection item references a query whose results contain the value(s) f
 
 ## Configure RDBMS data selection
 
-Complete the following steps to configure an RDBMS data selection. Use the `PUT` method in conjunction with the `api/v1/configuration/<ComponentId>/DataSelection/<StreamId>` REST endpoint to initialize the configuration.
+Complete the following steps to configure an RDBMS data selection. Use the `PUT` method in conjunction with the `api/v1/configuration/<ComponentId>/DataSelection` REST endpoint to initialize the configuration.
 
 1. Using a text editor, create an empty text file.
 
@@ -29,13 +29,13 @@ Complete the following steps to configure an RDBMS data selection. Use the `PUT`
 6. Enter the following cURL command (which uses the `PUT` method) to initialize the data selection configuration.
 
     ```bash
-    curl -d "@ConfigureDataSelection.json" -H "Content-Type: application/json" -X PUT "http://localhost:5590/api/v1/configuration/RDBMS1/DataSelection/Tank1.Temperature"
+    curl -d "@ConfigureDataSelection.json" -H "Content-Type: application/json" -X PUT "http://localhost:5590/api/v1/configuration/RDBMS1/DataSelection"
     ```
 
     **Notes:**
   
     * If you installed the adapter to listen on a non-default port, update `5590` to the port number in use.
-    * If you use a component ID other than `RDBMS1` and a stream ID other than `Tank1.Temperature`, update the endpoint with your chosen component ID and stream ID.
+    * If you use a component ID other than `RDBMS1`, update the endpoint with your chosen component ID.
     * For a list of other REST operations you can perform, like updating or deleting a data selection configuration, see [REST URLs](#rest-urls).
     <br/>
     <br/>
