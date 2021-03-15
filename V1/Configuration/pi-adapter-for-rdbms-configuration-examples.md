@@ -1,5 +1,5 @@
 ---
-uid: ConfigurationExamples
+uid: PIAdapterForRDBMSConfigurationExamples
 ---
 
 # PI Adapter for RDBMS configuration examples
