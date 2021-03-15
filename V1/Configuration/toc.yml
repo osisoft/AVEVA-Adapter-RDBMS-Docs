@@ -25,3 +25,5 @@
   href: ../main/V1.3/Configuration/buffering-configuration.md
 - name: Logging configuration
   href: ../main/V1.3/Configuration/logging-configuration.md
+- name: PI Adapter for RDBMS configuration examples
+  href: pi-adapter-for-rdbms-configuration-examples.md
