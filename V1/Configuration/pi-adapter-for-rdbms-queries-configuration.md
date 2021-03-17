@@ -2,45 +2,40 @@
 uid: PIAdapterForRDBMSQueriesConfiguration
 ---
 
-# PI Adapter for RDBMS query configuration
+# PI Adapter for RDBMS queries configuration
 
 Queries configuration holds a list of queries to run on the data source.
 
 ## Configure RDBMS queries
 
-**Note:** You cannot modify RDBMS query configurations manually. You must use REST endpoints to add or edit the configuration.
+Complete the following steps to configure RDBMS queries. Use the `PUT` method in conjunction with the `http://localhost:5590/api/v1/configuration/<ComponentId>/Queries` REST endpoint to initialize the configuration.
 
-Complete the following steps to configure RDBMS queries:
+1. Using a text editor, create an empty text file.
 
-1. Use any text editor to create a file that contains a RDBMS query in the JSON format
-    - For content structure, see [RDBMS queries example](#rdbms-queries-example). 
-    - For a table of all available parameters, see [RDBMS query parameters](#rdbms-query-parameters).
-2. Save the file. For example, `ConfigureQueries.json`.
-3. Use any of the [Configuration tools](xref:ConfigurationTools1-3) capable of making HTTP requests to run either a `POST` or `PUT` command to their appropriate endpoint:
+2. Copy and paste an example configuration for RDBMS queries into the file.
 
-**Note:** The following examples use RDBMS1 as the adapter component name. For more information on how to add a component, see [System components configuration](xref:SystemComponentsConfiguration1-3).
-    
-   `5590` is the default port number. If you selected a different port number, replace it with that value.
+    For sample JSON, see [RDBMS queries example](#rdbms-queries-example).
 
-   - `POST` endpoint: `http://localhost:5590/api/v1/configuration/<ComponentId>/Queries/`
+3. Update the example JSON parameters for your environment.
 
-      Example using `curl`:
+    For a table of all available parameters, see [RDBMS query parameters](#rdbms-query-parameters).
 
-      ```bash
-      curl -d "@ConfigureQueries.json" -H "Content-Type: application/json" -X POST "http://localhost:5590/api/v1/configuration/RDBMS1/Queries"
-      ```
+4. Save the file. For example, as `ConfigureQueries.json`.
 
-   **Note:** Run this command from the same directory where the file is located.
+5. Open a command line session. Change directory to the location of `ConfigureQueries.json`.
 
-   - `PUT` endpoint: `http://localhost:5590/api/v1/configuration/<ComponentId>/Queries/<QueryId>`
+6. Enter the following cURL command (which uses the `PUT` method) to initialize the queries configuration.
 
-      Example using `curl`:
+    ```bash
+    curl -d "@ConfigureQueries.json" -H "Content-Type: application/json" -X PUT "http://localhost:5590/api/v1/configuration/<ComponentId>/Queries"
+    ```
 
-      ```bash
-      curl -d "@ConfigureQuery.json" -H "Content-Type: application/json" -X PUT "http://localhost:5590/api/v1/configuration/RDBMS1/Queries"
-      ```
-
-   **Note:** Run this command from the same directory where the file is located.
+    **Notes:**
+  
+    * If you installed the adapter to listen on a non-default port, update `5590` to the port number in use.
+    * If you use a component ID other than `RDBMS1`, update the endpoint with your chosen component ID.
+    <br/>
+    <br/>
 
 ## RDBMS query schema
 
