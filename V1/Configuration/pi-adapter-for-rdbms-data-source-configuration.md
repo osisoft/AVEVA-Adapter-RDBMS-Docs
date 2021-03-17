@@ -4,7 +4,11 @@ uid: PIAdapterForRDBMSDataSourceConfiguration
 
 # PI Adapter for RDBMS data source configuration
 
-To use the adapter, you must configure the data source to receive data. The data source configuration defines properties to communicate with the source relational database via a specified data provider. When using the ODBC data provider, you will need to install an appropriate ODBC driver for your data source.  For more information on ODBC drivers, refer to the [Microsoft's ODBC Programmers Reference](https://docs.microsoft.com/en-us/sql/odbc/reference/odbc-programmer-s-reference?view=sql-server-2017) and the manual for the ODBC driver you are using. 
+To use the adapter, you must configure the adapter to collect data from one or more relational databases using the data source configuration. The data source configuration defines properties to communicate with the source relational database via a specified data provider. 
+
+## Data providers
+
+When using the ODBC data provider, you will need to install an appropriate ODBC driver for your data source.  For more information on ODBC drivers, refer to the [Microsoft's ODBC Programmers Reference](https://docs.microsoft.com/en-us/sql/odbc/reference/odbc-programmer-s-reference?view=sql-server-2017) and the manual for the ODBC driver you are using. 
 
 ## Configure RDBMS Data Files data source
 
