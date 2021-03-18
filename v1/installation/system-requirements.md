@@ -14,3 +14,5 @@ PI Adapter for RDBMS is supported on a variety of platforms and processors. Inst
 | Debian 9, 10 <br>Ubuntu 18.04, 20.04 | ARM64 | `RDBMS_linux-arm64.deb`  | Arm 64-bit processors |
 
 Alternatively, you can use tar.gz files with binaries to build your own custom installers or containers for Linux. For more information on installation of the PI Adapter for RDBMS with a Docker container, see [Install PI Adapter for RDBMS using Docker](xref:InstallPIAdapterForRDBMSUsingDocker).
+
+When collecting data via ODBC, PI Adapter for RDBMS requires that the appropriate ODBC driver for your data source is properly installed and configured. 

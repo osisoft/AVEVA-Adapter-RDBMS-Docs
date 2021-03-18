@@ -12,20 +12,20 @@ For the RDBMS adapter to start data collection, configure the following:
 
 - Data source: Provide the data source from which the adapter should collect data.
 - Data selection: Select RDBMS items to which the adapter should read data from.
-- Queries: List of SQL queries to send to the ODBC driver.
+- Queries: List of SQL queries to execute against the data source.
 - Logging: Set up the logging attributes to manage the adapter logging behavior.
 
 For more details, see [PI Adapter for RDBMS data source configuration](xref:PIAdapterForRDBMSDataSourceConfiguration) and [PI Adapter for RDBMS data selection configuration](xref:PIAdapterForRDBMSDataSelectionConfiguration).
 
 ## Connection
 
-The RDBMS adapter can retrieve data from a relational database by connecting to a compliant ODBC driver with a pre-configured DSN. The adapter assumes an appropriate ODBC driver is installed on the machine hosting the adapter. 
+PI Adapter for RDBMS can retrieve data from SQL Server via the .NET Data Provider for SQL Server and other relational databases via the .NET Data Provider for ODBC. When collecting data via ODBC, an appropriate ODBC driver for the data source should be installed and configured before the configuring the adapter. When collecting data from SQL Server, it is not necessary to install an ODBC driver. 
 
 For more information on ODBC drivers, you may refer to [Microsoft's ODBC Programmers Reference](https://docs.microsoft.com/en-us/sql/odbc/reference/odbc-programmer-s-reference?view=sql-server-2017) and the manual for the ODBC driver you are using.
 
 ## Data collection
 
-The adapter sends queries defined in the Queries configuration to the ODBC driver to run on the data source. These queries return a result set that the adapter parses through to get data values.
+Data will be collected for each DataSelection Item at an interval defined in the schedule referenced by the DataSelection Item's `ScheduleId` property. When the schedule is ran, the adapter will execute all queries that are referenced by a DataSelection Item in the schedule. The adapter will parse the results of that query and send data to the corresponding streams. 
 
 ## Stream creation
 

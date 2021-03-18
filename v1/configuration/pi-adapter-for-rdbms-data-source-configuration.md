@@ -4,7 +4,11 @@ uid: PIAdapterForRDBMSDataSourceConfiguration
 
 # PI Adapter for RDBMS data source configuration
 
-To use the adapter, you must configure the data source to receive data. The data source configuration defines properties to communicate with the source relational database by an ODBC driver. For more information on ODBC drivers, refer to the [Microsoft's ODBC Programmers Reference](https://docs.microsoft.com/en-us/sql/odbc/reference/odbc-programmer-s-reference?view=sql-server-2017) and the manual for the ODBC driver you are using. Each adapter component may connect to one DSN (Data Source Name).
+To use the adapter, you must configure the adapter to collect data from one or more relational databases using the data source configuration. The data source configuration defines properties to communicate with the source relational database via a specified data provider. 
+
+## Data providers
+
+The data source configuration will allow you to choose between two data providers: SQLServer or ODBC. The SQLServer data provider will allow you to connect to a Microsoft SQL Server without any additional software. The ODBC data provider will allow you to connect to any ODBC compliant relational database. When using the ODBC data provider, you will need to install an appropriate ODBC driver for your data source.  For more information on ODBC drivers, refer to the [Microsoft's ODBC Programmers Reference](https://docs.microsoft.com/en-us/sql/odbc/reference/odbc-programmer-s-reference?view=sql-server-2017) and the manual for the ODBC driver you are using. 
 
 ## Configure RDBMS Data Files data source
 
@@ -57,13 +61,14 @@ The following parameters are available for configuring an RDBMS data source:
 
 | Parameter                     | Required | Type      | Description |
 |-------------------------------|----------|-----------|-------------|
-| **ConnectString** | Required | `string` | Connection string to connect to the data source through an ODBC driver.<br><br> If you have a pre-configured DSN, you may simply specify `DSN={YourDSN}` for this property, along with any other required parameters.<br><br>For more information, refer to the documentation for your relational database. |
+| **ConnectString** | Required | `string` | Connection string to connect to the data source via the **DataProvider**. This string is encrypted when stored, so secrets such as passwords are safe to use in this string. <br><br> If you have a pre-configured DSN, you may simply specify `DSN={YourDSN}` for this property, along with any other required parameters.<br><br>For more information, refer to the documentation for your relational database. |
+| **DataProvider** | Required | `string` | Indicates which Data Provider the adapter should use to connect to the data source. Valid values are `SQLServer` or `ODBC`. <br><br> When connecting to Microsoft SQL Server, use `SQLServer`. When connecting to another relational database via ODBC, use `ODBC`. The `SQLServer` data provider does not require any additional software, but the `ODBC` data provider will require an ODBC driver. See installation requirements for more details. 
 | **WindowsUser** | Optional | `string` | Optional username to use with Windows Authentication. <br><br>**Note**: You must add your domain to the **WindowsUser**<br><br>Example: YourDomain\\YourUserName.<br><br>**Note:** This user should be configured to have the minimum permissions needed to read the desired data from your database. It is not recommended to use an admin user or even a user with write permissions. |
 | **WindowsPassword** | Optional | `string` | Optional password to be used with Windows Authentication|
 | **CommandTimeout** | Optional | `string` | Optional timeout for running queries on the data source.<br><br>Expected format: `HH:MM:SS.###`<br><br>Default Value: 00:00:30 (30 seconds) |
 | **UTC** | Optional | `bool` | If `true`, timestamps from the data source will be interpreted as UTC time. If `false`, local time relative to the adapter will be assumed.<br><br>Allowed value: `true` or `false`<br>Default value: `true` |
-| **StreamIdPrefix** | Optional | `string` | Specifies what prefix is used for stream IDs. The naming convention is `{StreamIdPrefix}{StreamId}`.An empty string means no prefix will be added to the stream IDs and names. A `null` value defaults to **ComponentID** followed by a period.<br><br>Example: `RDBMS1.TBD`<br><br>**Note:** If you change the **StreamIdPrefix** of a configured adapter, for example when you delete and add a data source, you need to restart the adapter for the changes to take place. New streams are created on adapter restart and pre-existing streams are no longer updated.
-| **DefaultStreamIdPattern** | Optional | `string` | Specifies the default stream ID pattern to use.  An empty or `null` value results in the default value. Possible parameters: `QueryId`, `ValueColumn`, `SourceId`, `IdColumn`, and `DSN`.<br><br>Allowed value: any string<br><br>Default value: `{QueryId}.{ValueColumn}`. |
+| **StreamIdPrefix** | Optional | `string` | Specifies what prefix is used for stream IDs. The naming convention is `{StreamIdPrefix}{StreamId}`.An empty string means no prefix will be added to the stream IDs and names. A `null` value defaults to **ComponentID** followed by a period.<br><br>Example: `RDBMS1.TBD`<br><br>**Note:** If you change the **StreamIdPrefix** of a configured adapter, for example when you delete and add a data source, you need to restart the adapter for the changes to take place. New streams are created on adapter restart and pre-existing streams are no longer updated.<br><br>Allowed value: any string<br>Default value: `null`
+| **DefaultStreamIdPattern** | Optional | `string` | Specifies the default stream ID pattern to use.  An empty or `null` value results in the default value. Possible parameters: `QueryId`, `ValueColumn`, `IdField`, `IdColumn`, and `SourceId`.<br><br>Allowed value: any string<br><br>Default value: `{SourceId}` <br><br>**Note:** `{SourceId}` in the **DefaultStreamIdPattern** evaluates the same as `SourceId` in the stream metadata. For selection items with a non-empty `IdField`, `{SourceId}` is equivalent to `{QueryId}.{IdField}.{ValueColumn}` For selection items with an empty `IdField`, `{SourceId}` is equivalent to `{QueryId}.{ValueColumn}` |
 
 ## RDBMS data source examples
 
@@ -74,35 +79,33 @@ The following are examples of valid RDBMS data source configurations:
 ```json
 [
   {
-    "DefaultStreamIdPattern": "{QueryId}.{ValueColumn}",
-    "ConnectString": "DSN=MyDSN"
+    "ConnectString": "DSN=MyDSN",
+    "DataProvider": "ODBC"
   }
 ]
 ```
 
 ### RDBMS data source configuration with username and password
 
+**Note:** The ConnectString parameter will be encrypted, so it is safe to include a password or other secrets. 
+
 ```json
 [
   {
-    "DefaultStreamIdPattern": "{QueryId}.{ValueColumn}",
-    "ConnectString": "Driver={ODBC Driver 17 for SQL Server}; Server=ServerName\\SQLEXPRESS; UID=[username]; PWD=[password]",
-    "UserName": "MyUser",
-    "Password": "MyPassword
+    "ConnectString": "Server=ServerName\\SQLEXPRESS; UID=MyUser; PWD=Password",
   }
 ]
 ```
 
-### RDBMS data source configuration with Window authentication
+### RDBMS data source configuration with Windows authentication
 
 ```json
 [
   {
-    "DefaultStreamIdPattern": "{QueryId}.{ValueColumn}",
-    "ConnectString": "Driver={ODBC Driver 17 for SQL Server}; Server=ServerName\\SQLEXPRESS; trusted_connection=yes",
-    "UserName": "MyUser",
-    "Password": "MyPassword",
-    "WindowsAuth": true
+    "ConnectString": "Server=ServerName\\SQLEXPRESS; Database=MyDB; trusted_connection=yes;",
+    "DataProvider": "SQLServer",
+    "WindowsUser": "MyDomain\\MyUser",
+    "WindowsPassword": "MyPassword"
   }
 ]
 ```
