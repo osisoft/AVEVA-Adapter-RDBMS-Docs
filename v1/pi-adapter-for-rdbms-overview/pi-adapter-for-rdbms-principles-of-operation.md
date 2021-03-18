@@ -19,13 +19,13 @@ For more details, see [PI Adapter for RDBMS data source configuration](xref:PIAd
 
 ## Connection
 
-PI Adapter for RDBMS can retrieve data from SQL Server via the .NET Data Provider for SQL Server and other relational databases via the .NET Data Provider for ODBC. When collecting data via ODBC, an appropriate ODBC driver for the data source should be installed and configured before the configuring the adapter. When collecting data from SQL Server, it is not necessary to install an ODBC driver. 
+PI Adapter for RDBMS can retrieve data from SQL Server via the .NET Data Provider for SQL Server and other relational databases through the .NET Data Provider for ODBC. When collecting data via ODBC, an appropriate ODBC driver for the data source should be installed and configured before configuring the adapter. When collecting data from SQL Server, it is not necessary to install an ODBC driver.
 
 For more information on ODBC drivers, you may refer to [Microsoft's ODBC Programmers Reference](https://docs.microsoft.com/en-us/sql/odbc/reference/odbc-programmer-s-reference?view=sql-server-2017) and the manual for the ODBC driver you are using.
 
 ## Data collection
 
-Data will be collected for each DataSelection Item at an interval defined in the schedule referenced by the DataSelection Item's `ScheduleId` property. When the schedule is ran, the adapter will execute all queries that are referenced by a DataSelection Item in the schedule. The adapter will parse the results of that query and send data to the corresponding streams. 
+Data is collected for each DataSelection item at an interval defined in the schedule referenced by the DataSelection item's `ScheduleId` property. When the schedule is ran, the adapter executes all queries that are referenced by a DataSelection item in the schedule. The adapter parses the results of that query and sends data to the corresponding streams.
 
 ## Stream creation
 
