@@ -1,0 +1,4 @@
+- name: PI Adapter for RDBMS device status
+  href: pi-adapter-for-rdbms-device-status.md
+- name: Next health message expected
+  href: next-health-message-expected.md

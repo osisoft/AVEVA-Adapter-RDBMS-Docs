@@ -12,7 +12,7 @@
   href: main/v1.3/administration/toc.yml
   topicHref: main/v1.3/administration/administration.md
 - name: Health and diagnostics
-  href: main/v1.3/health/toc.yml
+  href: health-and-diagnostics/toc.yml
   topicHref: main/v1.3/health/health-and-diagnostics.md
 - name: Release notes
   href: release-notes/release-notes.md
