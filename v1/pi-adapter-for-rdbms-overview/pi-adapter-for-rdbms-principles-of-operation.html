@@ -89,10 +89,10 @@
 </ul>
 <p>For more details, see <a class="xref" href="../configuration/pi-adapter-for-rdbms-data-source-configuration.html">PI Adapter for RDBMS data source configuration</a> and <a class="xref" href="../configuration/pi-adapter-for-rdbms-data-selection-configuration.html">PI Adapter for RDBMS data selection configuration</a>.</p>
 <h2 id="connection">Connection</h2>
-<p>PI Adapter for RDBMS can retrieve data from SQL Server via the .NET Data Provider for SQL Server and other relational databases via the .NET Data Provider for ODBC. When collecting data via ODBC, an appropriate ODBC driver for the data source should be installed and configured before the configuring the adapter. When collecting data from SQL Server, it is not necessary to install an ODBC driver. </p>
+<p>PI Adapter for RDBMS can retrieve data from SQL Server via the .NET Data Provider for SQL Server and other relational databases through the .NET Data Provider for ODBC. When collecting data via ODBC, an appropriate ODBC driver for the data source should be installed and configured before configuring the adapter. When collecting data from SQL Server, it is not necessary to install an ODBC driver.</p>
 <p>For more information on ODBC drivers, you may refer to <a href="https://docs.microsoft.com/en-us/sql/odbc/reference/odbc-programmer-s-reference?view=sql-server-2017">Microsoft&#39;s ODBC Programmers Reference</a> and the manual for the ODBC driver you are using.</p>
 <h2 id="data-collection">Data collection</h2>
-<p>Data will be collected for each DataSelection Item at an interval defined in the schedule referenced by the DataSelection Item&#39;s <code>ScheduleId</code> property. When the schedule is ran, the adapter will execute all queries that are referenced by a DataSelection Item in the schedule. The adapter will parse the results of that query and send data to the corresponding streams. </p>
+<p>Data is collected for each DataSelection item at an interval defined in the schedule referenced by the DataSelection item&#39;s <code>ScheduleId</code> property. When the schedule is ran, the adapter executes all queries that are referenced by a DataSelection item in the schedule. The adapter parses the results of that query and sends data to the corresponding streams.</p>
 <h2 id="stream-creation">Stream creation</h2>
 <p>The RDBMS adapter creates a stream with two properties for each selected RDBMS item. The properties are described in the following table.</p>
 <table>
