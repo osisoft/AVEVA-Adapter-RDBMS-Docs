@@ -16,10 +16,10 @@ Complete the following steps to establish a data flow from an RDBMS data source 
 
 1. Configure one or several RDBMS system components.<br>See [System components configuration](xref:SystemComponentsConfiguration#add-a-system-component).
 
-2. Configure an RDBMS data source for each RDBMS device.<br>See [PI Adapter for RDBMS data source configuration](xref:PIAdapterforRDBMSDataSourceConfiguration#configure-RDBMS-data-source).
+2. Configure an RDBMS data source for each RDBMS device.<br>See [PI Adapter for RDBMS data source configuration](xref:PIAdapterforRDBMSDataSourceConfiguration#configure-rdbms-data-files-data-source).
 
 3. Optional: Configure RDBMS queries to run on the data source.<br>See [PI Adapter for RDBMS queries configuration](xref:PIAdapterForRDBMSQueriesConfiguration).
 
-4. Configure an RDBMS data selection for each RDBMS data source.<br>See [PI Adapter for RDBMS data selection configuration](xref:PIAdapterforRDBMSDataSelectionConfiguration#configure-RDBMS-data-selection).
+4. Configure an RDBMS data selection for each RDBMS data source.<br>See [PI Adapter for RDBMS data selection configuration](xref:PIAdapterforRDBMSDataSelectionConfiguration#configure-rdbms-data-selection).
 
 5. Configure one or several egress endpoints.<br>See [Egress endpoints configuration](xref:EgressEndpointsConfiguration).
