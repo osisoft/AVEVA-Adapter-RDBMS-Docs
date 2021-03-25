@@ -16,11 +16,11 @@ Complete the following steps to configure an RDBMS data selection. Use the `PUT`
 
 2. Copy and paste an example configuration for an RDBMS data selection into the file.
 
-    For sample JSON, see [RDBMS data selection examples](#RDBMS-data-selection-examples).
+    For sample JSON, see [RDBMS data selection examples](#rdbms-data-selection-examples).
 
 3. Update the example JSON parameters for your environment.
 
-    For a table of all available parameters, see [RDBMS data selection parameters](#RDBMS-data-selection-parameters).
+    For a table of all available parameters, see [RDBMS data selection parameters](#rdbms-data-selection-parameters).
 
 4. Save the file. For example, as `ConfigureDataSelection.json`.
 

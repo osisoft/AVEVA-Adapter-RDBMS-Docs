@@ -1,6 +1,3 @@
-- name: PI Adapter for RDBMS versions
-  dropdown: true
-  items:
-  - name: PI Adapter for RDBMS 1.0
-    href: content/
-    homepage: content/index.md
+- name: PI Adapter for RDBMS 1.0
+  href: content/
+  topicHref: content/index.md

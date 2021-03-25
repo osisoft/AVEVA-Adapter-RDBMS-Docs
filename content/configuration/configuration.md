@@ -14,7 +14,7 @@ For more information on PI Adapter configuration tools, see [Configuration tools
 
 Complete the following steps to establish a data flow from an RDBMS data source device to a data endpoint.
 
-1. Configure one or several RDBMS system components.<br>See [System components configuration](xref:SystemComponentsConfiguration#add-a-system-component).
+1. Configure one or several RDBMS system components.<br>See [System components configuration](xref:SystemComponentsConfiguration#system-components-configuration).
 
 2. Configure an RDBMS data source for each RDBMS device.<br>See [PI Adapter for RDBMS data source configuration](xref:PIAdapterForRDBMSDataSourceConfiguration#configure-rdbms-data-files-data-source).
 

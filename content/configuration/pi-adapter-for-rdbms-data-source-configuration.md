@@ -18,11 +18,11 @@ Complete the following steps to configure an RDBMS data source. Use the `PUT` me
 
 2. Copy and paste an example configuration for an RDBMS data source into the file.
 
-    For sample JSON, see [RDBMS data source examples](#RDBMS-data-source-examples).
+    For sample JSON, see [RDBMS data source examples](#rdbms-data-source-examples).
 
 3. Update the example JSON parameters for your environment.
 
-    For a table of all available parameters, see [RDBMS data source parameters](#RDBMS-data-source-parameters).
+    For a table of all available parameters, see [RDBMS data source parameters](#rdbms-data-source-parameters).
 
 4. Save the file. For example, as `ConfigureDataSource.json`.
 
