@@ -4,11 +4,11 @@ uid: PIAdapterForRDBMSDataSourceConfiguration
 
 # PI Adapter for RDBMS data source configuration
 
-To use the adapter, you must configure the adapter to collect data from one or more relational databases using the data source configuration. The data source configuration defines properties to communicate with the source relational database through a specified data provider.
+To use the adapter <!-- jokim Apr 12 2021: use full name "PI adapter for RDBMS at first instance" -->, you must configure the adapter to collect data from one or more relational databases using the data source configuration. The data source configuration defines properties to communicate with the source relational database through a specified data provider.
 
 ## Data providers
 
-The data source configuration allows you to choose between two data providers: SQLServer or ODBC. The SQLServer data provider allows you to connect to a Microsoft SQL Server without any additional software. The ODBC data provider allows you to connect to any ODBC compliant relational database. When using the ODBC data provider, you need to install an appropriate ODBC driver for your data source.  For more information on ODBC drivers, refer to the [Microsoft's ODBC Programmers Reference](https://docs.microsoft.com/en-us/sql/odbc/reference/odbc-programmer-s-reference?view=sql-server-2017) and the manual for the ODBC driver you are using. 
+The data source configuration allows you to choose between two data providers: SQLServer or ODBC. The SQLServer data provider allows you to connect to a Microsoft SQL Server without any additional software. The ODBC data provider allows you to connect to any ODBC compliant <!-- jokim Apr 12 2021:"ODBC-compliant" -->relational database. When using the ODBC data provider, you need to install an appropriate ODBC driver for your data source.  For more information on ODBC drivers, refer to the [Microsoft's ODBC Programmers Reference](https://docs.microsoft.com/en-us/sql/odbc/reference/odbc-programmer-s-reference?view=sql-server-2017) and the manual for the ODBC driver you are using. 
 
 ## Configure RDBMS Data Files data source
 

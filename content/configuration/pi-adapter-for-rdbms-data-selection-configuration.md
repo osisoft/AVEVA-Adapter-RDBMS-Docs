@@ -35,7 +35,7 @@ Complete the following steps to configure an RDBMS data selection. Use the `PUT`
     **Notes:**
   
     * If you installed the adapter to listen on a non-default port, update `5590` to the port number in use.
-    * If you use a component ID other than `RDBMS1`, update the endpoint with your chosen component ID.
+    * If you use a component ID <!-- jokim Apr 12 2021: Did Rainer set a standard for "ID"? was it "Id"? -->other than `RDBMS1`, update the endpoint with your chosen component ID.
     * For a list of other REST operations you can perform, like updating or deleting a data selection configuration, see [REST URLs](#rest-urls).
     <br/>
     <br/>
@@ -56,8 +56,8 @@ Linux: `/opt/OSIsoft/Adapters/RDBMS/Schemas`
 | **ValueColumn** | Required | `string` | The database column to read data values from. |
 | **IndexColumn** | Optional | `string` | Column that contains the timestamp. If no column is specified, the timestamp will be the time that the adapter read the value. |
 | **IdColumn** | Optional | `string` | Name of the column that contains the IdField. Used to identify which rows of the query results belong to the selection item. |
-| **IdField** | Optional | `string` | The unique identifier of the source. Should be in the database column specified in **IdColumn**. Used to identify which rows of the query results belong to the selection item. |
-| **Name** | Optional | `string` | The optional friendly name of the data item collected from the data source. If not configured, the default value is the stream ID. |
+| **IdField** | Optional | `string` | The unique identifier of the source. Should be in the database column specified in **IdColumn**.<!-- jokim Apr 12 2021: a bit too casual of a sentence for me. How about "This identifier is commonly found in the database column..." --> Used to identify which rows of the query results belong to the selection item. |
+| **Name** | Optional | `string` | The optional friendly <!-- jokim Apr 12 2021: "optional-friendly" although not sure what this actually means... -->name of the data item collected from the data source. If not configured, the default value is the stream ID. |
 | **QueryId** | Required | `string` | The identifier of the query configured. |
 | **ScheduleId** | Required | `string` | The identifier of a schedule defined in the Schedules configuration. |
 | **Selected** | Optional | `boolean` | If `true`, data for this item is collected and sent to one or more configured OMF endpoints.<br><br>Allowed value: `true` or `false`<br>Default value:`true` |
@@ -68,7 +68,7 @@ There are two main ways to configure a selection item. The first and simplest me
 The following are examples of valid RDBMS data selection configurations:
 
 ### Column as an identifier
-This configuration is used when you have a table whose columns identify each stream in the result set. In the simplest of cases, there is one value column and one timestamp column; however, there could be multiple values and multiple timestamps. A separate data selection item needs to be defined for each timestamp value pair.
+This configuration is used when you <!-- jokim Apr 12 2021: use active voice "Use this configuration when..." --> have a table whose columns identify each stream in the result set. In the simplest of cases, there is one value column and one timestamp column; however, there could be multiple values and multiple timestamps. A separate data selection item needs to be defined for each timestamp value pair.
 
 Example data: 
 
@@ -118,7 +118,7 @@ Volume:
 ```
 
 ### Identifier in Row
-This configuration is used when each row of the result set contains information needed to identify each stream. In the simplest case, there could be one column for the identifier, one column for the timestamp, and one column for the value. However, result sets could contain multiple timestamp columns and multiple value columns. This configuration requires that the user specify the IdColumn and IdField properties.
+This configuration is used <!-- jokim Apr 12 2021: use active voice "Use this configuration when..." --> when each row of the result set contains information needed to identify each stream. In the simplest case, there could be one column for the identifier, one column for the timestamp, and one column for the value. However, result sets could contain multiple timestamp columns and multiple value columns. This configuration requires that the user specify the IdColumn and IdField properties.
 
 Example Data:
 

@@ -114,11 +114,11 @@ Complete the following steps to run the container:
 	docker run -d --network host rdbmsadapter
 	```
 
-The default port `5590` is accessible from the host and you can make REST calls to RDBMS adapter from applications on the local host computer. In this example, all data stored by the adapter is stored in the container itself. When the container is deleted, the data stored is also deleted.
+The default port `5590` is accessible from the host and <!-- jokim Apr 12 2021: a bit unclear or awkwardly written. but not sure how to rewrite it... -->you can make REST calls to RDBMS adapter from applications on the local host computer. In this example, all data stored by the adapter is stored in the container itself. When the container is deleted, the data stored is also deleted.
 
 ### Provide persistent storage for the Docker container
 
-Complete the following to run the container:
+Complete the following <!-- jokim Apr 12 2021: use active voice "the following items..."  -->to run the container:
 
 1. Use the docker container image `rdbmsadapter` created previously.
 2. Type the following command line (you may need to use the `sudo` command):
@@ -127,7 +127,7 @@ Complete the following to run the container:
 	docker run -d --network host -v /rdbms:/usr/share/OSIsoft/ rdbmsadapter
 	```
 
-The default port `5590` is accessible from the host and you can make REST calls to the RDBMS adapter from applications on the local host computer. In this example, data is written to a host directory on the local machine `/rdbms` rather than the container. You can specify any directory.
+The default port `5590` is accessible from the host and <!-- jokim Apr 12 2021: a bit unclear or awkwardly written. but not sure how to rewrite it... -->you can make REST calls to the RDBMS adapter from applications on the local host computer. In this example, data is written to a host directory on the local machine `/rdbms` rather than the container. You can specify any directory.
 
 ### Port number change
 
@@ -145,4 +145,4 @@ curl http://localhost:6000/api/v1/configuration
 
 ### Remove REST access to the Docker container
 
-If you remove the `--network host` option from the docker run command, REST access is not possible from outside the container. This can be valuable when you want to host an application in the same container as the RDBMS adapter but do not want to have external REST access enabled.
+If you remove the `--network host` option from the docker run command, REST access is not possible from outside the container. This can be valuable <!-- jokim Apr 12 2021: useful -->when you want to host an application in the same container as the RDBMS adapter but do not want to have external REST access enabled.
