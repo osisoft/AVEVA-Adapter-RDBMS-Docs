@@ -155,23 +155,23 @@ ENTRYPOINT [&quot;/rdbmsdockerstart.sh&quot;]
 <pre><code class="lang-bash">docker run -d --network host rdbmsadapter
 </code></pre></li>
 </ol>
-<p>The default port <code>5590</code> is accessible from the host and you can make REST calls to RDBMS adapter from applications on the local host computer. In this example, all data stored by the adapter is stored in the container itself. When the container is deleted, the data stored is also deleted.</p>
+<p>The default port <code>5590</code> is accessible from the host and <!-- jokim Apr 12 2021: a bit unclear or awkwardly written. but not sure how to rewrite it... -->you can make REST calls to RDBMS adapter from applications on the local host computer. In this example, all data stored by the adapter is stored in the container itself. When the container is deleted, the data stored is also deleted.</p>
 <h3 id="provide-persistent-storage-for-the-docker-container">Provide persistent storage for the Docker container</h3>
-<p>Complete the following to run the container:</p>
+<p>Complete the following <!-- jokim Apr 12 2021: use active voice "the following items..."  -->to run the container:</p>
 <ol>
 <li>Use the docker container image <code>rdbmsadapter</code> created previously.</li>
 <li><p>Type the following command line (you may need to use the <code>sudo</code> command):</p>
 <pre><code class="lang-bash">docker run -d --network host -v /rdbms:/usr/share/OSIsoft/ rdbmsadapter
 </code></pre></li>
 </ol>
-<p>The default port <code>5590</code> is accessible from the host and you can make REST calls to the RDBMS adapter from applications on the local host computer. In this example, data is written to a host directory on the local machine <code>/rdbms</code> rather than the container. You can specify any directory.</p>
+<p>The default port <code>5590</code> is accessible from the host and <!-- jokim Apr 12 2021: a bit unclear or awkwardly written. but not sure how to rewrite it... -->you can make REST calls to the RDBMS adapter from applications on the local host computer. In this example, data is written to a host directory on the local machine <code>/rdbms</code> rather than the container. You can specify any directory.</p>
 <h3 id="port-number-change">Port number change</h3>
 <p>To use a different port other than the default <code>5590</code>, you can specify a <code>portnum</code> variable on the <code>docker run</code> command line. For example, to start the RDBMS adapter using port <code>6000</code> instead of <code>5590</code>, use the following command line:</p>
 <pre><code class="lang-bash">docker run -d -e portnum=6000 --network host rdbmsadapter
 </code></pre><p>This command accesses the REST API with port <code>6000</code> instead of port <code>5590</code>. The following <code>curl</code> command returns the configuration for the container.</p>
 <pre><code class="lang-bash">curl http://localhost:6000/api/v1/configuration
 </code></pre><h3 id="remove-rest-access-to-the-docker-container">Remove REST access to the Docker container</h3>
-<p>If you remove the <code>--network host</code> option from the docker run command, REST access is not possible from outside the container. This can be valuable when you want to host an application in the same container as the RDBMS adapter but do not want to have external REST access enabled.</p>
+<p>If you remove the <code>--network host</code> option from the docker run command, REST access is not possible from outside the container. This can be valuable <!-- jokim Apr 12 2021: useful -->when you want to host an application in the same container as the RDBMS adapter but do not want to have external REST access enabled.</p>
 </article>
           </div>
           

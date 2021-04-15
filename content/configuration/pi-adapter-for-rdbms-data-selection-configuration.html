@@ -100,7 +100,7 @@
 </code></pre><p> <strong>Notes:</strong></p>
 <ul>
 <li>If you installed the adapter to listen on a non-default port, update <code>5590</code> to the port number in use.</li>
-<li>If you use a component ID other than <code>RDBMS1</code>, update the endpoint with your chosen component ID.</li>
+<li>If you use a component ID <!-- jokim Apr 12 2021: Did Rainer set a standard for "ID"? was it "Id"? -->other than <code>RDBMS1</code>, update the endpoint with your chosen component ID.</li>
 <li>For a list of other REST operations you can perform, like updating or deleting a data selection configuration, see <a href="#rest-urls">REST URLs</a>.
 <br>
 <br></li>
@@ -150,13 +150,13 @@
 <td><strong>IdField</strong></td>
 <td>Optional</td>
 <td><code>string</code></td>
-<td>The unique identifier of the source. Should be in the database column specified in <strong>IdColumn</strong>. Used to identify which rows of the query results belong to the selection item.</td>
+<td>The unique identifier of the source. Should be in the database column specified in <strong>IdColumn</strong>.<!-- jokim Apr 12 2021: a bit too casual of a sentence for me. How about "This identifier is commonly found in the database column..." --> Used to identify which rows of the query results belong to the selection item.</td>
 </tr>
 <tr>
 <td><strong>Name</strong></td>
 <td>Optional</td>
 <td><code>string</code></td>
-<td>The optional friendly name of the data item collected from the data source. If not configured, the default value is the stream ID.</td>
+<td>The optional friendly <!-- jokim Apr 12 2021: "optional-friendly" although not sure what this actually means... -->name of the data item collected from the data source. If not configured, the default value is the stream ID.</td>
 </tr>
 <tr>
 <td><strong>QueryId</strong></td>
@@ -187,7 +187,7 @@
 <h2 id="rdbms-data-selection-examples">RDBMS data selection examples</h2>
 <p>There are two main ways to configure a selection item. The first and simplest method is used when the columns of the result set are all that is needed to uniquely identify a stream. The second and most common method is used when each row of the result set contains information necessary to uniquely identify a stream.<br>The following are examples of valid RDBMS data selection configurations:</p>
 <h3 id="column-as-an-identifier">Column as an identifier</h3>
-<p>This configuration is used when you have a table whose columns identify each stream in the result set. In the simplest of cases, there is one value column and one timestamp column; however, there could be multiple values and multiple timestamps. A separate data selection item needs to be defined for each timestamp value pair.</p>
+<p>This configuration is used when you <!-- jokim Apr 12 2021: use active voice "Use this configuration when..." --> have a table whose columns identify each stream in the result set. In the simplest of cases, there is one value column and one timestamp column; however, there could be multiple values and multiple timestamps. A separate data selection item needs to be defined for each timestamp value pair.</p>
 <p>Example data: </p>
 <table>
 <thead>
@@ -247,7 +247,7 @@
   }
 ]
 </code></pre><h3 id="identifier-in-row">Identifier in Row</h3>
-<p>This configuration is used when each row of the result set contains information needed to identify each stream. In the simplest case, there could be one column for the identifier, one column for the timestamp, and one column for the value. However, result sets could contain multiple timestamp columns and multiple value columns. This configuration requires that the user specify the IdColumn and IdField properties.</p>
+<p>This configuration is used <!-- jokim Apr 12 2021: use active voice "Use this configuration when..." --> when each row of the result set contains information needed to identify each stream. In the simplest case, there could be one column for the identifier, one column for the timestamp, and one column for the value. However, result sets could contain multiple timestamp columns and multiple value columns. This configuration requires that the user specify the IdColumn and IdField properties.</p>
 <p>Example Data:</p>
 <table>
 <thead>

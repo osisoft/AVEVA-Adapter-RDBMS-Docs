@@ -78,21 +78,21 @@
             <article class="content wrap" id="_content" data-uid="PIAdapterForRDBMSPrinciplesOfOperation">
 <h1 id="pi-adapter-for-rdbms-principles-of-operation">PI Adapter for RDBMS principles of operation</h1>
 
-<p>The RDBMS adapter&#39;s operations focus on data collection and stream creation</p>
+<p>The RDBMS adapter&#39;s operations focus on data collection and stream creation. <!-- jokim Apr 12 2021: Should we give the acryonym's full name at the first instance? Also, missing a period (.) I added it. --></p>
 <h2 id="adapter-configuration">Adapter configuration</h2>
-<p>For the RDBMS adapter to start data collection, configure the following:</p>
+<p>For the RDBMS adapter to start data collection, configure the following:  <!-- jokim Apr 12 2021: Technically not a complete sentence in these leading clause to the steps. How about "...collection, configure the following items"? --></p>
 <ul>
-<li>Data source: Provide the data source from which the adapter should collect data.</li>
-<li>Data selection: Select RDBMS items to which the adapter should read data from.</li>
-<li>Queries: List of SQL queries to execute against the data source.</li>
-<li>Logging: Set up the logging attributes to manage the adapter logging behavior.</li>
+<li>Data source: Provide the data source from which the adapter should collect data  <!-- jokim Apr 12 2021: I don't think lists require periods at the end. I went and removed them. --></li>
+<li>Data selection: Select RDBMS items to which the adapter should read data from  <!-- jokim Apr 12 2021: how about "Select RDBMS items for the adapter to read"? --></li>
+<li>Queries: List of SQL queries to execute against the data source <!-- jokim Apr 12 2021: Consistency sakes, add a verb in the front of the sentence --></li>
+<li>Logging: Set up the logging attributes to manage the adapter logging behavior</li>
 </ul>
 <p>For more details, see <a class="xref" href="../configuration/pi-adapter-for-rdbms-data-source-configuration.html">PI Adapter for RDBMS data source configuration</a> and <a class="xref" href="../configuration/pi-adapter-for-rdbms-data-selection-configuration.html">PI Adapter for RDBMS data selection configuration</a>.</p>
 <h2 id="connection">Connection</h2>
-<p>PI Adapter for RDBMS can retrieve data from SQL Server via the .NET Data Provider for SQL Server and other relational databases through the .NET Data Provider for ODBC. When collecting data via ODBC, an appropriate ODBC driver for the data source should be installed and configured before configuring the adapter. When collecting data from SQL Server, it is not necessary to install an ODBC driver.</p>
+<p>PI Adapter for RDBMS can retrieve data from SQL Server via the .NET Data Provider for SQL Server and other relational databases <!-- jokim Apr 12 2021: how about "via the .NET Data Provider for SQL Server, and for other relational databases"? -->through the .NET Data Provider for ODBC. When collecting data via ODBC, an appropriate ODBC driver for the data source should be installed and configured before configuring the adapter. When collecting data from SQL Server, it is not necessary to install an ODBC driver.</p>
 <p>For more information on ODBC drivers, you may refer to <a href="https://docs.microsoft.com/en-us/sql/odbc/reference/odbc-programmer-s-reference?view=sql-server-2017">Microsoft&#39;s ODBC Programmers Reference</a> and the manual for the ODBC driver you are using.</p>
 <h2 id="data-collection">Data collection</h2>
-<p>Data is collected for each DataSelection item at an interval defined in the schedule referenced by the DataSelection item&#39;s <code>ScheduleId</code> property. When the schedule is ran, the adapter executes all queries that are referenced by a DataSelection item in the schedule. The adapter parses the results of that query and sends data to the corresponding streams.</p>
+<p>Data is collected for each DataSelection item <!-- jokim Apr 12 2021: use active voice "The adapter collects data for each DataSelection item..." -->at an interval defined in the schedule referenced by the DataSelection item&#39;s <code>ScheduleId</code> property. When the schedule is ran, the adapter executes all queries that are referenced by a DataSelection item in the schedule. The adapter parses the results of that query and sends data to the corresponding streams.</p>
 <h2 id="stream-creation">Stream creation</h2>
 <p>The RDBMS adapter creates a stream with two properties for each selected RDBMS item. The properties are described in the following table.</p>
 <table>

@@ -1,6 +1,6 @@
 {
   "homepages": [],
-  "source_base_path": "C:/agent/_work/1/s",
+  "source_base_path": "C:/Agent/_work/1/s",
   "xrefmap": "xrefmap.yml",
   "files": [
     {
@@ -30,7 +30,7 @@
       "output": {
         ".html": {
           "relative_path": "content/configuration/configuration.html",
-          "hash": "h8Nh59eIEQrsN7insdHiDQ=="
+          "hash": "Ojt/7/4haZKbdXvT1uw+IA=="
         }
       },
       "is_incremental": false,
@@ -54,7 +54,7 @@
       "output": {
         ".html": {
           "relative_path": "content/configuration/pi-adapter-for-rdbms-data-selection-configuration.html",
-          "hash": "mhox/RyBP0TyBynLyfe9tg=="
+          "hash": "drvNEom0Awrgku4Vg6+hsg=="
         }
       },
       "is_incremental": false,
@@ -66,7 +66,7 @@
       "output": {
         ".html": {
           "relative_path": "content/configuration/pi-adapter-for-rdbms-data-source-configuration.html",
-          "hash": "41ywM8uPOIU87/GZXEE6mA=="
+          "hash": "lVdgedV518jrZ3XBoWEsOA=="
         }
       },
       "is_incremental": false,
@@ -78,7 +78,7 @@
       "output": {
         ".html": {
           "relative_path": "content/configuration/pi-adapter-for-rdbms-queries-configuration.html",
-          "hash": "0Ldkn90O0R0FaX1wHtEOVQ=="
+          "hash": "aw6W+tqJF8efbMfWIXER8Q=="
         }
       },
       "is_incremental": false,
@@ -113,7 +113,7 @@
       "output": {
         ".html": {
           "relative_path": "content/installation/install-pi-adapter-for-rdbms-using-docker.html",
-          "hash": "m2yW6n1j/LCSWjtg7TfP0w=="
+          "hash": "F0zfIO/iSu5skbl+9RtQzg=="
         }
       },
       "is_incremental": false,
@@ -365,7 +365,7 @@
       "output": {
         ".html": {
           "relative_path": "content/main/shared-content/configuration/system-components-configuration.html",
-          "hash": "YHAabfq9T5mFssoroWaPrA=="
+          "hash": "4IEOFxTmA49+Qjs4o1RZpA=="
         }
       },
       "is_incremental": false,
@@ -389,7 +389,7 @@
       "output": {
         ".html": {
           "relative_path": "content/main/shared-content/configuration/text-parser/jsonpath-syntax-for-value-retrieval.html",
-          "hash": "myIz1b8aVxmlOS68KGdt9A=="
+          "hash": "9dHI3Ax3A1whnDM7JVgDhQ=="
         }
       },
       "is_incremental": false,
@@ -413,7 +413,7 @@
       "output": {
         ".html": {
           "relative_path": "content/main/shared-content/configuration/text-parser/text-parser.html",
-          "hash": "R3iwEx8kkcnq2RleKvSlDQ=="
+          "hash": "zhfxbbqU24ctlbrTPCiqmA=="
         }
       },
       "is_incremental": false,
@@ -773,7 +773,7 @@
       "output": {
         ".html": {
           "relative_path": "content/pi-adapter-for-rdbms-overview/pi-adapter-for-rdbms-principles-of-operation.html",
-          "hash": "CDqMtGAI3LlWLSLgqWGqfQ=="
+          "hash": "uLtXxmfmfYIKsibhguyOcQ=="
         }
       },
       "is_incremental": false,
@@ -797,7 +797,7 @@
       "output": {
         ".html": {
           "relative_path": "content/release-notes/release-notes.html",
-          "hash": "eZ1ttufLk50P2xj0MJgatA=="
+          "hash": "dmnSfrsaBkfNOb8I5XXrrA=="
         }
       },
       "is_incremental": false,
