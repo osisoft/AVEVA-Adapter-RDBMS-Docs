@@ -9,7 +9,7 @@ Adapter framework 1.3
 
 ## Overview
 
-This <!-- jokim Apr 12 2021: how about "Version 1.0 represents..."? -->represents the initial release for PI Adapter for RDBMS<!-- jokim Apr 12 2021: spell out at first instance "relational database management system (RDBMS)"-->. This product collects time series <!-- jokim Apr 12 2021: time-series -->data and sends it to configured OMF (OSIsoft Message Format) endpoints in OSIsoft Cloud Services or PI Servers. The time-series data can originate from any relational database management system (RDBMS) that supports Open Database Connectivity (ODBC) drivers. PI Adapter for RDBMS can also collect health and diagnostics information. It supports buffering, static and event data collection, automatic discovery of available data items on a data source, and various Windows and Linux-based operating systems as well as containerization.
+Version 1.0 represents the initial release for PI Adapter for RDBMS (Relational Database Management System). This product collects time-series data and sends it to configured OMF (OSIsoft Message Format) endpoints in OSIsoft Cloud Services or PI Servers. The time-series data can originate from any relational database management system (RDBMS) that supports Open Database Connectivity (ODBC) drivers. PI Adapter for RDBMS can also collect health and diagnostics information. It supports buffering, static and event data collection, automatic discovery of available data items on a data source, and various Windows and Linux-based operating systems as well as containerization.
 
 For more information, see the [PI Adapter for RDBMS overview](xref:PIAdapterForRDBMSOverview).
 
@@ -33,7 +33,7 @@ Refer to [Uninstall the adapter](xref:UninstallTheAdapter).
 
 ### OSIsoft's commitment
 
-Because the PI System often serves as a barrier protecting control system networks and mission-critical infrastructure assets, OSIsoft is committed to (1) delivering a high-quality product and (2) communicating clearly what security issues have been addressed. This release of PI Adapter for RDBMS is the highest quality and most secure <!-- jokim Apr 12 2021: most-secure-->version of the PI Adapter for RDBMS released to date. OSIsoft's commitment to improving the PI System is ongoing, and each future version should raise the quality and security bar even further.
+Because the PI System often serves as a barrier protecting control system networks and mission-critical infrastructure assets, OSIsoft is committed to (1) delivering a high-quality product and (2) communicating clearly what security issues have been addressed. This release of PI Adapter for RDBMS is the highest quality and most secure version of the PI Adapter for RDBMS released to date. OSIsoft's commitment to improving the PI System is ongoing, and each future version should raise the quality and security bar even further.
 
 ### Vulnerability communication
 

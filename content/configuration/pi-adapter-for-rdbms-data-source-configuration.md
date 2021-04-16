@@ -4,11 +4,11 @@ uid: PIAdapterForRDBMSDataSourceConfiguration
 
 # PI Adapter for RDBMS data source configuration
 
-To use the adapter <!-- jokim Apr 12 2021: use full name "PI adapter for RDBMS at first instance" -->, you must configure the adapter to collect data from one or more relational databases using the data source configuration. The data source configuration defines properties to communicate with the source relational database through a specified data provider.
+To use PI Adapter for RDBMS, you must configure the adapter to collect data from one or more relational databases using the data source configuration. The data source configuration defines properties to communicate with the source relational database through a specified data provider.
 
 ## Data providers
 
-The data source configuration allows you to choose between two data providers: SQLServer or ODBC. The SQLServer data provider allows you to connect to a Microsoft SQL Server without any additional software. The ODBC data provider allows you to connect to any ODBC compliant <!-- jokim Apr 12 2021:"ODBC-compliant" -->relational database. When using the ODBC data provider, you need to install an appropriate ODBC driver for your data source.  For more information on ODBC drivers, refer to the [Microsoft's ODBC Programmers Reference](https://docs.microsoft.com/en-us/sql/odbc/reference/odbc-programmer-s-reference?view=sql-server-2017) and the manual for the ODBC driver you are using. 
+The data source configuration allows you to choose between two data providers: SQLServer or ODBC. The SQLServer data provider allows you to connect to a Microsoft SQL Server without any additional software. The ODBC data provider allows you to connect to any ODBC-compliant relational database. When using the ODBC data provider, you need to install an appropriate ODBC driver for your data source.  For more information on ODBC drivers, refer to the [Microsoft's ODBC Programmers Reference](https://docs.microsoft.com/en-us/sql/odbc/reference/odbc-programmer-s-reference?view=sql-server-2017) and the manual for the ODBC driver you are using. 
 
 ## Configure RDBMS Data Files data source
 
@@ -37,7 +37,7 @@ Complete the following steps to configure an RDBMS data source. Use the `PUT` me
     **Notes:**
   
     * If you installed the adapter to listen on a non-default port, update `5590` to the port number in use.
-    * If you use a component ID other than `RDBMS1`, update the endpoint with your chosen component ID.
+    * If you use a component Id other than `RDBMS1`, update the endpoint with your chosen component Id.
     * For a list of other REST operations you can perform, like updating or deleting a data source configuration, see [REST URLs](#rest-urls).
     * You can decide to have a default data selection file generated automatically or you can create the data selection file yourself.
     <br/>
@@ -67,8 +67,8 @@ The following parameters are available for configuring an RDBMS data source:
 | **WindowsPassword** | Optional | `string` | Optional password to be used with Windows Authentication|
 | **CommandTimeout** | Optional | `string` | Optional timeout for running queries on the data source.<br><br>Expected format: `HH:MM:SS.###`<br><br>Default Value: 00:00:30 (30 seconds) |
 | **UTC** | Optional | `bool` | If `true`, timestamps from the data source are interpreted as UTC time. If `false`, local time relative to the adapter is assumed.<br><br>Allowed value: `true` or `false`<br>Default value: `true` |
-| **StreamIdPrefix** | Optional | `string` | Specifies what prefix is used for stream IDs. The naming convention is `{StreamIdPrefix}{StreamId}`.An empty string means no prefix will be added to the stream IDs and names. A `null` value defaults to **ComponentID** followed by a period.<br><br>Example: `RDBMS1.TBD`<br><br>**Note:** If you change the **StreamIdPrefix** of a configured adapter, for example when you delete and add a data source, you need to restart the adapter for the changes to take place. New streams are created on adapter restart and pre-existing streams are no longer updated.<br><br>Allowed value: any string<br>Default value: `null`
-| **DefaultStreamIdPattern** | Optional | `string` | Specifies the default stream ID pattern to use.  An empty or `null` value results in the default value. Possible parameters: `QueryId`, `ValueColumn`, `IdField`, `IdColumn`, and `SourceId`.<br><br>Allowed value: any string<br><br>Default value: `{SourceId}` <br><br>**Note:** `{SourceId}` in the **DefaultStreamIdPattern** evaluates the same as `SourceId` in the stream metadata. For selection items with a non-empty `IdField`, `{SourceId}` is equivalent to `{QueryId}.{IdField}.{ValueColumn}` For selection items with an empty `IdField`, `{SourceId}` is equivalent to `{QueryId}.{ValueColumn}` |
+| **StreamIdPrefix** | Optional | `string` | Specifies what prefix is used for stream Ids. The naming convention is `{StreamIdPrefix}{StreamId}`.An empty string means no prefix will be added to the stream Ids and names. A `null` value defaults to **ComponentId** followed by a period.<br><br>Example: `RDBMS1.TBD`<br><br>**Note:** If you change the **StreamIdPrefix** of a configured adapter, for example when you delete and add a data source, you need to restart the adapter for the changes to take place. New streams are created on adapter restart and pre-existing streams are no longer updated.<br><br>Allowed value: any string<br>Default value: `null`
+| **DefaultStreamIdPattern** | Optional | `string` | Specifies the default stream Id pattern to use.  An empty or `null` value results in the default value. Possible parameters: `QueryId`, `ValueColumn`, `IdField`, `IdColumn`, and `SourceId`.<br><br>Allowed value: any string<br><br>Default value: `{SourceId}` <br><br>**Note:** `{SourceId}` in the **DefaultStreamIdPattern** evaluates the same as `SourceId` in the stream metadata. For selection items with a non-empty `IdField`, `{SourceId}` is equivalent to `{QueryId}.{IdField}.{ValueColumn}` For selection items with an empty `IdField`, `{SourceId}` is equivalent to `{QueryId}.{ValueColumn}` |
 
 ## RDBMS data source examples
 

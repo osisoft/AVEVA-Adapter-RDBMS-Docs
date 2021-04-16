@@ -118,7 +118,7 @@ The default port `5590` is accessible from the host and <!-- jokim Apr 12 2021: 
 
 ### Provide persistent storage for the Docker container
 
-Complete the following <!-- jokim Apr 12 2021: use active voice "the following items..."  -->to run the container:
+Complete the following items to run the container:
 
 1. Use the docker container image `rdbmsadapter` created previously.
 2. Type the following command line (you may need to use the `sudo` command):
@@ -145,4 +145,4 @@ curl http://localhost:6000/api/v1/configuration
 
 ### Remove REST access to the Docker container
 
-If you remove the `--network host` option from the docker run command, REST access is not possible from outside the container. This can be valuable <!-- jokim Apr 12 2021: useful -->when you want to host an application in the same container as the RDBMS adapter but do not want to have external REST access enabled.
+If you remove the `--network host` option from the docker run command, REST access is not possible from outside the container. This can be useful when you want to host an application in the same container as the RDBMS adapter but do not want to have external REST access enabled.

@@ -4,7 +4,7 @@ uid: PIAdapterForRDBMSQueriesConfiguration
 
 # PI Adapter for RDBMS queries configuration
 
-Queries configuration holds <!-- jokim Apr 12 2021: contains -->a list of queries to run on the data source.
+Queries configuration contains a list of queries to run on the data source.
 
 ## Configure RDBMS queries
 
@@ -33,7 +33,7 @@ Complete the following steps to configure RDBMS queries. Use the `PUT` method in
     **Notes:**
   
     * If you installed the adapter to listen on a non-default port, update `5590` to the port number in use.
-    * If you use a component ID other than `RDBMS1`, update the endpoint with your chosen component ID.
+    * If you use a component Id other than `RDBMS1`, update the endpoint with your chosen component Id.
     <br/>
     <br/>
 
