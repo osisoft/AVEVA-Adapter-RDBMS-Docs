@@ -9,7 +9,11 @@ Adapter framework 1.3
 
 ## Overview
 
-Version 1.0 represents the initial release for PI Adapter for RDBMS (Relational Database Management System). This product collects time-series data and sends it to configured OMF (OSIsoft Message Format) endpoints in OSIsoft Cloud Services or PI Servers. The time-series data can originate from any relational database management system (RDBMS) that supports Open Database Connectivity (ODBC) drivers. PI Adapter for RDBMS can also collect health and diagnostics information. It supports buffering, static and event data collection, automatic discovery of available data items on a data source, and various Windows and Linux-based operating systems as well as containerization.
+Version 1.0 represents the initial release for PI Adapter for RDBMS (Relational Database Management System). This product collects time-series data and sends it to configured OMF (OSIsoft Message Format) endpoints in Edge Data Store, OSIsoft Cloud Services, or PI Servers. The time-series data can originate from any RDBMS that supports Open Database Connectivity (ODBC) drivers.
+
+PI Adapter for RDBMS can also collect health and diagnostics information. It supports buffering, static and event data collection, automatic discovery of available data items on a data source.
+
+The adapter can be installed on various Windows and Linux-based operating systems. Containerization is also supported.
 
 For more information, see the [PI Adapter for RDBMS overview](xref:PIAdapterForRDBMSOverview).
 

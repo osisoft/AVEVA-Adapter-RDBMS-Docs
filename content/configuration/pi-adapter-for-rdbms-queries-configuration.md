@@ -47,13 +47,27 @@ Linux: `/opt/OSIsoft/Adapters/RDBMS/Schemas`
 
 ## RDBMS query parameters
 
-The following parameters are available to configure queries to be sent to the ODBC driver. The supported query syntax will depend on the ODBC driver you are using. These queries will be sent to the driver exactly as they are defined here, and the adapter will use what is returned by that query to collect data.
+The following parameters are available to configure queries to be sent to the Open Database Connectivity (ODBC) driver. The supported query syntax depends on the ODBC driver you are using. These queries will be sent to the driver exactly as they are defined here, and the adapter will use what is returned by that query to collect data.
+
+<!-- Mark Bishop 4/16: The last sentence in this paragraph can be trimmed down considerably. Suggestion:
+
+These queries are sent to the driver exactly as defined, and the adapter uses the driver response to collect data.
+
+-->
+
 Consult the documentation for your ODBC driver for supported query syntax.
 
-Placeholder values are provided by the adapter to make query configuration more streamlined. Make sure to surround the placeholders with question marks so the adapter knows to read them as placeholders. Those placeholders include:
-* ?LST?: Last Scan Time
-* ?ET?: End Time 
-* ?ST?: Start Time
+Placeholder values are provided by the adapter to streamline make query configuration more streamlined. Make sure to surround the placeholders with question marks so the adapter knows to read them as placeholders. Those placeholders include:
+
+<!-- Mark Bishop 4/16: I suggest moving the information about the placeholder values below the parameter table. I also suggest the following revisions to it:
+
+Within `QueryString`, you can use the placeholder values listed below to streamline query configuration. Delimit the placeholders with question marks. Placeholders include:
+
+-->
+
+* `?LST?`: Last Scan Time
+* `?ET?`: End Time
+* `?ST?`: Start Time
 
 | Parameter                     | Required | Type      | Description |
 |-------------------------------|----------|-----------|-------------|
