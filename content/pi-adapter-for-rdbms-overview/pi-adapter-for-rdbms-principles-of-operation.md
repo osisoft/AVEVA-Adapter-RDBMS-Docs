@@ -19,48 +19,31 @@ For more details, see [PI Adapter for RDBMS data source configuration](xref:PIAd
 
 ## Connection
 
-<!-- Mark Bishop 4/16: This section contains complex sentences that are difficult to understand. I advise breaking it down into multiple paragraphs with shorter sentences. Suggested revision:
-
 PI Adapter for RDBMS can retrieve data from:
 
 * SQL Server, using the .NET Data Provider for SQL Server
 * Other relational databases, using the .NET Data Provider for ODBC (Open Database Connectivity)
 
-When collecting data via ODBC, you must install and configure an appropriate ODBC driver for the data source before configuring the adapter. 
+When collecting data through ODBC, you must install and configure an appropriate ODBC driver for the data source before configuring the adapter. 
 
-When collecting data from SQL Server, additional driver installation is not  necessary.
+When collecting data from a SQL Server, additional driver installation is not necessary.
 
 For more information on ODBC drivers, refer to [Microsoft's ODBC Programmers Reference](https://docs.microsoft.com/en-us/sql/odbc/reference/odbc-programmer-s-reference?view=sql-server-2017) and the manual for the ODBC driver you are using.
--->
-
-PI Adapter for RDBMS can retrieve data from SQL Server through the .NET Data Provider for SQL Server, and for other relational databases through the .NET Data Provider for ODBC. When collecting data via ODBC, an appropriate ODBC driver for the data source should be installed and configured before configuring the adapter. When collecting data from SQL Server, it is not necessary to install an ODBC driver.
-
-For more information on ODBC drivers, you may refer to [Microsoft's ODBC Programmers Reference](https://docs.microsoft.com/en-us/sql/odbc/reference/odbc-programmer-s-reference?view=sql-server-2017) and the manual for the ODBC driver you are using.
 
 ## Data collection
-
-<!-- Mark Bishop 4/16: Same feedback as the previous section. This section needs to be broke down. Suggested revision:
 
 The adapter collects data for each DataSelection item at an interval defined using the `ScheduleId` property, which you can set in the schedule configuration. 
 
 When the schedule runs, the adapter executes all queries that are referenced by a DataSelection item in the schedule. The adapter parses the results of that query and sends data to the corresponding streams.
 
--->
-
-The adapter collects data for each DataSelection item at an interval defined in the schedule referenced by the DataSelection item's `ScheduleId` property. When the schedule is ran, the adapter executes all queries that are referenced by a DataSelection item in the schedule. The adapter parses the results of that query and sends data to the corresponding streams.
-
 ## Stream creation
 
 The RDBMS adapter creates a stream with two properties for each selected RDBMS item. The properties are described in the following table.
 
-<!-- Mark Bishop 4/16: I have some suggestions for the `Timestamp` description here: 
-
-| `Timestamp`   | String    | The time read from the result set. If no time is available, the adapter uses the local time instead. | -->
-
 | Property name | Data type | Description |
 |---------------|-----------|-------------|
-| `Timestamp`   | String    | The time read from the result set. If no time is read, this will be the local time the adapter read the value. |
-| `Value`       | The type on <!-- should this "on" be "of"? --> the data source converted to an OMF type | The value read from the result set. |
+| `Timestamp`   | String    | The time read from the result set. If no time is available, the adapter uses the local time instead. |
+| `Value`       | The type of the data source converted to an OMF type | The value read from the result set. |
 
 Certain metadata are sent with each stream created. The following metadata are common for every adapter type:
 

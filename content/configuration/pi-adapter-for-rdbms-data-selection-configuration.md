@@ -6,13 +6,7 @@ uid: PIAdapterForRDBMSDataSelectionConfiguration
 
 In addition to the data source configuration, you need to provide a data selection configuration to specify the data you want the adapter to collect from the data sources.
 
-<!-- Mark Bishop 4/16: I don't understand the sentence that follows. Here's a suggestion for revision, although I'm not sure if I'm changing the meaning: 
-
-Each data selection item references a query that returns the value(s) for that item.
-
--->
-
-Each data selection item references a query whose results contain the value(s) for that item. For more information on queries, see [PI Adapter for RDBMS queries configuration](xref:PIAdapterForRDBMSQueriesConfiguration).
+Each data selection item references a query that returns the value(s) for that item. For more information on queries, see [PI Adapter for RDBMS queries configuration](xref:PIAdapterForRDBMSQueriesConfiguration).
 
 ## Configure RDBMS data selection
 
@@ -71,16 +65,10 @@ Linux: `/opt/OSIsoft/Adapters/RDBMS/Schemas`
 
 ## RDBMS data selection examples
 
-<!-- Mark Bishop 4/16: Some rewrites here would make this clearer. Revision suggestions: 
-
 There are two ways to configure a selection item.
 
 * **By Column:** Uniquely identify a stream using the columns from the result set. This method is simplest.
 * **By Row:** Uniquely identify a stream using the rows from the result set. This method is more complex, but more common.
-
--->
-
-There are two main ways to configure a selection item. The first and simplest method is used when the columns of the result set are all that is needed to uniquely identify a stream. The second and most common method is used when each row of the result set contains information necessary to uniquely identify a stream.
   
 The following are examples of valid RDBMS data selection configurations:
 

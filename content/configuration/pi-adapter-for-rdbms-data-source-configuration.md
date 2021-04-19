@@ -10,8 +10,6 @@ To use PI Adapter for RDBMS, you must configure the adapter to collect data from
 
 The data source configuration allows you to choose between two data providers: SQLServer or ODBC (Open Database Connectivity). The SQLServer data provider allows you to connect to a Microsoft SQL Server without any additional software. The ODBC data provider allows you to connect to any ODBC-compliant relational database.
 
-<!-- Mark Bishop 4/16: This part needs special mentioning -->
-
 **Note:** When using the ODBC data provider, you need to install an appropriate ODBC driver for your data source.  For more information on ODBC drivers, refer to the [Microsoft's ODBC Programmers Reference](https://docs.microsoft.com/en-us/sql/odbc/reference/odbc-programmer-s-reference?view=sql-server-2017) and the manual for the ODBC driver you are using.
 
 ## Configure RDBMS Data Files data source
@@ -66,7 +64,7 @@ The following parameters are available for configuring an RDBMS data source:
 | Parameter                     | Required | Type      | Description |
 |-------------------------------|----------|-----------|-------------|
 | **ConnectString** | Required | `string` | Connection string to connect to the data source through the **DataProvider**. This string is encrypted when stored, so secrets such as passwords are safe to use in this string. <br><br> If you have a pre-configured DSN, you may simply specify `DSN={YourDSN}` for this property, along with any other required parameters.<br><br>For more information, refer to the documentation for your relational database. |
-| **DataProvider** | Required | `string` | Indicates which Data Provider the adapter should use to connect to the data source. Valid values are `SQLServer` or `ODBC`. <br><br> When connecting to Microsoft SQL Server, use `SQLServer`. When connecting to another relational database through ODBC, use `ODBC`. The `SQLServer` data provider does not require any additional software, but the `ODBC` data provider requires an ODBC driver. See @SystemRequirements for more details.
+| **DataProvider** | Required | `string` | Indicates which Data Provider the adapter should use to connect to the data source. Valid values are `SQLServer` or `ODBC`. <br><br> When connecting to Microsoft SQL Server, use `SQLServer`. When connecting to another relational database through ODBC, use `ODBC`. The `SQLServer` data provider does not require any additional software, but the `ODBC` data provider requires an ODBC driver. For more details, see [SystemRequirements](xref:SystemRequirements).
 | **WindowsUser** | Optional | `string` | Optional username to use with Windows Authentication. <br><br>**Note**: You must add your domain to the **WindowsUser**.<br><br>Example: `DomainName\UserName`<br><br>**Note:** This user should be configured to have the minimum permissions needed to read the desired data from your database. It is not recommended to use an admin user or even a user with write permissions. |
 | **WindowsPassword** | Optional | `string` | Optional password to be used with Windows Authentication|
 | **CommandTimeout** | Optional | `string` | Optional timeout for running queries on the data source.<br><br>Expected format: `HH:MM:SS.###`<br><br>Default Value: 00:00:30 (30 seconds) |

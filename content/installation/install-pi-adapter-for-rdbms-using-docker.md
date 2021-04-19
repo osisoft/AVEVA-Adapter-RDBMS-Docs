@@ -55,8 +55,6 @@ Docker is a set of tools that can be used on Linux to manage application deploym
 
     **Note:** `Dockerfile` is the required name of the file. Use the variation according to your operating system.
 
-    <!-- Mark Bishop I removed the headings here and changes them to bold text to match the previous procedure. -->
-
     **ARM32**
 
     ```dockerfile
@@ -120,13 +118,9 @@ Complete the following steps to run the container:
     docker run -d --network host rdbmsadapter
     ```
 
-<!-- Mark Bishop 4/16: I agree with Josh. It's a weird sentence. It works better flipped around: -->
-
-You can make REST calls to the RDBMS adapter from other applications on the local host computer. The container is accessible over the default port of `5590`.
+You can make REST calls to the RDBMS adapter from other applications on the local host computer. You can access the container over the default port of `5590`.
 
 ### Provide persistent storage for the Docker container
-
-<!-- Mark Bishop 4/16: We should lead with this text. -->
 
 In this Docker setup procedure, data is written to a host directory on the local machine `/rdbms` directory rather than the container. You can specify any directory.
 
@@ -139,7 +133,7 @@ Complete the following items to run the container:
     docker run -d --network host -v /rdbms:/usr/share/OSIsoft/ rdbmsadapter
     ```
 
-You can make REST calls to the RDBMS adapter from other applications on the local host computer. The container is accessible over the default port of `5590`.
+You can make REST calls to the RDBMS adapter from other applications on the local host computer. You can access the container over the default port of `5590`.
 
 ### Port number change
 
