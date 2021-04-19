@@ -47,19 +47,22 @@ Linux: `/opt/OSIsoft/Adapters/RDBMS/Schemas`
 
 ## RDBMS query parameters
 
-The following parameters are available to configure queries to be sent to the ODBC driver. The supported query syntax will depend on the ODBC driver you are using. These queries will be sent to the driver exactly as they are defined here, and the adapter will use what is returned by that query to collect data.
-Consult the documentation for your ODBC driver for supported query syntax.
+The following parameters are available to configure queries to be sent to the Open Database Connectivity (ODBC) driver. The supported query syntax depends on the ODBC driver you are using.
+These queries are sent to the driver exactly as defined, and the adapter uses the driver response to collect data.
 
-Placeholder values are provided by the adapter to make query configuration more streamlined. Make sure to surround the placeholders with question marks so the adapter knows to read them as placeholders. Those placeholders include:
-* ?LST?: Last Scan Time
-* ?ET?: End Time 
-* ?ST?: Start Time
+Refer to the documentation for your ODBC driver for supported query syntax.
 
 | Parameter                     | Required | Type      | Description |
 |-------------------------------|----------|-----------|-------------|
-| QueryString | Required | `string` | The SQL query to run. |
+| QueryString<sup> | Required | `string` | The SQL query to run. |
 | Id | Required | `string` | String identifier of the query to be referenced by data selection items. |
 
+<sup> Within `QueryString`, you can use the placeholder values listed below to streamline query configuration. Delimit the placeholders with question marks. Placeholders include:
+
+
+* `?LST?`: Last Scan Time
+* `?ET?`: End Time
+* `?ST?`: Start Time
 
 ## RDBMS queries example
 

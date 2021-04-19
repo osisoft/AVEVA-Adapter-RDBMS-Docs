@@ -12,84 +12,84 @@ Docker is a set of tools that can be used on Linux to manage application deploym
 
 1. Use a text editor and create a script similar to one of the following examples:
 
-	**Note:** The script varies slightly by processor.
+    **Note:** The script varies slightly by processor.
 
-	**ARM32**
+    **ARM32**
 
-	```bash
-	#!/bin/sh
-	if [ -z $portnum ] ; then
-			exec /RDBMS_linux-arm/OSIsoft.Data.System.Host
-	else
-			exec /RDBMS_linux-arm/OSIsoft.Data.System.Host --port:$portnum
-	fi
-	```
-	
-	**ARM64**
-	
-	```bash
-	#!/bin/sh
-	if [ -z $portnum ] ; then
-			exec /RDBMS_linux-arm64/OSIsoft.Data.System.Host
-	else
-			exec /RDBMS_linux-arm64/OSIsoft.Data.System.Host --port:$portnum
-	fi
-	```
-	
-	**AMD64**
-	
-	```bash
-	#!/bin/sh
-	if [ -z $portnum ] ; then
-			exec /RDBMS_linux-x64/OSIsoft.Data.System.Host
-	else
-			exec /RDBMS_linux-x64/OSIsoft.Data.System.Host --port:$portnum
-	fi
-	```
-	
+    ```bash
+    #!/bin/sh
+    if [ -z $portnum ] ; then
+            exec /RDBMS_linux-arm/OSIsoft.Data.System.Host
+    else
+            exec /RDBMS_linux-arm/OSIsoft.Data.System.Host --port:$portnum
+    fi
+    ```
+    
+    **ARM64**
+    
+    ```bash
+    #!/bin/sh
+    if [ -z $portnum ] ; then
+            exec /RDBMS_linux-arm64/OSIsoft.Data.System.Host
+    else
+            exec /RDBMS_linux-arm64/OSIsoft.Data.System.Host --port:$portnum
+    fi
+    ```
+    
+    **AMD64**
+    
+    ```bash
+    #!/bin/sh
+    if [ -z $portnum ] ; then
+            exec /RDBMS_linux-x64/OSIsoft.Data.System.Host
+    else
+            exec /RDBMS_linux-x64/OSIsoft.Data.System.Host --port:$portnum
+    fi
+    ```
+    
 2. Name the script `rdbmsdockerstart.sh` and save it to the directory where you plan to create the container.
 
 ## Create a Docker container containing the adapter
 
 1. Create the following `Dockerfile` in the directory where you want to create and run the container. 
 
-	**Note:** `Dockerfile` is the required name of the file. Use the variation according to your operating system.
+    **Note:** `Dockerfile` is the required name of the file. Use the variation according to your operating system.
 
-	### ARM32
+    **ARM32**
 
-	```dockerfile
-	FROM ubuntu
-	WORKDIR /
-	RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y ca-certificates libicu60 libssl1.1 curl
-	COPY rdbmsdockerstart.sh /
-	RUN chmod +x /rdbmsdockerstart.sh
-	ADD ./RDBMS_linux-arm.tar.gz .
-	ENTRYPOINT ["/rdbmsdockerstart.sh"]
-	```
-	
-	### ARM64
+    ```dockerfile
+    FROM ubuntu
+    WORKDIR /
+    RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y ca-certificates libicu60 libssl1.1 curl
+    COPY rdbmsdockerstart.sh /
+    RUN chmod +x /rdbmsdockerstart.sh
+    ADD ./RDBMS_linux-arm.tar.gz .
+    ENTRYPOINT ["/rdbmsdockerstart.sh"]
+    ```
+    
+    **ARM64**
 
-	```dockerfile
-	FROM ubuntu
-	WORKDIR /
-	RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y ca-certificates libicu66 libssl1.1 curl
-	COPY rdbmsdockerstart.sh /
-	RUN chmod +x /rdbmsdockerstart.sh
-	ADD ./RDBMS_linux-arm64.tar.gz .
-	ENTRYPOINT ["/rdbmsdockerstart.sh"]
-	```
+    ```dockerfile
+    FROM ubuntu
+    WORKDIR /
+    RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y ca-certificates libicu66 libssl1.1 curl
+    COPY rdbmsdockerstart.sh /
+    RUN chmod +x /rdbmsdockerstart.sh
+    ADD ./RDBMS_linux-arm64.tar.gz .
+    ENTRYPOINT ["/rdbmsdockerstart.sh"]
+    ```
 
-	### AMD64 (x64)
+    **AMD64 (x64)**
 
-	```dockerfile
-	FROM ubuntu
-	WORKDIR /
-	RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y ca-certificates libicu66 libssl1.1 curl
-	COPY rdbmsdockerstart.sh /
-	RUN chmod +x /rdbmsdockerstart.sh
-	ADD ./RDBMS_linux-x64.tar.gz .
-	ENTRYPOINT ["/rdbmsdockerstart.sh"]
-	```
+    ```dockerfile
+    FROM ubuntu
+    WORKDIR /
+    RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y ca-certificates libicu66 libssl1.1 curl
+    COPY rdbmsdockerstart.sh /
+    RUN chmod +x /rdbmsdockerstart.sh
+    ADD ./RDBMS_linux-x64.tar.gz .
+    ENTRYPOINT ["/rdbmsdockerstart.sh"]
+    ```
 
 2. Copy the `RDBMS_linux-\<platform>.tar.gz` file to the same directory as the `Dockerfile`.
 
@@ -97,37 +97,43 @@ Docker is a set of tools that can be used on Linux to manage application deploym
 
 4. Run the following command line in the same directory (you may need to use the `sudo` command):
 
-	```bash
-	docker build -t rdbmsadapter .
-	```
+    ```bash
+    docker build -t rdbmsadapter .
+    ```
 
 ## Run the adapter Docker container
 
 ### REST access from the local host to the Docker container
+
+<!-- Mark Bishop 4/16: We should lead with this text. -->
+
+In this Docker setup procedure, all data stored by the adapter is stored in the container itself. When the container is deleted, the data stored is also deleted.
 
 Complete the following steps to run the container:
 
 1. Use the docker container image `rdbmsadapter` that you created previously.
 2. Type the following command line (you may need to use the `sudo` command):
 
-	```bash
-	docker run -d --network host rdbmsadapter
-	```
+    ```bash
+    docker run -d --network host rdbmsadapter
+    ```
 
-The default port `5590` is accessible from the host and <!-- jokim Apr 12 2021: a bit unclear or awkwardly written. but not sure how to rewrite it... -->you can make REST calls to RDBMS adapter from applications on the local host computer. In this example, all data stored by the adapter is stored in the container itself. When the container is deleted, the data stored is also deleted.
+You can make REST calls to the RDBMS adapter from other applications on the local host computer. You can access the container over the default port of `5590`.
 
 ### Provide persistent storage for the Docker container
+
+In this Docker setup procedure, data is written to a host directory on the local machine `/rdbms` directory rather than the container. You can specify any directory.
 
 Complete the following items to run the container:
 
 1. Use the docker container image `rdbmsadapter` created previously.
 2. Type the following command line (you may need to use the `sudo` command):
 
-	```bash
-	docker run -d --network host -v /rdbms:/usr/share/OSIsoft/ rdbmsadapter
-	```
+    ```bash
+    docker run -d --network host -v /rdbms:/usr/share/OSIsoft/ rdbmsadapter
+    ```
 
-The default port `5590` is accessible from the host and <!-- jokim Apr 12 2021: a bit unclear or awkwardly written. but not sure how to rewrite it... -->you can make REST calls to the RDBMS adapter from applications on the local host computer. In this example, data is written to a host directory on the local machine `/rdbms` rather than the container. You can specify any directory.
+You can make REST calls to the RDBMS adapter from other applications on the local host computer. You can access the container over the default port of `5590`.
 
 ### Port number change
 
