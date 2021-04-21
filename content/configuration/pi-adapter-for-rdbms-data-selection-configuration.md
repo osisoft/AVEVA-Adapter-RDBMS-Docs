@@ -52,7 +52,7 @@ Linux: `/opt/OSIsoft/Adapters/RDBMS/Schemas`
 
 | Parameter        | Required | Type      | Description |
 |------------------|----------|-----------|-------------|
-| **DataFilterId** | Optional | `string` | The identifier of a data filter defined in the [Data filters configuration](xref:DataFiltersConfiguration). By default, no filter is applied. |
+| **DataFilterId** | Optional | `string` | The identifier of a data filter defined in the [Data filters configuration](xref:DataFiltersConfiguration). By default, no filter is applied.<br>**Note:** If the specified **DataFilterId** does not exist, unfiltered data is sent until that **DataFilterId** is created. |
 | **ValueColumn** | Required | `string` | The database column to read data values from. |
 | **IndexColumn** | Optional | `string` | Column that contains the timestamp. If no column is specified, the timestamp will be the time that the adapter read the value. |
 | **IdColumn** | Optional | `string` | Name of the column that contains the IdField. Used to identify which rows of the query results belong to the selection item. |
