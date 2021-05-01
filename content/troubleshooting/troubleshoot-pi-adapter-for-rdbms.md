@@ -10,22 +10,22 @@ PI Adapter for RDBMS provides troubleshooting features that enable you to verify
 
 Incorrect configurations can interrupt data flow and cause errors in values and ranges. Perform the following steps to confirm correct configuration for your adapter.
 
-1. Navigate to [data source configuration](xref:PIAdapterForRDBMSDataSourceConfiguration) and verify that the following are correct.
+1. Navigate to [data source configuration](xref:PIAdapterForRDBMSDataSourceConfiguration) and verify the following for each configured data source item below:
 
-    * **ConnectString** - Verify that all properties in the ConnectString are correct. If this is not correct, the adapter will not be able to connect to the data source.
-    * **UTC** - This should be set to true if the timestamps on the data source are UTC timestamps, or false if the timestamps on the data source are in the same timezone as the adapter. If this is incorrect, the adapter might not read any data at all, depending on the timestamps in the query.
-    * **DataProvider** - If the data source is a Microsoft SQL Server, the value of this property should be SQLServer, otherwise it should be ODBC. If using ODBC, verify that an appropriate ODBC driver is installed and working properly on the machine your adapter is running on.
-    * **WindowsUser and WindowsPassword** - Make sure your data source supports Windows authentication. If so, make sure these values are correct and that the account has read access to the database. 
+    * **ConnectString** - All properties in the ConnectString are correct. If properties are incorrect, the adapter cannot connect to the data source.
+    * **UTC** - Set to `true` if the timestamps on the data source are UTC timestamps, or `false` if the timestamps on the data source are in the same timezone as the adapter. If this is incorrect, the adapter might not read any data at all, depending on the timestamps in the query.
+    * **DataProvider** - The value of this property is `SQLServer` if the data source is a Microsoft SQL Server, otherwise the value is `ODBC`. If using `ODBC`, verify that an appropriate ODBC driver is installed and working properly on the machine your adapter is running on.
+    * **WindowsUser and WindowsPassword** - Your data source supports Windows authentication. If so, make sure these values are correct and that the account has read access to the database.
 
-2. Navigate to [data selection configuration](xref:PIAdapterForRDBMSDataSelectionConfiguration) and verify that the following data selection items are correct:
+2. Navigate to [data selection configuration](xref:PIAdapterForRDBMSDataSelectionConfiguration) and verify the following for each configured data selection item below:
 
-    * **ValueColumn** - Make sure this column exists in the database table and contains the desired data values.
-    * **IndexColumn** - Make sure this column exists in the database table and contains the desired DateTime formatted timestamps.
-    * **IdColumn** - Make sure this column exists in the database table and contains the values specified in the IdField property for each of the selection items.
-    * **IdField** - Make sure this value exists in the IdColumn in the database and is in the row that contains the data for this selection item.
-    * **QueryId** - Make sure this query exists and is correct for the columns specified.
+    * **ValueColumn** - The column exists in the database table and contains the desired data values.
+    * **IndexColumn** - The column exists in the database table and contains the desired DateTime formatted timestamps.
+    * **IdColumn** - The column exists in the database table and contains the values specified in the IdField property for each of the selection items.
+    * **IdField** - The value exists in the IdColumn in the database and is in the row that contains the data for this selection item.
+    * **QueryId** - The query exists and is correct for the columns specified.
     * **ScheduleId** - The referenced schedule exists. <br> A non-existent referenced schedule uses a default schedule instead.
-    * **DataFilterId** - If configured, verify the referenced data filter exists.<br> A non-existent or incorrect DataFilterId  means that data filtering is not active.
+    * **DataFilterId** - If configured, the referenced data filter exists.<br> A non-existent or incorrect DataFilterId means that data filtering is not active.
 
 3. Navigate to [query configuration](xref:PIAdapterForRDBMSQueriesConfiguration) and verify that the query is correct and retrieves the desired results.
 
