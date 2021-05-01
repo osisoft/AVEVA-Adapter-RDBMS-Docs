@@ -78,9 +78,10 @@
             <article class="content wrap" id="_content" data-uid="PIAdapterForRDBMSDataSourceConfiguration">
 <h1 id="pi-adapter-for-rdbms-data-source-configuration">PI Adapter for RDBMS data source configuration</h1>
 
-<p>To use the adapter <!-- jokim Apr 12 2021: use full name "PI adapter for RDBMS at first instance" -->, you must configure the adapter to collect data from one or more relational databases using the data source configuration. The data source configuration defines properties to communicate with the source relational database through a specified data provider.</p>
+<p>To use PI Adapter for RDBMS, you must configure the adapter to collect data from one or more relational databases using the data source configuration. The data source configuration defines properties to communicate with the source relational database through a specified data provider.</p>
 <h2 id="data-providers">Data providers</h2>
-<p>The data source configuration allows you to choose between two data providers: SQLServer or ODBC. The SQLServer data provider allows you to connect to a Microsoft SQL Server without any additional software. The ODBC data provider allows you to connect to any ODBC compliant <!-- jokim Apr 12 2021:"ODBC-compliant" -->relational database. When using the ODBC data provider, you need to install an appropriate ODBC driver for your data source.  For more information on ODBC drivers, refer to the <a href="https://docs.microsoft.com/en-us/sql/odbc/reference/odbc-programmer-s-reference?view=sql-server-2017">Microsoft&#39;s ODBC Programmers Reference</a> and the manual for the ODBC driver you are using. </p>
+<p>The data source configuration allows you to choose between two data providers: SQLServer or ODBC (Open Database Connectivity). The SQLServer data provider allows you to connect to a Microsoft SQL Server without any additional software. The ODBC data provider allows you to connect to any ODBC-compliant relational database.</p>
+<p><strong>Note:</strong> When using the ODBC data provider, you need to install an appropriate ODBC driver for your data source.  For more information on ODBC drivers, refer to the <a href="https://docs.microsoft.com/en-us/sql/odbc/reference/odbc-programmer-s-reference?view=sql-server-2017">Microsoft&#39;s ODBC Programmers Reference</a> and the manual for the ODBC driver you are using.</p>
 <h2 id="configure-rdbms-data-files-data-source">Configure RDBMS Data Files data source</h2>
 <p>Complete the following steps to configure an RDBMS data source. Use the <code>PUT</code> method in conjunction with the <code>api/v1/configuration/&lt;ComponentId&gt;/DataSource</code> REST endpoint to initialize the configuration.</p>
 <ol>
@@ -101,7 +102,7 @@
 </code></pre><p> <strong>Notes:</strong></p>
 <ul>
 <li>If you installed the adapter to listen on a non-default port, update <code>5590</code> to the port number in use.</li>
-<li>If you use a component ID other than <code>RDBMS1</code>, update the endpoint with your chosen component ID.</li>
+<li>If you use a component Id other than <code>RDBMS1</code>, update the endpoint with your chosen component Id.</li>
 <li>For a list of other REST operations you can perform, like updating or deleting a data source configuration, see <a href="#rest-urls">REST URLs</a>.</li>
 <li>You can decide to have a default data selection file generated automatically or you can create the data selection file yourself.
 <br>
@@ -138,13 +139,13 @@
 <td><strong>DataProvider</strong></td>
 <td>Required</td>
 <td><code>string</code></td>
-<td>Indicates which Data Provider the adapter should use to connect to the data source. Valid values are <code>SQLServer</code> or <code>ODBC</code>. <br><br> When connecting to Microsoft SQL Server, use <code>SQLServer</code>. When connecting to another relational database through ODBC, use <code>ODBC</code>. The <code>SQLServer</code> data provider does not require any additional software, but the <code>ODBC</code> data provider requires an ODBC driver. See installation requirements for more details.</td>
+<td>Indicates which Data Provider the adapter should use to connect to the data source. Valid values are <code>SQLServer</code> or <code>ODBC</code>. <br><br> When connecting to Microsoft SQL Server, use <code>SQLServer</code>. When connecting to another relational database through ODBC, use <code>ODBC</code>. The <code>SQLServer</code> data provider does not require any additional software, but the <code>ODBC</code> data provider requires an ODBC driver. For more details, see <a class="xref" href="../installation/system-requirements.html">SystemRequirements</a>.</td>
 </tr>
 <tr>
 <td><strong>WindowsUser</strong></td>
 <td>Optional</td>
 <td><code>string</code></td>
-<td>Optional username to use with Windows Authentication. <br><br><strong>Note</strong>: You must add your domain to the <strong>WindowsUser</strong><br><br>Example: YourDomain\YourUserName.<br><br><strong>Note:</strong> This user should be configured to have the minimum permissions needed to read the desired data from your database. It is not recommended to use an admin user or even a user with write permissions.</td>
+<td>Optional username to use with Windows Authentication. <br><br><strong>Note</strong>: You must add your domain to the <strong>WindowsUser</strong>.<br><br>Example: <code>DomainName\UserName</code><br><br><strong>Note:</strong> This user should be configured to have the minimum permissions needed to read the desired data from your database. It is not recommended to use an admin user or even a user with write permissions.</td>
 </tr>
 <tr>
 <td><strong>WindowsPassword</strong></td>
@@ -168,13 +169,13 @@
 <td><strong>StreamIdPrefix</strong></td>
 <td>Optional</td>
 <td><code>string</code></td>
-<td>Specifies what prefix is used for stream IDs. The naming convention is <code>{StreamIdPrefix}{StreamId}</code>.An empty string means no prefix will be added to the stream IDs and names. A <code>null</code> value defaults to <strong>ComponentID</strong> followed by a period.<br><br>Example: <code>RDBMS1.TBD</code><br><br><strong>Note:</strong> If you change the <strong>StreamIdPrefix</strong> of a configured adapter, for example when you delete and add a data source, you need to restart the adapter for the changes to take place. New streams are created on adapter restart and pre-existing streams are no longer updated.<br><br>Allowed value: any string<br>Default value: <code>null</code></td>
+<td>Specifies what prefix is used for stream Ids. The naming convention is <code>{StreamIdPrefix}{StreamId}</code>. An empty string means no prefix will be added to the stream Ids and names. A <code>null</code> value defaults to <strong>ComponentId</strong> followed by a period.<br><br>Example: <code>RDBMS1.TBD</code><br><br><strong>Note:</strong> If you change the <strong>StreamIdPrefix</strong> of a configured adapter (like when you delete and add a data source), you must restart the adapter for the changes to take place. New streams are created on adapter restart and pre-existing streams are no longer updated.<br><br>Allowed value: any string<br>Default value: <code>null</code></td>
 </tr>
 <tr>
 <td><strong>DefaultStreamIdPattern</strong></td>
 <td>Optional</td>
 <td><code>string</code></td>
-<td>Specifies the default stream ID pattern to use.  An empty or <code>null</code> value results in the default value. Possible parameters: <code>QueryId</code>, <code>ValueColumn</code>, <code>IdField</code>, <code>IdColumn</code>, and <code>SourceId</code>.<br><br>Allowed value: any string<br><br>Default value: <code>{SourceId}</code> <br><br><strong>Note:</strong> <code>{SourceId}</code> in the <strong>DefaultStreamIdPattern</strong> evaluates the same as <code>SourceId</code> in the stream metadata. For selection items with a non-empty <code>IdField</code>, <code>{SourceId}</code> is equivalent to <code>{QueryId}.{IdField}.{ValueColumn}</code> For selection items with an empty <code>IdField</code>, <code>{SourceId}</code> is equivalent to <code>{QueryId}.{ValueColumn}</code></td>
+<td>Specifies the default stream Id pattern to use.  An empty or <code>null</code> value results in the default value. Possible parameters: <code>QueryId</code>, <code>ValueColumn</code>, <code>IdField</code>, <code>IdColumn</code>, and <code>SourceId</code>.<br><br>Allowed value: any string<br><br>Default value: <code>{SourceId}</code> <br><br><strong>Note:</strong> <code>{SourceId}</code> in the <strong>DefaultStreamIdPattern</strong> evaluates the same as <code>SourceId</code> in the stream metadata. For selection items with a non-empty <code>IdField</code>, <code>{SourceId}</code> is equivalent to <code>{QueryId}.{IdField}.{ValueColumn}</code>. For selection items with an empty <code>IdField</code>, <code>{SourceId}</code> is equivalent to <code>{QueryId}.{ValueColumn}</code>.</td>
 </tr>
 </tbody>
 </table>
@@ -216,22 +217,22 @@
 <tr>
 <td>api/v1/configuration/&lt;ComponentId>/DataSource</td>
 <td><code>GET</code></td>
-<td>Retrieves the RDBMS data source configuration</td>
+<td>Retrieves the data source configuration.</td>
 </tr>
 <tr>
 <td>api/v1/configuration/&lt;ComponentId>/DataSource</td>
 <td><code>POST</code></td>
-<td>Creates the RDBMS data source configuration</td>
+<td>Creates the data source configuration. The adapter starts collecting data after the following conditions are met:<br><br>&bull; The data source configuration <code>POST</code> request is received.<br>&bull; A data selection configuration is active.</td>
 </tr>
 <tr>
 <td>api/v1/configuration/&lt;ComponentId>/DataSource</td>
 <td><code>PUT</code></td>
-<td>Configures or updates the RDBMS data source configuration</td>
+<td>Configures or updates the data source configuration. Overwrites any active data source configuration. If no configuration is active, the adapter starts collecting data after the following conditions are met:<br><br>&bull; The data source configuration <code>PUT</code> request is received.<br>&bull; A data selection configuration is active.</td>
 </tr>
 <tr>
 <td>api/v1/configuration/&lt;ComponentId>/DataSource</td>
 <td><code>DELETE</code></td>
-<td>Deletes the RDBMS data source configuration</td>
+<td>Deletes the data source configuration. After the request is received, the adapter stops collecting data.</td>
 </tr>
 </tbody>
 </table>

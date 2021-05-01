@@ -78,7 +78,7 @@
             <article class="content wrap" id="_content" data-uid="PIAdapterForRDBMSQueriesConfiguration">
 <h1 id="pi-adapter-for-rdbms-queries-configuration">PI Adapter for RDBMS queries configuration</h1>
 
-<p>Queries configuration holds <!-- jokim Apr 12 2021: contains -->a list of queries to run on the data source.</p>
+<p>Queries configuration contains a list of queries to run on the data source.</p>
 <h2 id="configure-rdbms-queries">Configure RDBMS queries</h2>
 <p>Complete the following steps to configure RDBMS queries. Use the <code>PUT</code> method in conjunction with the <code>http://localhost:5590/api/v1/configuration/&lt;ComponentId&gt;/Queries</code> REST endpoint to initialize the configuration.</p>
 <ol>
@@ -99,7 +99,7 @@
 </code></pre><p> <strong>Notes:</strong></p>
 <ul>
 <li>If you installed the adapter to listen on a non-default port, update <code>5590</code> to the port number in use.</li>
-<li>If you use a component ID other than <code>RDBMS1</code>, update the endpoint with your chosen component ID.
+<li>If you use a component Id other than <code>RDBMS1</code>, update the endpoint with your chosen component Id.
 <br>
 <br></li>
 </ul>
@@ -110,14 +110,9 @@
 <p>Windows: <code>%ProgramFiles%\OSIsoft\Adapters\RDBMS\Schemas</code></p>
 <p>Linux: <code>/opt/OSIsoft/Adapters/RDBMS/Schemas</code></p>
 <h2 id="rdbms-query-parameters">RDBMS query parameters</h2>
-<p>The following parameters are available to configure queries to be sent to the ODBC driver. The supported query syntax will depend on the ODBC driver you are using. These queries will be sent to the driver exactly as they are defined here, and the adapter will use what is returned by that query to collect data.
-Consult the documentation for your ODBC driver for supported query syntax.</p>
-<p>Placeholder values are provided by the adapter to make query configuration more streamlined. Make sure to surround the placeholders with question marks so the adapter knows to read them as placeholders. Those placeholders include:</p>
-<ul>
-<li>?LST?: Last Scan Time</li>
-<li>?ET?: End Time </li>
-<li>?ST?: Start Time</li>
-</ul>
+<p>The following parameters are available to configure queries to be sent to the Open Database Connectivity (ODBC) driver. The supported query syntax depends on the ODBC driver you are using.
+These queries are sent to the driver exactly as defined, and the adapter uses the driver response to collect data.</p>
+<p>Refer to the documentation for your ODBC driver for supported query syntax.</p>
 <table>
 <thead>
 <tr>
@@ -129,7 +124,7 @@ Consult the documentation for your ODBC driver for supported query syntax.</p>
 </thead>
 <tbody>
 <tr>
-<td>QueryString</td>
+<td>QueryString<sup></sup></td>
 <td>Required</td>
 <td><code>string</code></td>
 <td>The SQL query to run.</td>
@@ -142,6 +137,12 @@ Consult the documentation for your ODBC driver for supported query syntax.</p>
 </tr>
 </tbody>
 </table>
+<p><sup> Within <code>QueryString</code>, you can use the placeholder values listed below to streamline query configuration. Delimit the placeholders with question marks. Placeholders include:<p>
+<ul>
+<li><code>?LST?</code>: Last Scan Time</li>
+<li><code>?ET?</code>: End Time</li>
+<li><code>?ST?</code>: Start Time</li>
+</ul>
 <h2 id="rdbms-queries-example">RDBMS queries example</h2>
 <pre><code class="lang-json">[
     {
@@ -153,7 +154,7 @@ Consult the documentation for your ODBC driver for supported query syntax.</p>
         &quot;QueryString&quot;: &quot;SELECT ASSET, TEMPERATURE, PRESSURE, VOLUME, SAMPLETIME FROM TANK1 WHERE SAMPLETIME &gt; ?LST? ORDER BY SAMPLETIME ASC&quot;
     }
 ]
-</code></pre></article>
+</code></pre></sup></article>
           </div>
           
           <div class="hidden-sm col-md-2" role="complementary">

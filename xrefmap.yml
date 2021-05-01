@@ -139,6 +139,9 @@ references:
 - uid: TextParser
   name: Text parser
   href: content/main/shared-content/configuration/text-parser/text-parser.html
+- uid: TroubleshootPIAdapterForRDBMS
+  name: Troubleshoot PI Adapter for RDBMS
+  href: content/troubleshooting/troubleshoot-pi-adapter-for-rdbms.html
 - uid: TroubleshootTheAdapter
   name: Troubleshoot the adapter
   href: content/main/shared-content/troubleshooting/troubleshoot-the-adapter.html

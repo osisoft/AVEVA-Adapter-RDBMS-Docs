@@ -78,21 +78,28 @@
             <article class="content wrap" id="_content" data-uid="PIAdapterForRDBMSPrinciplesOfOperation">
 <h1 id="pi-adapter-for-rdbms-principles-of-operation">PI Adapter for RDBMS principles of operation</h1>
 
-<p>The RDBMS adapter&#39;s operations focus on data collection and stream creation. <!-- jokim Apr 12 2021: Should we give the acryonym's full name at the first instance? Also, missing a period (.) I added it. --></p>
+<p>The RDBMS adapter&#39;s operations focus on data collection and stream creation.</p>
 <h2 id="adapter-configuration">Adapter configuration</h2>
-<p>For the RDBMS adapter to start data collection, configure the following:  <!-- jokim Apr 12 2021: Technically not a complete sentence in these leading clause to the steps. How about "...collection, configure the following items"? --></p>
+<p>For the RDBMS adapter to start data collection, configure the following items:</p>
 <ul>
-<li>Data source: Provide the data source from which the adapter should collect data  <!-- jokim Apr 12 2021: I don't think lists require periods at the end. I went and removed them. --></li>
-<li>Data selection: Select RDBMS items to which the adapter should read data from  <!-- jokim Apr 12 2021: how about "Select RDBMS items for the adapter to read"? --></li>
-<li>Queries: List of SQL queries to execute against the data source <!-- jokim Apr 12 2021: Consistency sakes, add a verb in the front of the sentence --></li>
+<li>Data source: Provide the data source from which the adapter should collect data</li>
+<li>Data selection: Select RDBMS items for the adapter to read</li>
+<li>Queries: List SQL queries to execute against the data source</li>
 <li>Logging: Set up the logging attributes to manage the adapter logging behavior</li>
 </ul>
 <p>For more details, see <a class="xref" href="../configuration/pi-adapter-for-rdbms-data-source-configuration.html">PI Adapter for RDBMS data source configuration</a> and <a class="xref" href="../configuration/pi-adapter-for-rdbms-data-selection-configuration.html">PI Adapter for RDBMS data selection configuration</a>.</p>
 <h2 id="connection">Connection</h2>
-<p>PI Adapter for RDBMS can retrieve data from SQL Server via the .NET Data Provider for SQL Server and other relational databases <!-- jokim Apr 12 2021: how about "via the .NET Data Provider for SQL Server, and for other relational databases"? -->through the .NET Data Provider for ODBC. When collecting data via ODBC, an appropriate ODBC driver for the data source should be installed and configured before configuring the adapter. When collecting data from SQL Server, it is not necessary to install an ODBC driver.</p>
-<p>For more information on ODBC drivers, you may refer to <a href="https://docs.microsoft.com/en-us/sql/odbc/reference/odbc-programmer-s-reference?view=sql-server-2017">Microsoft&#39;s ODBC Programmers Reference</a> and the manual for the ODBC driver you are using.</p>
+<p>PI Adapter for RDBMS can retrieve data from:</p>
+<ul>
+<li>SQL Server, using the .NET Data Provider for SQL Server</li>
+<li>Other relational databases, using the .NET Data Provider for ODBC (Open Database Connectivity)</li>
+</ul>
+<p>When collecting data through ODBC, you must install and configure an appropriate ODBC driver for the data source before configuring the adapter. </p>
+<p>When collecting data from a SQL Server, additional driver installation is not necessary.</p>
+<p>For more information on ODBC drivers, refer to <a href="https://docs.microsoft.com/en-us/sql/odbc/reference/odbc-programmer-s-reference?view=sql-server-2017">Microsoft&#39;s ODBC Programmers Reference</a> and the manual for the ODBC driver you are using.</p>
 <h2 id="data-collection">Data collection</h2>
-<p>Data is collected for each DataSelection item <!-- jokim Apr 12 2021: use active voice "The adapter collects data for each DataSelection item..." -->at an interval defined in the schedule referenced by the DataSelection item&#39;s <code>ScheduleId</code> property. When the schedule is ran, the adapter executes all queries that are referenced by a DataSelection item in the schedule. The adapter parses the results of that query and sends data to the corresponding streams.</p>
+<p>The adapter collects data for each DataSelection item at an interval defined using the <code>ScheduleId</code> property, which you can set in the schedule configuration. </p>
+<p>When the schedule runs, the adapter executes all queries that are referenced by a DataSelection item in the schedule. The adapter parses the results of that query and sends data to the corresponding streams.</p>
 <h2 id="stream-creation">Stream creation</h2>
 <p>The RDBMS adapter creates a stream with two properties for each selected RDBMS item. The properties are described in the following table.</p>
 <table>
@@ -107,11 +114,11 @@
 <tr>
 <td><code>Timestamp</code></td>
 <td>String</td>
-<td>The time read from the result set. If no time is read, this will be the local time the adapter read the value.</td>
+<td>The time read from the result set. If no time is available, the adapter uses the local time instead.</td>
 </tr>
 <tr>
 <td><code>Value</code></td>
-<td>The type on the data source converted to an OMF type</td>
+<td>The type of the data source converted to an OMF type</td>
 <td>The value read from the result set.</td>
 </tr>
 </tbody>
@@ -121,13 +128,13 @@
 <li><strong>ComponentId</strong>: Specifies the data source, for example, <em>RDBMS1</em></li>
 <li><strong>ComponentType</strong>: Specifies the type of adapter, for example, <em>RDBMS</em></li>
 </ul>
-<p>Metadata specific to the RDBMS adapter:</p>
+<p>Metadata specific to the RDBMS adapter includes:</p>
 <ul>
-<li><strong>ScheduleId</strong>: Specifies the schedule used to collect data for the stream. For RDBMS, this correlates to the ScheduleId property of the selection item. For example, <code>schedule1</code>.</li>
-<li><strong>SourceId</strong>: Specifies the information used to uniquely identify the stream on the source system. For RDBMS it is <code>{QueryId}.{IdField}.{ValueColumn}</code>. For example, <code>TankQuery.Tank1.Temperature</code>. If there is no IdField specified for a given selection item, IdField is left out of SourceId. For example, <code>Query1.Temperature</code>.</li>
+<li><strong>ScheduleId</strong>: Specifies the schedule used to collect data for the stream. For RDBMS, this value correlates to the ScheduleId property of the selection item. For example, <code>schedule1</code>.</li>
+<li><strong>SourceId</strong>: Specifies the information used to uniquely identify the stream on the source system. For RDBMS it is <code>{QueryId}.{IdField}.{ValueColumn}</code>. For example, <code>TankQuery.Tank1.Temperature</code>. If there is no IdField specified for a given selection item, IdField is omitted from the SourceId. For example, <code>Query1.Temperature</code>.</li>
 </ul>
-<p>Each stream created for the selected measurement has a unique identifier (stream ID). If you specify a custom stream ID for the measurement in the data selection configuration, the adapter uses that stream ID to create the stream. Otherwise, the adapter constructs the stream ID using the following format:</p>
-<pre><code class="lang-code">&lt;AdapterComponentID&gt;.&lt;QueryId&gt;.&lt;ValueColumn&gt;
+<p>Each stream created for the selected measurement has a unique identifier (stream Id). If you specify a custom stream Id for the measurement in the data selection configuration, the adapter uses that stream Id to create the stream. Otherwise, the adapter constructs the stream Id using the following format:</p>
+<pre><code class="lang-code">&lt;AdapterComponentId&gt;.&lt;QueryId&gt;.&lt;ValueColumn&gt;
 </code></pre><p><strong>Note:</strong> Naming convention is affected by <code>StreamIdPrefix</code> and <code>DefaultStreamIdPattern</code> settings in the data source configuration. For more information, see <a class="xref" href="../configuration/pi-adapter-for-rdbms-data-source-configuration.html">PI Adapter for RDBMS data source configuration</a>.</p>
 </article>
           </div>
