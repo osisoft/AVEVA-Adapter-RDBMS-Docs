@@ -12,14 +12,30 @@ For more information on PI Adapter configuration tools, see [Configuration tools
 
 ## Quick start
 
-Complete the following steps to establish a data flow from an RDBMS data source device to a data endpoint.
+This Quick Start guides you through setup of each configuration file available for PI Adapter for RDBMS. As you complete each step, perform each required configuration to establish a data flow from a data source to one or more endpoints. Some configurations are optional.
+
+**Important:** If you want to complete the optional configurations, complete those tasks before the required tasks.
 
 1. Configure one or several RDBMS system components.<br>See [System components configuration](xref:SystemComponentsConfiguration#system-components-configuration).
 
 2. Configure an RDBMS data source for each RDBMS device.<br>See [PI Adapter for RDBMS data source configuration](xref:PIAdapterForRDBMSDataSourceConfiguration#configure-rdbms-data-files-data-source).
 
-3. Optional: Configure RDBMS queries to run on the data source.<br>See [PI Adapter for RDBMS queries configuration](xref:PIAdapterForRDBMSQueriesConfiguration).
+3. **Optional**: Configure schedules, data filters, and RDBMS queries to run on the data source.<br>See the following topics:
+
+    - [Schedules configuration](xref:SchedulesConfiguration)
+    - [Data filters configuration](xref:DataFiltersConfiguration#ConfigureDataFilters)    - 
+    - [PI Adapter for RDBMS queries configuration](xref:PIAdapterForRDBMSQueriesConfiguration).
 
 4. Configure an RDBMS data selection for each RDBMS data source.<br>See [PI Adapter for RDBMS data selection configuration](xref:PIAdapterForRDBMSDataSelectionConfiguration#configure-rdbms-data-selection).
 
-5. Configure one or several egress endpoints.<br>See [Egress endpoints configuration](xref:EgressEndpointsConfiguration).
+5. **Optional**: If there is a proxy between the adapter and your egress endpoints, define it.<br>See using the [Configure a network proxy](xref:ConfigureANetworkProxy).
+
+6. Configure one or more egress endpoints.<br>See [Egress endpoints configuration](xref:EgressEndpointsConfiguration#configure-egress-endpoints).
+
+7. **Optional**: Configure health endpoints, general (diagnostics and metadata), buffering, and logging. See the following topics:
+
+    - [Health endpoint configuration](xref:HealthEndpointConfiguration#configure-health-endpoint)
+    - [General configuration](xref:GeneralConfiguration#configure-general)
+    - [Buffering configuration](xref:BufferingConfiguration#configure-buffering)
+    - [Logging configuration](xref:LoggingConfiguration#configure-logging)
+ 
