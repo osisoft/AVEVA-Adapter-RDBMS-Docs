@@ -16,21 +16,21 @@ This Quick Start guides you through setup of each configuration file available f
 
 **Important:** If you want to complete the optional configurations, complete those tasks before the required tasks.
 
-1. Configure one or several RDBMS system components.<br>See [System components configuration](xref:SystemComponentsConfiguration#system-components-configuration).
+1. Configure one or several RDBMS system components.<br>See [System components configuration](xref:SystemComponentsConfiguration#configure-system-components).
 
 2. Configure an RDBMS data source for each RDBMS device.<br>See [PI Adapter for RDBMS data source configuration](xref:PIAdapterForRDBMSDataSourceConfiguration#configure-rdbms-data-files-data-source).
 
 3. **Optional**: Configure schedules and RDBMS queries to run on the data source.<br>See the following topics:
 
     - [Schedules configuration](xref:SchedulesConfiguration)
-    - [PI Adapter for RDBMS queries configuration](xref:PIAdapterForRDBMSQueriesConfiguration).
+    - [PI Adapter for RDBMS queries configuration](xref:PIAdapterForRDBMSQueriesConfiguration#configure-rdbms-queries).
 
 4. Configure an RDBMS data selection for each RDBMS data source.<br>See [PI Adapter for RDBMS data selection configuration](xref:PIAdapterForRDBMSDataSelectionConfiguration#configure-rdbms-data-selection).
 
 5. **Optional**: Configure data filters and if there is a proxy between the adapter and your egress endpoints, define it.<br>See the following topics:
 
-- [Data filters configuration](xref:DataFiltersConfiguration#configure-data-filters) 
-- [Configure a network proxy](xref:ConfigureANetworkProxy)
+    - [Data filters configuration](xref:DataFiltersConfiguration#configure-data-filters) 
+    - [Configure a network proxy](xref:ConfigureANetworkProxy)
 
 6. Configure one or more egress endpoints.<br>See [Egress endpoints configuration](xref:EgressEndpointsConfiguration#configure-egress-endpoints).
 
