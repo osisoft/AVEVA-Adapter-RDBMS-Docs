@@ -7,12 +7,12 @@
   href: pi-adapter-for-rdbms-data-source-configuration.md
 - name: Schedules configuration
   href: ../main/shared-content/configuration/schedules-configuration.md
-- name: Data filters configuration
-  href: ../main/shared-content/configuration/data-filters-configuration.md
 - name: PI Adapter for RDBMS queries configuration
   href: pi-adapter-for-rdbms-queries-configuration.md
 - name: PI Adapter for RDBMS data selection configuration
   href: pi-adapter-for-rdbms-data-selection-configuration.md
+- name: Data filters configuration
+  href: ../main/shared-content/configuration/data-filters-configuration.md
 - name: Egress endpoints configuration
   href: ../main/shared-content/configuration/egress-endpoint-configuration/toc.yml
   topicHref: ../main/shared-content/configuration/egress-endpoints-configuration.md
