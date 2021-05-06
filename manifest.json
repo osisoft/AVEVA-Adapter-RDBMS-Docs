@@ -1,6 +1,6 @@
 {
   "homepages": [],
-  "source_base_path": "C:/Agent/_work/1/s",
+  "source_base_path": "C:/agent/_work/1/s",
   "xrefmap": "xrefmap.yml",
   "files": [
     {
@@ -30,7 +30,7 @@
       "output": {
         ".html": {
           "relative_path": "content/configuration/configuration.html",
-          "hash": "GwM3GKHpXzYNyATZ+RLosQ=="
+          "hash": "fpWoS+krbm6zY7xx8ff/Fg=="
         }
       },
       "is_incremental": false,
@@ -257,7 +257,7 @@
       "output": {
         ".html": {
           "relative_path": "content/main/shared-content/configuration/discovery-configuration.html",
-          "hash": "LLx457ZHqgiiemWP4BRD2w=="
+          "hash": "giQ/NFdODMfunTIjr+T0zg=="
         }
       },
       "is_incremental": false,
@@ -809,7 +809,7 @@
       "output": {
         ".html": {
           "relative_path": "content/toc.html",
-          "hash": "dVdsCFw+g2xRuGGKF9EQgg=="
+          "hash": "jDZuCILAG/J2U1ELI87S8g=="
         }
       },
       "is_incremental": false,
