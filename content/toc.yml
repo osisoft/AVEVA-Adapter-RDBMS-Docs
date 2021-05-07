@@ -1,22 +1,55 @@
-- name: PI Adapter for PI Adapter for RDBMS overview
-  href: pi-adapter-for-rdbms-overview/toc.yml
-  topicHref: index.md
-- name: Installation
-  href: installation/toc.yml
-  topicHref: main/shared-content/installation/installation.md
-- name: Configuration
-  href: configuration/toc.yml
-  topicHref: configuration/configuration.md
-- name: Administration
-  href: main/shared-content/administration/toc.yml
-  topicHref: main/shared-content/administration/administration.md
-- name: Health and diagnostics
-  href: main/shared-content/health/toc.yml
-  topicHref: main/shared-content/health/health-and-diagnostics.md
-- name: Troubleshooting
-  href: troubleshooting/toc.yml
-  topicHref: main/shared-content/troubleshooting/troubleshoot-the-adapter.md
-- name: Release notes
-  href: release-notes/release-notes.md
-- name: Technical support and feedback
-  href: main/shared-content/technical-support-and-feedback.md
+- topicUid: PIAdapterForRDBMSOverview
+  items:
+  - topicUid: PIAdapterForRDBMSPrinciplesOfOperation
+- topicUid: Installation
+  items:
+  - topicUid: SystemRequirements
+  - topicUid: InstallTheAdapter
+  - topicUid: InstallPIAdapterForRDBMSUsingDocker
+  - topicUid: UninstallTheAdapter
+- topicUid: Configuration
+  items:
+  - topicUid: ConfigurationTools
+  - topicUid: SystemComponentsConfiguration
+    items:
+    - topicUid: SystemAndAdapterConfiguration
+  - topicUid: PIAdapterForRDBMSDataSourceConfiguration 
+  - topicUid: SchedulesConfiguration
+  - topicUid: PIAdapterForRDBMSQueriesConfiguration
+  - topicUid: PIAdapterForRDBMSDataSelectionConfiguration
+  - topicUid: DataFiltersConfiguration
+  - topicUid: EgressEndpointsConfiguration
+    items:
+    - topicUid: PrepareEgressDestinations
+    - topicUid: ConfigureANetworkProxy
+  - topicUid: HealthEndpointConfiguration
+  - topicUid: GeneralConfiguration
+    items:
+    - topicUid: AdapterMetadata
+  - topicUid: BufferingConfiguration
+  - topicUid: LoggingConfiguration
+  - topicUid: PIAdapterForRDBMSConfigurationExamples
+- topicUid: Administration
+  items:
+  - topicUid: StartAndStopAnAdapter
+  - topicUid: StartAndStopIngressComponent
+  - topicUid: RetrieveProductVersionInformation
+  - topicUid: DeleteAnAdapterComponent
+- topicUid: HealthAndDiagnostics
+  items:
+  - topicUid: AdapterHealth
+    items:
+    - topicUid: DeviceStatus
+    - topicUid: NextHealthMessageExpected
+  - topicUid: AdapterDiagnostics
+    items:
+    - topicUid: System
+    - topicUid: StreamCount
+    - topicUid: IORate
+    - topicUid: ErrorRate
+  - topicUid: EgressDiagnostics
+- topicUid: TroubleshootTheAdapter
+  items:
+  - topicUid: TroubleshootPIAdapterForRDBMS
+- topicUid: ReleaseNotes
+- topicUid: TechnicalSupportAndFeedback
