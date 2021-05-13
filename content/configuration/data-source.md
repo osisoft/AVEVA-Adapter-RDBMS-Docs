@@ -2,7 +2,7 @@
 uid: PIAdapterForRDBMSDataSourceConfiguration
 ---
 
-# PI Adapter for RDBMS data source configuration
+# Data source
 
 To use PI Adapter for RDBMS, you must configure the adapter to collect data from one or more relational databases using the data source configuration. The data source configuration defines properties to communicate with the source relational database through a specified data provider.
 
