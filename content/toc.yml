@@ -18,7 +18,6 @@
   - topicUid: PIAdapterForRDBMSQueriesConfiguration
   - topicUid: PIAdapterForRDBMSDataSelectionConfiguration
   - topicUid: DataFiltersConfiguration
-  - topicUid: HealthEndpointConfiguration
   - topicUid: GeneralConfiguration
     items:
     - topicUid: AdapterMetadata
@@ -28,6 +27,7 @@
     items:
     - topicUid: PrepareEgressDestinations
     - topicUid: ConfigureANetworkProxy
+  - topicUid: HealthEndpointConfiguration
   - topicUid: PIAdapterForRDBMSConfigurationExamples
 - topicUid: Administration
   items:
