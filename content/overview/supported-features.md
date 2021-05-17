@@ -2,7 +2,7 @@
 uid: PIAdapterForRDBMSSupportedFeatures
 ---
 
-# PI Adapter for RDBMS supported features
+# Supported features
 
 ## Data Types
 

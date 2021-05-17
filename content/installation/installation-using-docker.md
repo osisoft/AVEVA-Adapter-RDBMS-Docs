@@ -2,7 +2,7 @@
 uid: InstallPIAdapterForRDBMSUsingDocker
 ---
 
-# Install PI Adapter for RDBMS using Docker
+# Installation using Docker
 
 Docker is a set of tools that can be used on Linux to manage application deployments. This topic provides examples of how to create a Docker container with the RDBMS adapter.
 

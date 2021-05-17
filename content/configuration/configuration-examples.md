@@ -2,7 +2,7 @@
 uid: PIAdapterForRDBMSConfigurationExamples
 ---
 
-# PI Adapter for RDBMS configuration examples
+# Configuration examples
 
 The following JSON samples provide examples for all configurations available for PI Adapter for RDBMS.
 

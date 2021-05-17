@@ -2,7 +2,7 @@
 uid: PIAdapterForRDBMSOverview
 ---
 
-# PI Adapter for RDBMS overview
+# Overview
 
 PI Adapter for RDBMS (Relational Database Management System) is a data-collection component that collects time-series data and sends it to configured OMF (OSIsoft Message Format) endpoints in OSIsoft Cloud Services or PI Servers. The time-series data can originate from any relational database management system (RDBMS) that supports Open Database Connectivity (ODBC) drivers.
 

@@ -2,7 +2,7 @@
 uid: PIAdapterForRDBMSPrinciplesOfOperation
 ---
 
-# PI Adapter for RDBMS principles of operation
+# Principles of operation
 
 The RDBMS adapter's operations focus on data collection and stream creation.
 

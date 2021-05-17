@@ -2,7 +2,7 @@
 uid: PIAdapterForRDBMSQueriesConfiguration
 ---
 
-# PI Adapter for RDBMS queries configuration
+# Queries
 
 Queries configuration contains a list of queries to run on the data source.
 
