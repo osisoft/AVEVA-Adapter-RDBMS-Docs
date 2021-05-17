@@ -82,7 +82,7 @@
 <h2 id="check-configurations">Check configurations</h2>
 <p>Incorrect configurations can interrupt data flow and cause errors in values and ranges. Perform the following steps to confirm correct configuration for your adapter.</p>
 <ol>
-<li><p>Navigate to <a class="xref" href="../configuration/pi-adapter-for-rdbms-data-source-configuration.html">data source configuration</a> and verify the following for each configured data source item below:</p>
+<li><p>Navigate to <a class="xref" href="../configuration/data-source.html">data source configuration</a> and verify the following for each configured data source item below:</p>
 <ul>
 <li><strong>ConnectString</strong> - All properties in the ConnectString are correct. If properties are incorrect, the adapter cannot connect to the data source.</li>
 <li><strong>UTC</strong> - Set to <code>true</code> if the timestamps on the data source are UTC timestamps, or <code>false</code> if the timestamps on the data source are in the same timezone as the adapter. If this is incorrect, the adapter might not read any data at all, depending on the timestamps in the query.</li>
@@ -90,7 +90,7 @@
 <li><strong>WindowsUser and WindowsPassword</strong> - Your data source supports Windows authentication. If so, make sure these values are correct and that the account has read access to the database.</li>
 </ul>
 </li>
-<li><p>Navigate to <a class="xref" href="../configuration/pi-adapter-for-rdbms-data-selection-configuration.html">data selection configuration</a> and verify the following for each configured data selection item below:</p>
+<li><p>Navigate to <a class="xref" href="../configuration/data-selection.html">data selection configuration</a> and verify the following for each configured data selection item below:</p>
 <ul>
 <li><strong>ValueColumn</strong> - The column exists in the database table and contains the desired data values.</li>
 <li><strong>IndexColumn</strong> - The column exists in the database table and contains the desired DateTime formatted timestamps.</li>
@@ -101,9 +101,9 @@
 <li><strong>DataFilterId</strong> - If configured, the referenced data filter exists.<br> A non-existent or incorrect DataFilterId means that data filtering is not active.</li>
 </ul>
 </li>
-<li><p>Navigate to <a class="xref" href="../configuration/pi-adapter-for-rdbms-queries-configuration.html">query configuration</a> and verify that the query is correct and retrieves the desired results.</p>
+<li><p>Navigate to <a class="xref" href="../configuration/queries.html">query configuration</a> and verify that the query is correct and retrieves the desired results.</p>
 </li>
-<li><p>Navigate to <a class="xref" href="../main/shared-content/configuration/egress-endpoints-configuration.html">egress endpoints configuration</a>. For each configured endpoint, verify that the <strong>Endpoint</strong> and authentication properties are correct.</p>
+<li><p>Navigate to <a class="xref" href="../main/shared-content/configuration/egress-endpoints.html">egress endpoints configuration</a>. For each configured endpoint, verify that the <strong>Endpoint</strong> and authentication properties are correct.</p>
 <ul>
 <li>For a PI server or EDS endpoint, verify <strong>UserName</strong> and <strong>Password</strong>.</li>
 <li>For an OCS endpoint, verify <strong>ClientId</strong> and <strong>ClientSecret</strong>.</li>
@@ -122,7 +122,7 @@
 <li>Navigate to the logs directory:<br>
  Windows: <code>%ProgramData%\OSIsoft\Adapters\RDBMS\Logs</code><br>
  Linux: <code>/usr/share/OSIsoft/Adapters/RDBMS/Logs</code>.</li>
-<li>Optional: Change the log level of the adapter to receive more information and context.<br>For more information, see <a class="xref" href="../main/shared-content/configuration/logging-configuration.html">Logging configuration</a>.</li>
+<li>Optional: Change the log level of the adapter to receive more information and context.<br>For more information, see <a class="xref" href="../main/shared-content/configuration/logging.html">Logging configuration</a>.</li>
 </ol>
 </article>
           </div>

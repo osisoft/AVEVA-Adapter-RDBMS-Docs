@@ -5,9 +5,9 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Egress diagnostics </title>
+    <title>Health </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Egress diagnostics ">
+    <meta name="title" content="Health ">
     <meta name="generator" content="docfx 2.56.5.0">
     
     <link rel="shortcut icon" href="../../../../favicon.ico">
@@ -75,33 +75,21 @@
         </div>
         <div class="article row grid-right">
           <div class="col-md-10">
-            <article class="content wrap" id="_content" data-uid="EgressDiagnostics">
-<h1 id="egress-diagnostics">Egress diagnostics</h1>
+            <article class="content wrap" id="_content" data-uid="AdapterHealth">
+<h1 id="health">Health</h1>
 
-<p>The Egress component of the adapter produces the following diagnostics stream:</p>
-<h2 id="io-rate">IO rate</h2>
-<p>The <code>Diagnostics.Egress.IORate</code> dynamic type includes the following values, which are logged in a stream with the <code>Id</code> <code>{machineName}.{serviceName}.OmfEgress.{EndpointId}.IORate</code>. <code>IORate</code> includes only sequential data successfully sent to an egress endpoint.</p>
-<table>
-<thead>
-<tr>
-<th>Property</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>timestamp</strong></td>
-<td><code>string</code></td>
-<td>Timestamp of event</td>
-</tr>
-<tr>
-<td><strong>IORate</strong></td>
-<td><code>double</code></td>
-<td>One-minute rolling average of data rate (streams/second)</td>
-</tr>
-</tbody>
-</table>
+<p>PI Adapters produce different kinds of health data that can be egressed to different health endpoints.</p>
+<p>To egress health related data, you have to configure an adapter health endpoint first. See <a class="xref" href="../configuration/health-endpoints.html">Health endpoint configuration</a>.</p>
+<h2 id="available-health-data">Available health data</h2>
+<p>Dynamic data is sent every minute to configured health endpoints.</p>
+<p>The following health data is available:</p>
+<ul>
+<li><a class="xref" href="device-status.html">Device status</a></li>
+<li><a class="xref" href="next-health-message-expected.html">Next Health Message Expected</a></li>
+</ul>
+<h2 id="af-structure">AF structure</h2>
+<p>With a health endpoint configured to a PI server, you can use PI System Explorer to view the health of a given adapter. The element hierarchy is shown in the following image.</p>
+<p><img src="../images/health-data.png" alt="Health data"></p>
 </article>
           </div>
           
@@ -110,7 +98,7 @@
               <div class="contribution">
                 <ul class="nav">
                   <li>
-                    <a href="https://github.com/osisoft/PI-Adapter/blob/main/shared-content/diagnostics/egress-diagnostics.md/#L1" class="contribution-link">Improve this Doc</a>
+                    <a href="https://github.com/osisoft/PI-Adapter/blob/main/shared-content/health/health.md/#L1" class="contribution-link">Improve this Doc</a>
                   </li>
                 </ul>
               </div>

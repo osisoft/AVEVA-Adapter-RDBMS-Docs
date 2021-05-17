@@ -2,20 +2,20 @@
 sorted: true
 references:
 - uid: AdapterDiagnostics
-  name: Adapter diagnostics
-  href: content/main/shared-content/diagnostics/adapter-diagnostics.html
+  name: Diagnostics
+  href: content/main/shared-content/diagnostics/diagnostics.html
 - uid: AdapterHealth
-  name: Adapter health
-  href: content/main/shared-content/health/adapter-health.html
+  name: Health
+  href: content/main/shared-content/health/health.html
 - uid: AdapterMetadata
-  name: Adapter metadata
-  href: content/main/shared-content/metadata/adapter-metadata.html
+  name: Metadata
+  href: content/main/shared-content/metadata/metadata.html
 - uid: Administration
   name: Administration
   href: content/main/shared-content/administration/administration.html
 - uid: BufferingConfiguration
-  name: Buffering configuration
-  href: content/main/shared-content/configuration/buffering-configuration.html
+  name: Buffering
+  href: content/main/shared-content/configuration/buffering.html
 - uid: Configuration
   name: Configuration
   href: content/configuration/configuration.html
@@ -24,10 +24,10 @@ references:
   href: content/main/shared-content/configuration/configuration-tools.html
 - uid: ConfigureANetworkProxy
   name: Configure a network proxy
-  href: content/main/shared-content/configuration/egress-endpoint-configuration/configure-a-network-proxy.html
+  href: content/main/shared-content/configuration/egress-endpoints/configure-a-network-proxy.html
 - uid: DataFiltersConfiguration
-  name: Data filters configuration
-  href: content/main/shared-content/configuration/data-filters-configuration.html
+  name: Data filters
+  href: content/main/shared-content/configuration/data-filters.html
 - uid: DeleteAnAdapterComponent
   name: Delete an adapter component
   href: content/main/shared-content/administration/delete-an-adapter-component.html
@@ -35,32 +35,32 @@ references:
   name: Device status
   href: content/main/shared-content/health/device-status.html
 - uid: DiscoveryConfiguration
-  name: Discovery configuration
-  href: content/main/shared-content/configuration/discovery-configuration.html
+  name: Discovery
+  href: content/main/shared-content/configuration/discovery.html
 - uid: EgressDiagnostics
-  name: Egress diagnostics
-  href: content/main/shared-content/diagnostics/egress-diagnostics.html
+  name: Egress
+  href: content/main/shared-content/diagnostics/egress.html
 - uid: EgressEndpointsConfiguration
-  name: Egress endpoints configuration
-  href: content/main/shared-content/configuration/egress-endpoints-configuration.html
+  name: Egress endpoints
+  href: content/main/shared-content/configuration/egress-endpoints.html
 - uid: ErrorRate
   name: Error rate
   href: content/main/shared-content/diagnostics/error-rate.html
 - uid: GeneralConfiguration
-  name: General configuration
-  href: content/main/shared-content/configuration/general-configuration.html
+  name: Diagnostics and metadata
+  href: content/main/shared-content/configuration/diagnostics-and-metadata.html
 - uid: HealthAndDiagnostics
   name: Health and Diagnostics
   href: content/main/shared-content/health/health-and-diagnostics.html
 - uid: HealthEndpointConfiguration
-  name: Health endpoint configuration
-  href: content/main/shared-content/configuration/health-endpoint-configuration.html
+  name: Health endpoints
+  href: content/main/shared-content/configuration/health-endpoints.html
 - uid: Installation
   name: Installation
   href: content/main/shared-content/installation/installation.html
 - uid: InstallPIAdapterForRDBMSUsingDocker
-  name: Install PI Adapter for RDBMS using Docker
-  href: content/installation/install-pi-adapter-for-rdbms-using-docker.html
+  name: Installation using Docker
+  href: content/installation/installation-using-docker.html
 - uid: InstallTheAdapter
   name: Install the adapter
   href: content/main/shared-content/installation/install-the-adapter.html
@@ -71,35 +71,35 @@ references:
   name: JSONPath syntax for value retrieval
   href: content/main/shared-content/configuration/text-parser/jsonpath-syntax-for-value-retrieval.html
 - uid: LoggingConfiguration
-  name: Logging configuration
-  href: content/main/shared-content/configuration/logging-configuration.html
+  name: Logging
+  href: content/main/shared-content/configuration/logging.html
 - uid: NextHealthMessageExpected
   name: Next health message expected
   href: content/main/shared-content/health/next-health-message-expected.html
 - uid: PIAdapterForRDBMSConfigurationExamples
-  name: PI Adapter for RDBMS configuration examples
-  href: content/configuration/pi-adapter-for-rdbms-configuration-examples.html
+  name: Configuration examples
+  href: content/configuration/configuration-examples.html
 - uid: PIAdapterForRDBMSDataSelectionConfiguration
-  name: PI Adapter for RDBMS data selection configuration
-  href: content/configuration/pi-adapter-for-rdbms-data-selection-configuration.html
+  name: Data selection
+  href: content/configuration/data-selection.html
 - uid: PIAdapterForRDBMSDataSourceConfiguration
-  name: PI Adapter for RDBMS data source configuration
-  href: content/configuration/pi-adapter-for-rdbms-data-source-configuration.html
+  name: Data source
+  href: content/configuration/data-source.html
 - uid: PIAdapterForRDBMSOverview
-  name: PI Adapter for RDBMS overview
+  name: Overview
   href: content/index.html
 - uid: PIAdapterForRDBMSPrinciplesOfOperation
-  name: PI Adapter for RDBMS principles of operation
-  href: content/pi-adapter-for-rdbms-overview/pi-adapter-for-rdbms-principles-of-operation.html
+  name: Principles of operation
+  href: content/overview/principles-of-operation.html
 - uid: PIAdapterForRDBMSQueriesConfiguration
-  name: PI Adapter for RDBMS queries configuration
-  href: content/configuration/pi-adapter-for-rdbms-queries-configuration.html
+  name: Queries
+  href: content/configuration/queries.html
 - uid: PIAdapterForRDBMSSupportedFeatures
-  name: PI Adapter for RDBMS supported features
-  href: content/pi-adapter-for-rdbms-overview/pi-adapter-for-rdbms-supported-features.html
+  name: Supported features
+  href: content/overview/supported-features.html
 - uid: PrepareEgressDestinations
   name: Prepare egress destinations
-  href: content/main/shared-content/configuration/egress-endpoint-configuration/prepare-egress-destinations.html
+  href: content/main/shared-content/configuration/egress-endpoints/prepare-egress-destinations.html
 - uid: releaseNotes
   name: Release notes
   href: content/main/Templates/Markdown%20Release%20Notes%20template-V1.html
@@ -110,8 +110,8 @@ references:
   name: Retrieve product version information
   href: content/main/shared-content/administration/retrieve-product-version-information.html
 - uid: SchedulesConfiguration
-  name: Schedules configuration
-  href: content/main/shared-content/configuration/schedules-configuration.html
+  name: Schedules
+  href: content/main/shared-content/configuration/schedules.html
 - uid: StartAndStopAnAdapter
   name: Start and stop an adapter
   href: content/main/shared-content/administration/start-and-stop-an-adapter.html
@@ -125,11 +125,11 @@ references:
   name: System
   href: content/main/shared-content/diagnostics/system.html
 - uid: SystemAndAdapterConfiguration
-  name: System and adapter configuration
-  href: content/main/shared-content/configuration/system-and-adapter-configuration.html
+  name: System and adapter
+  href: content/main/shared-content/configuration/system-and-adapter.html
 - uid: SystemComponentsConfiguration
-  name: System components configuration
-  href: content/main/shared-content/configuration/system-components-configuration.html
+  name: System components
+  href: content/main/shared-content/configuration/system-components.html
 - uid: SystemRequirements
   name: System requirements
   href: content/installation/system-requirements.html
@@ -143,8 +143,8 @@ references:
   name: Troubleshoot PI Adapter for RDBMS
   href: content/troubleshooting/troubleshoot-pi-adapter-for-rdbms.html
 - uid: TroubleshootTheAdapter
-  name: Troubleshoot the adapter
-  href: content/main/shared-content/troubleshooting/troubleshoot-the-adapter.html
+  name: Troubleshooting
+  href: content/main/shared-content/troubleshooting/troubleshooting.html
 - uid: UninstallTheAdapter
   name: Uninstall the adapter
   href: content/main/shared-content/installation/uninstall-the-adapter.html
