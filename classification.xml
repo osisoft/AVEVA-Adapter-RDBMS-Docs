@@ -211,12 +211,12 @@
    <Row ss:Height="14.5">
     <Cell><Data ss:Type="String">MAP</Data></Cell>
     <Cell ss:Index="3"><Data ss:Type="String">adapter</Data></Cell>
-    <Cell ss:StyleID="s17"><Data ss:Type="String">PI-Interface-for-RDBMS_Preview</Data></Cell>
+    <Cell ss:StyleID="s17"><Data ss:Type="String">PI-Adapter-for-RDBMS_Preview</Data></Cell>
    </Row>
    <Row ss:Height="14.5">
     <Cell><Data ss:Type="String">apply-ALL</Data></Cell>
     <Cell ss:Index="3"><Data ss:Type="String">adapter</Data></Cell>
-    <Cell ss:StyleID="s17"><Data ss:Type="String">PI-Interface-for-RDBMS_Preview</Data></Cell>
+    <Cell ss:StyleID="s17"><Data ss:Type="String">PI-Adapter-for-RDBMS_Preview</Data></Cell>
    </Row>
    <Row>
     <Cell><Data ss:Type="String">default</Data></Cell>
@@ -242,9 +242,8 @@
    <Panes>
     <Pane>
      <Number>3</Number>
-     <ActiveRow>1</ActiveRow>
+     <ActiveRow>11</ActiveRow>
      <ActiveCol>3</ActiveCol>
-     <RangeSelection>R2C4:R3C4</RangeSelection>
     </Pane>
    </Panes>
    <ProtectObjects>False</ProtectObjects>
@@ -821,7 +820,7 @@
    <FreezePanes/>
    <FrozenNoSplit/>
    <SplitHorizontal>1</SplitHorizontal>
-   <TopRowBottomPane>46</TopRowBottomPane>
+   <TopRowBottomPane>13</TopRowBottomPane>
    <ActivePane>2</ActivePane>
    <Panes>
     <Pane>
@@ -829,8 +828,8 @@
     </Pane>
     <Pane>
      <Number>2</Number>
-     <ActiveRow>63</ActiveRow>
-     <ActiveCol>2</ActiveCol>
+     <ActiveRow>33</ActiveRow>
+     <ActiveCol>3</ActiveCol>
     </Pane>
    </Panes>
    <ProtectObjects>False</ProtectObjects>
