@@ -4,51 +4,52 @@ uid: PIAdapterForRDBMSDataSourceDiscovery
 
 # Data source discovery
 
-A discovery against the data source of an RDBMS adapter allows you to specify the optional **query** parameter. The query discovers the contents of the data source and narrows down the scope of the discovery. You can add the discovered items to the data selection. For more information, see also [Queries](xref:Queries). <!-- I am unsure how exactly this topic is helpful for configuring the discovery, but remember from our call that you mentioned the ?LST? placeholder that we describe in the Queries topic -->
+A discovery against the data source of an RDBMS adapter requires you to specify the **query** parameter. In the discover query, you must specify the `QueryId` of a query in the [Queries configuration facet](xref:Queries). This will be the query that is executed against the data source, and the adapter will parse the result set for data selection items. You may also provide other key=value pairs to allow the adapter to create more accurate data selection items. You can add the discovered items to the data selection.
 
 ## RDBMS query string
 
-The string of the **query** parameter must contain string items in the following form: <br>`<QueryId>/<IndexColumn>/<IdColumn>` <!-- Is TimeStamp an actual parameter that is specified in the query string? --><br><br>
+The string of the **query** parameter must contain string items in the following form: <br>`QueryId=Tanks;IndexColumn=SAMPLETIME;IdColumn=ASSET;InitialTime=6/11/2021 4:29:12 PM` <br><br>
 
 | String item      | Required | Description |
 |------------------|----------|-------------|
-| **QueryId**     | Optional | The identifier of the query configured.
-| **IndexColumn** | Optional | Column that contains the timestamp. If no column is specified, the timestamp will be the time that the adapter read the value. <!-- Does the IndexColumn replace the Timestamp you mentioned today? -->
-| **IdColumn**    | Optional | Name of the column that contains the IdField. Used to identify which rows of the query results belong to the selection item.
+| **QueryId**     | Required | The identifier of the query to reference in the `Queries` configuration facet. The results of this query will determine the discovery results. 
+| **IndexColumn** | Optional | Column containing the timestamp. The adapter will use this column to populate the `IndexColumn` property of newly discovered data selection items. Default is an empty string.
+| **IdColumn**    | Optional | Column containing the IdField. The adapter will use this column to populate the `IdColumn` property of the newly discovered selection item. The adapter will also use this column to distinguish selection items from unique rows in the result set. Default is an empty string.
+| **InitialTime** | Optional | The timestamp that will be used to substitute the `?LST?` parameter (if used) in your Query during discovery. Default is one hour earlier than current time. 
 
 ### Query rules
 
 The following rules apply for specifying the query string:
 
-- Multiple queries are separated by a semicolon (`;`).
-- Partial queries are terminated by a multi-level wildcard (`#`).
-- A query cannot be terminated by a trailing slash (`/`).
-- A query cannot start with a leading slash (`/`) or `$`.
-- Topics are case sensitive.
+- The query is made up of key=value pairs.
+- Pairs are separated with a semicolon (`;`).
+- Keys and values are separated with an equals (`=`).
+- The discovery query must reference a defined query from the `Queries` configuration facet. 
+- Columns are case-insensitive. 
 
-**Note:** The data source might contain tens of thousands of metrics. Use the `#` judiciously and narrow down the query string to something specific or break down the query into different discoveries.
+**Note:** The data source might contain tens of thousands of metrics. Ensure that the query will only return data for the selection items you will be interested in.
 
-#### Wildcards
-
-Wildcards are allowed in the query with the following specifications:
-
-- A single-level wildcard replaces one topic level and is indicated by `+`.
-- A multi-level wildcard covers many topic levels and is indicated by `#`.
-- Wildcards can be combined.
-- `#` must not be used more than once and can only be used at the end of the topic.
-- No query, an empty string, or `null` as the query parameter is equivalent to `#`.
 
 ## Discovery query example
 
 The query parameter must be specified in the following form:
-`<QueryId>/<IndexColumn>/<IdColumn>`.
+`QueryId=Tanks;IndexColumn=SAMPLETIME;IdColumn=ASSET;InitialTime=11/11/2020 3:46:00 AM`.
+
+### Example result set from `Tanks` query
+
+| Asset | Temperature | Pressure | SampleTime |
+|-------|-------------|----------|------------|
+| Tank1 | 25 | 100 | 11/11/2020 3:56:00 AM |
+| Tank2 | 26.3 | 100.2 | 11/11/2020 3:56:00 AM |
+| Tank2 | 26.5 | 100 | 11/11/2020 3:46:00 AM |
+| Tank1 | 26.7 | 99.8 | 11/11/2020 3:46:00 AM |
 
 ### RDBMS data source discovery initiation
 
 ```json
 {
 	"id" : "40",
-	"query" : "Tanks/SampleTime/Asset"
+	"query" : "QueryId=Tanks;IndexColumn=SampleTime;IdColumn=Asset;InitialTime=11/11/2020 3:46:00 AM"
 }
 ```
 
@@ -69,5 +70,50 @@ The query parameter must be specified in the following form:
 	    "status": "Complete",
 	    "errors": null
 	}
+]
+```
+### RDBMS discovered selection items
+```json
+[
+  {
+    "StreamId": "Tank1.Temperature",
+    "ValueColumn": "Temperature",
+    "IndexColumn": "SampleTime",
+    "IdColumn": "Asset",
+    "IdField": "Tank1",
+    "ScheduleId": "1",
+    "QueryId": "Tanks",
+    "Selected": false
+  },
+  {
+	"StreamId": "Tank1.Pressure",
+    "ValueColumn": "Pressure",
+    "IndexColumn": "SampleTime",
+    "IdColumn": "Asset",
+    "IdField": "Tank1",
+    "ScheduleId": "1",
+    "QueryId": "Tanks",
+    "Selected": false
+  },
+  {
+	"StreamId": "Tank2.Temperature",
+    "ValueColumn": "Temperature",
+    "IndexColumn": "SampleTime",
+    "IdColumn": "Asset",
+    "IdField": "Tank2",
+    "ScheduleId": "1",
+    "QueryId": "Tanks",
+    "Selected": false
+  },
+  {
+	"StreamId": "Tank2.Pressure",
+    "ValueColumn": "Pressure",
+    "IndexColumn": "SampleTime",
+    "IdColumn": "Asset",
+    "IdField": "Tank2",
+    "ScheduleId": "1",
+    "QueryId": "Tanks",
+    "Selected": false
+  }
 ]
 ```
