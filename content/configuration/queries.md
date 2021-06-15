@@ -61,7 +61,7 @@ Refer to the documentation for your ODBC driver for supported query syntax.
 
 
 * `?LST?`: Last Scan Time. This is a timestamp representing the time the adapter ran the last scan.
-* `?ET?`: End Time. If the adapter is in a history recovery mode, this will be the ?ST? value plus the RequestInterval specified in the data source configuration. For example, if RequestInterval is set to 1 hour, there will be an hour difference between ?ST? and ?ET?. If the adapter is not in a history recovery mode, this will be replaced with the current time.
+* `?ET?`: End Time. If the adapter is in a history recovery mode, this will be the `?ST?` value plus the RequestInterval specified in the data source configuration. For example, if **RequestInterval** is set to 1 hour, there will be an hour difference between `?ST?` and `?ET?`. If the adapter is not in history recovery mode, this will be replaced with the current time.
 * `?ST?`: Start Time. If the adapter is in history recovery mode, this placeholder will be replaced by the StartTime specified in the history recovery configuration on the first scan. After the first scan during history recovery, this placeholder will be replaced by the timestamp of the last event collected.
 
 ## RDBMS queries example
