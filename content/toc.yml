@@ -16,6 +16,7 @@
   - topicUid: PIAdapterForRDBMSDataSourceConfiguration 
   - topicUid: SchedulesConfiguration
   - topicUid: PIAdapterForRDBMSQueriesConfiguration
+  - topicUid: PIAdapterForRDBMSDataSourceDiscovery
   - topicUid: PIAdapterForRDBMSDataSelectionConfiguration
   - topicUid: DataFiltersConfiguration
   - topicUid: GeneralConfiguration
