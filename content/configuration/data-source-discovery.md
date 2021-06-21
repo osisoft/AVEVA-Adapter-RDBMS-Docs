@@ -4,7 +4,7 @@ uid: PIAdapterForRDBMSDataSourceDiscovery
 
 # Data source discovery
 
-A discovery against the data source of an RDBMS adapter requires you to specify the **query** parameter. In the discover query, you must specify the `QueryId` of a query in the queries configuration facet. For more information, see [Queries](xref:Queries). This is the query that is executed against the data source. The adapter parses the result set for data selection items. To allow the adapter to create more accurate data selection items, you may also provide other key=value pairs. You can add the discovered items to the data selection.
+A discovery against the data source of an RDBMS adapter requires you to specify the **query** parameter. In the discover query, you must specify the `QueryId` of a query in the queries configuration facet. For more information, see [Queries](xref:PIAdapterForRDBMSQueriesConfiguration). This is the query that is executed against the data source. The adapter parses the result set for data selection items. To allow the adapter to create more accurate data selection items, you may also provide other key=value pairs. You can add the discovered items to the data selection.
 
 ## RDBMS query string
 
