@@ -42,8 +42,6 @@ Complete the following steps to configure an RDBMS data source. Use the `PUT` me
     * If you use a component Id other than `RDBMS1`, update the endpoint with your chosen component Id.
     * For a list of other REST operations you can perform, like updating or deleting a data source configuration, see [REST URLs](#rest-urls).
     * You can decide to have a default data selection file generated automatically or you can create the data selection file yourself.
-    <br/>
-    <br/>
 
 7. Configure data selection.
 
@@ -75,7 +73,7 @@ The following parameters are available for configuring an RDBMS data source:
 | **MaxHistoryEventsPerSecond** | Optional | `int` | Specifies the maximum number of events per second that the adapter will collect during history recovery. This can be used to limit the adapter to prevent overwhelming the data source or network. Setting this property to `0` will allow historical data to be collected without throttling. <br><br>Expected Format: `#####` <br><br> Default Value: `0` |
 | **DataCollectionMode** | Optional | `string` | Specifies the data collection mode the adapter is in. The following data collection modes are available:<br> **HistoryOnly** - The adapter component does not get started and history recovery on-demand is enabled. For more information, see [On-demand history recovery](xref:OnDemandHistoryRecovery).<br>**CurrentOnly** - The adapter component operates normally and on-demand history recovery is disabled.<br>**CurrentWithBackfill** - The adapter component operates normally, but will automaticall recover intervals during the `Shutdown` device status. History recovery backfills data once device status is `good`. On-demand history recovery is disabled. For more information, see [Automatic history recovery](xref:AutomaticHistoryRecovery). <br>Changing the mode requires a restart of the adapter component.
 
-<!-- About the **RequestInterval**: I will talk to Aurora about the wording in the Automatic history recovery as this seems incorrect (at least for RDBMS)>
+<!-- About the **RequestInterval**: I will talk to Aurora about the wording in the Automatic history recovery as this seems incorrect (at least for RDBMS) -->
 
 ## RDBMS data source examples
 
