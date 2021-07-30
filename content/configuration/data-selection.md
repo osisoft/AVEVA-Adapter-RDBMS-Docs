@@ -53,7 +53,7 @@ Linux: `/opt/OSIsoft/Adapters/RDBMS/Schemas`
 | Parameter        | Required | Type      | Description |
 |------------------|----------|-----------|-------------|
 | **DataFilterId** | Optional | `string` | The identifier of a data filter defined in the [Data filters configuration](xref:DataFiltersConfiguration). By default, no filter is applied.<br>**Note:** If the specified **DataFilterId** does not exist, unfiltered data is sent until that **DataFilterId** is created. |
-| **ValueColumn** | Required | `string` | The database column to read data values from. |
+| **ValueColumn** | Required | `string` | The database column to read data values from. <sup>1</sup> |
 | **IndexColumn** | Optional | `string` | Column that contains the timestamp. If no column is specified, the timestamp will be the time that the adapter read the value. |
 | **IdColumn** | Optional | `string` | Name of the column that contains the IdField. Used to identify which rows of the query results belong to the selection item. |
 | **IdField** | Optional | `string` | The unique identifier of the source. This identifier is commonly found in the database column specified in **IdColumn**. Used to identify which rows of the query results belong to the selection item. |
@@ -62,6 +62,9 @@ Linux: `/opt/OSIsoft/Adapters/RDBMS/Schemas`
 | **ScheduleId** | Required | `string` | The identifier of a schedule defined in the Schedules configuration. |
 | **Selected** | Optional | `boolean` | If `true`, data for this item is collected and sent to one or more configured OMF endpoints.<br><br>Allowed value: `true` or `false`<br>Default value:`true` |
 | **StreamId** | Optional | `string` | The custom identifier used to create the stream. If not specified, the RDBMS adapter generates a default value based on the **DefaultStreamIdPattern** in the [PI Adapter for RDBMS data source configuration](xref:PIAdapterForRDBMSDataSourceConfiguration). |
+| **DataColumns** | Required | `dictionary<string, string>` | A dictionary of values with key-value pairs. The keys are specific fields for a complex type and the values are the database column to read data values from.<br><br>Allowed keys: `Latitude`, `Longitude`, `x`, `y`, `z`<br>Default key value: `null` <sup>1</sup>|
+
+<sup>1</sup> **ValueColumn** and **DataColumns** are mutually exclusive. For example, if you specify **ValueColumn**, you cannot specify **DataColumns** and vice versa.
 
 ## RDBMS data selection examples
 
@@ -124,6 +127,34 @@ Volume:
     "ScheduleId": "1min",
     "QueryId": "Tank1",
     "Selected": true
+  }
+]
+```
+
+Coordinates and Geolocation:
+
+```json
+[    
+  {        
+    "StreamId": "ComplexQuery.Coordinates",        
+    "DataColumns": {            
+        "X": "X_Col",            
+        "Y": "Y_Col",            
+        "Z": "Z_Col"        
+    },        
+    "ScheduleId": "1",        
+    "queryId": "ComplexQuery",        
+    "Selected": true    
+  },    
+  {        
+    "StreamId": "ComplexQuery.Geolocation",        
+    "DataColumns": {            
+        "Latitude": "Lat",            
+        "Longitude": "Lon"        
+    },        
+    "ScheduleId": "1",        
+    "queryId": "ComplexQuery",        
+    "Selected": true    
   }
 ]
 ```
