@@ -21,8 +21,8 @@ Incorrect configurations can interrupt data flow and cause errors in values and 
 
     * **ValueColumn** - The column exists in the database table and contains the desired data values.
     * **IndexColumn** - The column exists in the database table and contains the desired DateTime formatted timestamps.
-    * **IdColumn** - The column exists in the database table and contains the values specified in the IdField property for each of the selection items.
-    * **IdField** - The value exists in the IdColumn in the database and is in the row that contains the data for this selection item.
+    * **SelectColumn** - The column exists in the database table and contains the values specified in the SelectValue property for each of the selection items.
+    * **SelectValue** - The value exists in the SelectColumn in the database and is in the row that contains the data for this selection item.
     * **QueryId** - The query exists and is correct for the columns specified.
     * **ScheduleId** - The referenced schedule exists. <br> A non-existent referenced schedule uses a default schedule instead.
     * **DataFilterId** - If configured, the referenced data filter exists.<br> A non-existent or incorrect DataFilterId means that data filtering is not active.
