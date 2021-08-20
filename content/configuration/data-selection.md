@@ -55,8 +55,8 @@ Linux: `/opt/OSIsoft/Adapters/RDBMS/Schemas`
 | **DataFilterId** | Optional | `string` | The identifier of a data filter defined in the [Data filters configuration](xref:DataFiltersConfiguration). By default, no filter is applied.<br>**Note:** If the specified **DataFilterId** does not exist, unfiltered data is sent until that **DataFilterId** is created. |
 | **ValueColumn** | Required<sup>1</sup> | `string` | The database column to read data values from.  |
 | **IndexColumn** | Optional | `string` | Column that contains the timestamp. If no column is specified, the timestamp will be the time that the adapter read the value. |
-| **IdColumn** | Optional | `string` | Name of the column that contains the IdField. Used to identify which rows of the query results belong to the selection item. |
-| **IdField** | Optional | `string` | The unique identifier of the source. This identifier is commonly found in the database column specified in **IdColumn**. Used to identify which rows of the query results belong to the selection item. |
+| **SelectColumn** | Optional | `string` | Name of the column that contains the SelectValue. Used to identify which rows of the query results belong to the selection item. |
+| **SelectValue** | Optional | `string` | The unique identifier of the source. This identifier is commonly found in the database column specified in **SelectColumn**. Used to identify which rows of the query results belong to the selection item. |
 | **Name** | Optional | `string` | The friendly name of the data item collected from the data source. If not configured, the default value is the stream Id. |
 | **QueryId** | Required | `string` | The identifier of the query configured. |
 | **ScheduleId** | Required | `string` | The identifier of a schedule defined in the Schedules configuration. |
@@ -169,7 +169,7 @@ Coordinates and Geolocation:
 
 ### Identifier in Row
 
-Use this configuration when each row of the result set contains information needed to identify each stream. In the simplest case, there could be one column for the identifier, one column for the timestamp, and one column for the value. However, result sets could contain multiple timestamp columns and multiple value columns. This configuration requires that the user specify the IdColumn and IdField properties.
+Use this configuration when each row of the result set contains information needed to identify each stream. In the simplest case, there could be one column for the identifier, one column for the timestamp, and one column for the value. However, result sets could contain multiple timestamp columns and multiple value columns. This configuration requires that the user specify the SelectColumn and SelectValue properties.
 
 Example Data:
 
@@ -190,8 +190,8 @@ Tank1.Temperature:
     "StreamId": "Tank1.Temperature",
     "ValueColumn": "Temperature",
     "IndexColumn": "SampleTime",
-    "IdColumn": "Asset",
-    "IdField": "Tank1",
+    "SelectColumn": "Asset",
+    "SelectValue": "Tank1",
     "ScheduleId": "1min",
     "QueryId": "Tanks",
     "Selected": true
@@ -207,8 +207,8 @@ Tank2.Temperature:
     "StreamId": "Tank2.Temperature",
     "ValueColumn": "Temperature",
     "IndexColumn": "SampleTime",
-    "IdColumn": "Asset",
-    "IdField": "Tank2",
+    "SelectColumn": "Asset",
+    "SelectValue": "Tank2",
     "ScheduleId": "1min",
     "QueryId": "Tanks",
     "Selected": true
