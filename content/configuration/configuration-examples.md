@@ -49,8 +49,8 @@ The following JSON samples provide examples for all configurations available for
           "StreamId": "Tank1.Temperature",
           "ValueColumn": "Temperature",
           "IndexColumn": "SampleTime",
-          "IdColumn": "Asset",
-          "IdField": "Tank1",
+          "SelectColumn": "Asset",
+          "SelectValue": "Tank1",
           "ScheduleId": "1min",
           "QueryId": "Tanks",
           "Selected": true
@@ -59,8 +59,8 @@ The following JSON samples provide examples for all configurations available for
           "StreamId": "Tank2.Temperature",
           "ValueColumn": "Temperature",
           "IndexColumn": "SampleTime",
-          "IdColumn": "Asset",
-          "IdField": "Tank2",
+          "SelectColumn": "Asset",
+          "SelectValue": "Tank2",
           "ScheduleId": "1min",
           "QueryId": "Tanks",
           "Selected": true
@@ -227,8 +227,8 @@ Tank1.Temperature:
     "StreamId": "Tank1.Temperature",
     "ValueColumn": "Temperature",
     "IndexColumn": "SampleTime",
-    "IdColumn": "Asset",
-    "IdField": "Tank1",
+    "SelectColumn": "Asset",
+    "SelectValue": "Tank1",
     "ScheduleId": "1min",
     "QueryId": "Tanks",
     "Selected": true
@@ -244,8 +244,8 @@ Tank2.Temperature:
     "StreamId": "Tank2.Temperature",
     "ValueColumn": "Temperature",
     "IndexColumn": "SampleTime",
-    "IdColumn": "Asset",
-    "IdField": "Tank2",
+    "SelectColumn": "Asset",
+    "SelectValue": "Tank2",
     "ScheduleId": "1min",
     "QueryId": "Tanks",
     "Selected": true

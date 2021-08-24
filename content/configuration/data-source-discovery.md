@@ -8,13 +8,13 @@ A discovery against the data source of an RDBMS adapter requires you to specify 
 
 ## RDBMS query string
 
-The string of the **query** parameter must contain string items in the following form: <br>`QueryId=Tanks;IndexColumn=SAMPLETIME;IdColumn=ASSET;InitialTime=6/11/2021 4:29:12 PM` <br><br>
+The string of the **query** parameter must contain string items in the following form: <br>`QueryId=Tanks;IndexColumn=SAMPLETIME;SelectColumn=ASSET;InitialTime=6/11/2021 4:29:12 PM` <br><br>
 
 | String item      | Required | Description |
 |------------------|----------|-------------|
 | **QueryId**     | Required | The identifier of the query to reference in the `Queries` configuration facet. The results of this query determine the discovery results. 
 | **IndexColumn** | Optional | Column containing the timestamp. The adapter will use this column to populate the `IndexColumn` property of newly discovered data selection items.<br><br> Default: empty string.
-| **IdColumn**    | Optional | Column containing the IdField. The adapter will use this column to populate the `IdColumn` property of the newly discovered selection item. The adapter will also use this column to distinguish selection items from unique rows in the result set. Default: empty string.
+| **SelectColumn**    | Optional | Column containing the SelectValue. The adapter will use this column to populate the `SelectColumn` property of the newly discovered selection item. The adapter will also use this column to distinguish selection items from unique rows in the result set. Default: empty string.
 | **InitialTime** | Optional | The timestamp that is used to substitute the `?LST?` parameter (if used) in your query during discovery. Default is one hour earlier than current time.
 
 ### Query rules
@@ -32,7 +32,7 @@ The following rules apply for specifying the query string:
 ## Discovery query example
 
 The query parameter must be specified in the following form:
-`QueryId=Tanks;IndexColumn=SAMPLETIME;IdColumn=ASSET;InitialTime=11/11/2020 3:46:00 AM`.
+`QueryId=Tanks;IndexColumn=SAMPLETIME;SelectColumn=ASSET;InitialTime=11/11/2020 3:46:00 AM`.
 
 ### Example result set from `Tanks` query
 
@@ -48,7 +48,7 @@ The query parameter must be specified in the following form:
 ```json
 {
   "id" : "40",
-  "query" : "QueryId=Tanks;IndexColumn=SampleTime;IdColumn=Asset;InitialTime=11/11/2020 3:46:00 AM"
+  "query" : "QueryId=Tanks;IndexColumn=SampleTime;SelectColumn=Asset;InitialTime=11/11/2020 3:46:00 AM"
 }
 ```
 
@@ -80,8 +80,8 @@ The query parameter must be specified in the following form:
     "StreamId": "Tank1.Temperature",
     "ValueColumn": "Temperature",
     "IndexColumn": "SampleTime",
-    "IdColumn": "Asset",
-    "IdField": "Tank1",
+    "SelectColumn": "Asset",
+    "SelectValue": "Tank1",
     "ScheduleId": "1",
     "QueryId": "Tanks",
     "Selected": false
@@ -90,8 +90,8 @@ The query parameter must be specified in the following form:
     "StreamId": "Tank1.Pressure",
     "ValueColumn": "Pressure",
     "IndexColumn": "SampleTime",
-    "IdColumn": "Asset",
-    "IdField": "Tank1",
+    "SelectColumn": "Asset",
+    "SelectValue": "Tank1",
     "ScheduleId": "1",
     "QueryId": "Tanks",
     "Selected": false
@@ -100,8 +100,8 @@ The query parameter must be specified in the following form:
     "StreamId": "Tank2.Temperature",
     "ValueColumn": "Temperature",
     "IndexColumn": "SampleTime",
-    "IdColumn": "Asset",
-    "IdField": "Tank2",
+    "SelectColumn": "Asset",
+    "SelectValue": "Tank2",
     "ScheduleId": "1",
     "QueryId": "Tanks",
     "Selected": false
@@ -110,8 +110,8 @@ The query parameter must be specified in the following form:
     "StreamId": "Tank2.Pressure",
     "ValueColumn": "Pressure",
     "IndexColumn": "SampleTime",
-    "IdColumn": "Asset",
-    "IdField": "Tank2",
+    "SelectColumn": "Asset",
+    "SelectValue": "Tank2",
     "ScheduleId": "1",
     "QueryId": "Tanks",
     "Selected": false
