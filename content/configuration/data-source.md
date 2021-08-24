@@ -82,12 +82,10 @@ The following are examples of valid RDBMS data source configurations:
 ### RDBMS minimum data source configuration
 
 ```json
-[
-  {
+{
     "ConnectString": "DSN=MyDSN",
     "DataProvider": "ODBC"
-  }
-]
+}
 ```
 
 ### RDBMS data source configuration with username and password
@@ -95,24 +93,20 @@ The following are examples of valid RDBMS data source configurations:
 **Note:** The ConnectString parameter will be encrypted, so it is safe to include a password or other secrets. 
 
 ```json
-[
-  {
+{
     "ConnectString": "Server=ServerName\\SQLEXPRESS; UID=MyUser; PWD=Password",
-  }
-]
+}
 ```
 
 ### RDBMS data source configuration with Windows authentication
 
 ```json
-[
-  {
+{
     "ConnectString": "Server=ServerName\\SQLEXPRESS; Database=MyDB; trusted_connection=yes;",
     "DataProvider": "SQLServer",
     "WindowsUser": "MyDomain\\MyUser",
     "WindowsPassword": "MyPassword"
-  }
-]
+}
 ```
 
 ## REST URLs
