@@ -19,6 +19,10 @@
   - topicUid: DiscoveryConfiguration
     items:
     - topicUid: PIAdapterForRDBMSDataSourceDiscovery
+  - topicUid: HistoryRecovery
+    items:
+    - topicUid: OnDemandHistoryRecoveryConfiguration
+    - topicUid: AutomaticHistoryRecovery
   - topicUid: PIAdapterForRDBMSDataSelectionConfiguration
   - topicUid: DataFiltersConfiguration
   - topicUid: GeneralConfiguration
