@@ -61,7 +61,7 @@ Linux: `/opt/OSIsoft/Adapters/RDBMS/Schemas`
 | **QueryId** | Required | `string` | The identifier of the query configured. |
 | **ScheduleId** | Required | `string` | The identifier of a schedule defined in the Schedules configuration. |
 | **Selected** | Optional | `boolean` | If `true`, data for this item is collected and sent to one or more configured OMF endpoints.<br><br>Allowed value: `true` or `false`<br>Default value:`true` |
-| **StreamId** | Optional | `string` | The custom identifier used to create the stream. If not specified, the RDBMS adapter generates a default value based on the **DefaultStreamIdPattern** in the [PI Adapter for RDBMS data source configuration](xref:PIAdapterForRDBMSDataSourceConfiguration). |
+| **StreamId** | Optional | `string` | The custom identifier used to create the stream. If not specified, the RDBMS adapter generates a default value based on the **DefaultStreamIdPattern** in the [PI Adapter for RDBMS data source configuration](xref:PIAdapterForRDBMSDataSourceConfiguration).<br><br>For more information on how the adapter encodes special characters in the **StreamId**, see [Egress endpoints](xref:EgressEndpointsConfiguration#special-characters-encoding). |
 | **DataColumns** | Required<sup>1</sup> | `dictionary<string, string>` | A dictionary of values with key-value pairs. The keys are specific fields for a complex type and the values are the database column to read data values from.<br><br>Allowed keys: `Latitude`, `Longitude`, `x`, `y`, `z`<br>Default value: `null` |
 
 <sup>1</sup> **ValueColumn** and **DataColumns** are mutually exclusive. For example, if you specify **ValueColumn**, you cannot specify **DataColumns** and vice versa.
