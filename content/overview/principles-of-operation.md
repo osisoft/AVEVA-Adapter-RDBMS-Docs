@@ -30,7 +30,7 @@ When collecting data from a SQL Server, additional driver installation is not ne
 
 For more information on ODBC drivers, refer to [Microsoft's ODBC Programmers Reference](https://docs.microsoft.com/en-us/sql/odbc/reference/odbc-programmer-s-reference?view=sql-server-ver15) and the manual for the ODBC driver you are using.
 
-The following ODBC Drivers have been tested and will work with this adapter. This is not a comprehensive list of ODBC drivers that can work with this adapter. Most recent ODBC drivers should work with this adapter but are not guaranteed. 
+The following ODBC drivers have been tested and work with this adapter. This is not a comprehensive list of ODBC drivers that work with this adapter. Most recent ODBC drivers should work, but it is not guaranteed. 
 
 - [Microsoft ODBC Driver for SQL Server Version 17.8.1.1](https://docs.microsoft.com/en-us/sql/connect/odbc/microsoft-odbc-driver-for-sql-server?view=sql-server-ver15)
 - [MariaDB Connector/ODBC 3.1 Series](https://downloads.mariadb.org/connector-odbc/)
