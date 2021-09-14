@@ -37,6 +37,11 @@ The following ODBC drivers have been tested and work with this adapter. This is 
 - [MySQL Connector/ODBC Version 8.0.26](https://dev.mysql.com/downloads/connector/odbc/)
 - [Oracle Instant Client ODBC Version 19.00.00.00](https://www.oracle.com/database/technologies/releasenote-odbc-ic.html)
 
+The following versions of SQL Server have been tested and work with this adapter. Again, this is not a comprehensive list. Most recent SQL Server versions should work, but it is not guaranteed.
+
+- [Microsoft SQL Server 2019](https://www.microsoft.com/en-us/sql-server/sql-server-2019)
+- [Microsoft SQL Server 2017](https://www.microsoft.com/en-us/sql-server/sql-server-2017)
+
 ## Data collection
 
 The adapter collects data for each DataSelection item at an interval defined using the `ScheduleId` property, which you can set in the schedule configuration. 
