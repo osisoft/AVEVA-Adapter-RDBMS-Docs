@@ -39,9 +39,8 @@ The following JSON samples provide examples for all configurations available for
       "DataSource": [
         {
           "DefaultStreamIdPattern": "{QueryId}.{ValueColumn}",
-          "ConnectString": "Driver={ODBC Driver 17 for SQL Server}; Server=ServerName\\SQLEXPRESS; UID=[username]; PWD=[password]",
-          "UserName": "MyUser",
-          "Password": "MyPassword"
+          "ConnectString": "Server=ServerName\\SQLEXPRESS; UID=[username]; PWD=[password]",
+          "DataProvider": "sqlServer"
         }
       ],
       "DataSelection": [
@@ -128,40 +127,39 @@ The following JSON samples provide examples for all configurations available for
 
 The following are examples of valid RDBMS data source configurations.
 
-### RDBMS minimum data source configuration
+### RDBMS minimum data source configuration for ODBC
 
 ```json
 [
   {
     "DefaultStreamIdPattern": "{QueryId}.{ValueColumn}",
-    "ConnectString": "DSN=MyDSN"
+    "ConnectString": "DSN=MyDSN",
+    "DataProvider": "ODBC"
   }
 ]
 ```
 
-### RDBMS data source configuration with username and password
+### RDBMS minimum data source configuration for SQL Server
 
 ```json
 [
   {
     "DefaultStreamIdPattern": "{QueryId}.{ValueColumn}",
-    "ConnectString": "Driver={ODBC Driver 17 for SQL Server}; Server=ServerName\\SQLEXPRESS; UID=[username]; PWD=[password]",
-    "UserName": "MyUser",
-    "Password": "MyPassword"
+    "ConnectString": "Server=ServerName\\SQLEXPRESS; UID=[username]; PWD=[password]",
+    "DataProvider": "sqlServer"
   }
 ]
 ```
 
-### RDBMS data source configuration with Windows authentication
-
+### RDBMS data source configuration with Windows Authentication for SQL Server
 ```json
 [
   {
     "DefaultStreamIdPattern": "{QueryId}.{ValueColumn}",
-    "ConnectString": "Driver={ODBC Driver 17 for SQL Server}; Server=ServerName\\SQLEXPRESS; trusted_connection=yes",
-    "UserName": "MyUser",
-    "Password": "MyPassword",
-    "WindowsAuth": true
+    "ConnectString": "Server=ServerName\\SQLEXPRESS; Trusted_Connection=yes",
+    "WindowsUser": "domain\\MyUser",
+    "WindowsPassword": "MyPassword",
+    "DataProvider": "sqlServer"
   }
 ]
 ```
