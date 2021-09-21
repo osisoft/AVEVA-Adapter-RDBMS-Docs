@@ -12,7 +12,7 @@ The data source configuration allows you to choose between two data providers: S
 
 **Note:** When using the ODBC data provider, you need to install an appropriate ODBC driver for your data source.  For more information on ODBC drivers, refer to the [Microsoft's ODBC Programmers Reference](https://docs.microsoft.com/en-us/sql/odbc/reference/odbc-programmer-s-reference?view=sql-server-2017) and the manual for the ODBC driver you are using.
 
-## Configure RDBMS Data Files data source
+## Configure RDBMS data source
 
 Complete the following steps to configure an RDBMS data source. Use the `PUT` method in conjunction with the `api/v1/configuration/<ComponentId>/DataSource` REST endpoint to initialize the configuration.
 
@@ -95,6 +95,7 @@ The following are examples of valid RDBMS data source configurations:
 ```json
 {
     "ConnectString": "Server=ServerName\\SQLEXPRESS; UID=MyUser; PWD=Password",
+    "DataProvider": "sqlServer"
 }
 ```
 
