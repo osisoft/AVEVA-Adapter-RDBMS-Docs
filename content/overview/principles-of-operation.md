@@ -69,8 +69,6 @@ Metadata specific to the RDBMS adapter includes:
 
 Each stream created for the selected measurement has a unique identifier (stream Id). If you specify a custom stream Id for the measurement in the data selection configuration, the adapter uses that stream Id to create the stream. Otherwise, the adapter constructs the stream Id using the following format:
 
-```code
-<AdapterComponentId>.<QueryId>.<ValueColumn>
-```
+`<AdapterComponentId>.<QueryId>.<ValueColumn>`
 
 **Note:** Naming convention is affected by `StreamIdPrefix` and `DefaultStreamIdPattern` settings in the data source configuration. For more information, see [PI Adapter for RDBMS data source configuration](xref:PIAdapterForRDBMSDataSourceConfiguration).
