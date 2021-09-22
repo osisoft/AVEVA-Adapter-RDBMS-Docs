@@ -1,6 +1,7 @@
 - topicUid: PIAdapterForRDBMSOverview
   items:
   - topicUid: PIAdapterForRDBMSPrinciplesOfOperation
+  - topicUid: PIAdapterForRDBMSSupportedFeatures
 - topicUid: Installation
   items:
   - topicUid: SystemRequirements
