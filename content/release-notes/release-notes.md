@@ -5,7 +5,7 @@ uid: ReleaseNotes
 # Release notes
 
 PI Adapter for RDBMS 1.0 <br>
-Adapter framework 1.3
+Adapter framework 1.4
 
 ## Overview
 
