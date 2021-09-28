@@ -18,7 +18,7 @@ This Quick Start guides you through setup of each configuration file available f
 
 1. Configure one or several RDBMS system components.<br>See [System components](xref:SystemComponentsConfiguration#configure-system-components).
 
-2. Configure an RDBMS data source for each RDBMS device.<br>See [Data source](xref:PIAdapterForRDBMSDataSourceConfiguration#configure-rdbms-data-files-data-source).
+2. Configure an RDBMS data source for each RDBMS device.<br>See [Data source](xref:PIAdapterForRDBMSDataSourceConfiguration#configure-rdbms-data-source).
 
 3. **Optional**: Configure schedules and RDBMS queries to run on the data source.<br>See the following topics:
 
