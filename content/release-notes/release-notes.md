@@ -5,7 +5,7 @@ uid: ReleaseNotes
 # Release notes
 
 PI Adapter for RDBMS 1.0 <br>
-Adapter framework 1.3
+Adapter framework 1.4
 
 ## Overview
 
@@ -21,15 +21,17 @@ For more information, see the [PI Adapter for RDBMS overview](xref:PIAdapterForR
 
 There are no known issues at this time.
 
-## System requirements
+## Setup
+
+### System requirements
 
 Refer to [System requirements](xref:SystemRequirements).
 
-## Installation
+### Installation and upgrade
 
 Refer to [Install the adapter](xref:InstallTheAdapter).
 
-## Uninstallation
+### Uninstallation
 
 Refer to [Uninstall the adapter](xref:UninstallTheAdapter).
 
@@ -56,6 +58,10 @@ OSIsoft has selected the [Common Vulnerability Scoring System (CVSS)](https://ww
 This section is intended to provide relevant security-related information to guide your installation or upgrade decision. OSIsoft is proactively disclosing aggregate information about the number and severity of PI Adapter for RDBMS security vulnerabilities that are fixed in this release.
 
 No security-related information is applicable to this release.
+
+## Documentation overview
+
+**EdgeCmd utility:** Provides an overview on how to configure and administer PI adapters on Linux and Windows using command line arguments.
 
 ## Technical support and resources
 
