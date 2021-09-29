@@ -73,7 +73,7 @@ There are two ways to configure a selection item.
 * **By Column:** Uniquely identify a stream using the columns from the result set. This method is simplest.
 * **By Row:** Uniquely identify a stream using the rows from the result set. This method is more complex, but more common.
   
-The following are examples of valid RDBMS data selection configurations:
+The following sections contain examples of valid RDBMS data selection configurations.
 
 ### Column as an identifier
 
