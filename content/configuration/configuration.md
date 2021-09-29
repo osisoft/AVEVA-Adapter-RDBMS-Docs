@@ -23,7 +23,7 @@ This Quick Start guides you through setup of each configuration file available f
 3. **Optional**: Configure schedules and RDBMS queries to run on the data source.<br>See the following topics:
 
     - [Schedules](xref:SchedulesConfiguration)
-    - [Queries](xref:PIAdapterForRDBMSQueriesConfiguration#configure-rdbms-queries).
+    - [Queries](xref:PIAdapterForRDBMSQueriesConfiguration#configure-rdbms-queries)
 
 4. Configure an RDBMS data selection for each RDBMS data source.<br>See [Data selection](xref:PIAdapterForRDBMSDataSelectionConfiguration#configure-rdbms-data-selection).
 

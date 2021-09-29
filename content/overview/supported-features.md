@@ -20,6 +20,6 @@ For more details, see the ODBC driver-specific documentation.
 
 ## History recovery
 
-PI Adapter for RDBMS supports [History Recovery](xref:HistoryRecovery). The adapter creates history recovery intervals only on shutdown. Every item is historical by design and there is no automatic history recovery interval on a `bad` device status.
+PI Adapter for RDBMS supports [History recovery](xref:HistoryRecovery). The adapter creates history recovery intervals only on shutdown. Every item is historical by design and there is no automatic history recovery interval on a `bad` device status.
 
 Data source configuration properties **MaxHistoryEventsPerSecond**, **RequestInterval**, and **DataCollectionMode** impact history recovery depending on how they are configured. For more information, see [Data source - RDBMS data source parameters](xref:PIAdapterForRDBMSDataSourceConfiguration#rdbms-data-source-parameters).
