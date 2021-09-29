@@ -41,7 +41,7 @@ Complete the following steps to configure an RDBMS data source. Use the `PUT` me
     * If you installed the adapter to listen on a non-default port, update `5590` to the port number in use.
     * If you use a component Id other than `RDBMS1`, update the endpoint with your chosen component Id.
     * For a list of other REST operations you can perform, like updating or deleting a data source configuration, see [REST URLs](#rest-urls).
-    * You can decide to have a default data selection file generated automatically or you can create the data selection file yourself. For more information, see <xref:DiscoveryConfiguration>.
+    * You can decide to have a default data selection file generated automatically or you can create the data selection file yourself. For more information, see [Discovery](xref:DiscoveryConfiguration).
 
 7. Configure data selection.
 
