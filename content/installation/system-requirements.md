@@ -16,3 +16,7 @@ PI Adapter for RDBMS is supported on a variety of platforms and processors. Inst
 Alternatively, you can use tar.gz files with binaries to build your own custom installers or containers for Linux. For more information on installation of the PI Adapter for RDBMS with a Docker container, see [Install PI Adapter for RDBMS using Docker](xref:InstallPIAdapterForRDBMSUsingDocker).
 
 When collecting data through ODBC (Open Database Connectivity), PI Adapter for RDBMS requires that the appropriate ODBC driver for your data source is properly installed and configured.
+
+## PI Web API compatibility
+
+This version of PI Adapter for OPC UA is compatible with PI Web API 2021 and later.
