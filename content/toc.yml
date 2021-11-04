@@ -11,7 +11,7 @@
 - topicUid: Configuration
   items:
   - topicUid: ConfigurationTools
-  - topicUid: SystemComponentsConfiguration
+  - topicUid: PIAdapterForRDBMSSystemComponentsConfiguration
     items:
     - topicUid: SystemAndAdapterConfiguration
   - topicUid: PIAdapterForRDBMSDataSourceConfiguration 
