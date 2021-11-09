@@ -19,4 +19,4 @@ When collecting data through ODBC (Open Database Connectivity), PI Adapter for R
 
 ## PI Web API compatibility
 
-This version of PI Adapter for OPC UA is compatible with PI Web API 2021 and later.
+This version of PI Adapter for RDBMS is compatible with PI Web API 2021 and later.
