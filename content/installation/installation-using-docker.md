@@ -19,9 +19,9 @@ Docker is a set of tools that can be used on Linux to manage application deploym
     ```bash
     #!/bin/sh
     if [ -z $portnum ] ; then
-            exec /RDBMS_linux-arm/OSIsoft.Data.System.Host
+            exec /PI-Adapter-for-RDBMS_1.0.0.123-arm_/OSIsoft.Data.System.Host
     else
-            exec /RDBMS_linux-arm/OSIsoft.Data.System.Host --port:$portnum
+            exec /PI-Adapter-for-RDBMS_1.0.0.123-arm_/OSIsoft.Data.System.Host --port:$portnum
     fi
     ```
     
@@ -30,9 +30,9 @@ Docker is a set of tools that can be used on Linux to manage application deploym
     ```bash
     #!/bin/sh
     if [ -z $portnum ] ; then
-            exec /RDBMS_linux-arm64/OSIsoft.Data.System.Host
+            exec /PI-Adapter-for-RDBMS_1.0.0.123-arm64_/OSIsoft.Data.System.Host
     else
-            exec /RDBMS_linux-arm64/OSIsoft.Data.System.Host --port:$portnum
+            exec /PI-Adapter-for-RDBMS_1.0.0.123-arm64_/OSIsoft.Data.System.Host --port:$portnum
     fi
     ```
     
@@ -41,9 +41,9 @@ Docker is a set of tools that can be used on Linux to manage application deploym
     ```bash
     #!/bin/sh
     if [ -z $portnum ] ; then
-            exec /RDBMS_linux-x64/OSIsoft.Data.System.Host
+            exec /PI-Adapter-for-RDBMS_1.0.0.123-x64_/OSIsoft.Data.System.Host
     else
-            exec /RDBMS_linux-x64/OSIsoft.Data.System.Host --port:$portnum
+            exec /PI-Adapter-for-RDBMS_1.0.0.123-x64_/OSIsoft.Data.System.Host --port:$portnum
     fi
     ```
     
@@ -63,7 +63,7 @@ Docker is a set of tools that can be used on Linux to manage application deploym
     RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y ca-certificates libicu60 libssl1.1 curl
     COPY rdbmsdockerstart.sh /
     RUN chmod +x /rdbmsdockerstart.sh
-    ADD ./RDBMS_linux-arm.tar.gz .
+    ADD ./PI-Adapter-for-RDBMS_1.0.0.123-arm_.tar.gz .
     ENTRYPOINT ["/rdbmsdockerstart.sh"]
     ```
     
@@ -75,7 +75,7 @@ Docker is a set of tools that can be used on Linux to manage application deploym
     RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y ca-certificates libicu66 libssl1.1 curl
     COPY rdbmsdockerstart.sh /
     RUN chmod +x /rdbmsdockerstart.sh
-    ADD ./RDBMS_linux-arm64.tar.gz .
+    ADD ./PI-Adapter-for-RDBMS_1.0.0.123-arm64_.tar.gz .
     ENTRYPOINT ["/rdbmsdockerstart.sh"]
     ```
 
@@ -87,11 +87,11 @@ Docker is a set of tools that can be used on Linux to manage application deploym
     RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y ca-certificates libicu66 libssl1.1 curl
     COPY rdbmsdockerstart.sh /
     RUN chmod +x /rdbmsdockerstart.sh
-    ADD ./RDBMS_linux-x64.tar.gz .
+    ADD ./PI-Adapter-for-RDBMS_1.0.0.123-x64_.tar.gz .
     ENTRYPOINT ["/rdbmsdockerstart.sh"]
     ```
 
-2. Copy the `RDBMS_linux-\<platform>.tar.gz` file to the same directory as the `Dockerfile`.
+2. Copy the `PI-Adapter-for-RDBMS_<versionNumber>-<platform>_.tar.gz` file to the same directory as the `Dockerfile`.
 
 3. Copy the `rdbmsdockerstart.sh` script to the same directory as the `Dockerfile`.
 
