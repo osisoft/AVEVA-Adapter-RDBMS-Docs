@@ -63,7 +63,7 @@ The following parameters are available for configuring an RDBMS data source:
 |-------------------------------|----------|-----------|-------------|
 | **ConnectString** | Required | `string` | Connection string to connect to the data source through the **DataProvider**. This string is encrypted when stored, so secrets such as passwords are safe to use in this string. <br><br> If you have a pre-configured DSN, you may simply specify `DSN={YourDSN}` for this property, along with any other required parameters.<br><br>For more information, refer to the documentation for your relational database. |
 | **DataProvider** | Required | `string` | Indicates which Data Provider the adapter should use to connect to the data source. Valid values are `SQLServer` or `ODBC`. <br><br> When connecting to Microsoft SQL Server, use `SQLServer`. When connecting to another relational database through ODBC, use `ODBC`. The `SQLServer` data provider does not require any additional software, but the `ODBC` data provider requires an ODBC driver. For more details, see [SystemRequirements](xref:SystemRequirements).
-| **WindowsUser** | Optional | `string` | Optional username to use with Windows Authentication. <br><br>**Note**: You must add your domain to the **WindowsUser**.<br><br>Example: `DomainName\UserName`<br><br>**Note:** This user should be configured to have the minimum permissions needed to read the desired data from your database. It is not recommended to use an admin user or even a user with write permissions. |
+| **WindowsUser** | Optional | `string` | Optional username to use with Windows Authentication. <br><br>**Note**: You must add your domain to the **WindowsUser**.<br><br>Example: `DomainName\\UserName`<br><br>**Note:** This user should be configured to have the minimum permissions needed to read the desired data from your database. It is not recommended to use an admin user or even a user with write permissions. |
 | **WindowsPassword** | Optional | `string` | Optional password to be used with Windows Authentication. |
 | **CommandTimeout** | Optional | `string` | Optional timeout for running queries on the data source.<br><br>Expected format: `HH:MM:SS.###`<br><br>Default Value: 00:00:30 (30 seconds) |
 | **UTC** | Optional | `bool` | If `true`, timestamps from the data source are interpreted as UTC time. If `false`, local time relative to the adapter is assumed.<br><br>Allowed value: `true` or `false`<br>Default value: `true` |
@@ -90,7 +90,7 @@ The following are examples of valid RDBMS data source configurations:
 
 ### RDBMS data source configuration with username and password
 
-**Note:** The ConnectString parameter will be encrypted, so it is safe to include a password or other secrets. 
+**Note:** The ConnectString parameter will be encrypted, so it is safe to include a password or other secrets.
 
 ```json
 {

@@ -78,3 +78,18 @@ Refer to the documentation for your ODBC driver for supported query syntax.
     }
 ]
 ```
+
+## REST URLs
+
+| Relative URL | HTTP verb | Action |
+| ------------ | --------- | ------ |
+| api/v1/configuration/_ComponentId_/Queries      | GET       | Gets all configured queries |
+| api/v1/configuration/_ComponentId_/Queries      | DELETE    | Deletes all configured queries |
+| api/v1/configuration/_ComponentId_/Queries      | POST      | Adds an array of queries or a single query. Fails if any query already exists |
+| api/v1/configuration/_ComponentId_/Queries      | PUT       | Replaces all queries |
+| api/v1/configuration/_ComponentId_/Queries/*id* | GET       | Gets configured query by *id* |
+| api/v1/configuration/_ComponentId_/Queries/*id*| DELETE     | Deletes configured query by *id* |
+| api/v1/configuration/_ComponentId_/Queries/*id* | PUT       | Replaces query by *id*. Fails if query does not exist |
+| api/v1/configuration/_ComponentId_/Queries/*id* | PATCH     | Allows partial updating of configured query by *id* |
+
+**Note:** Replace *ComponentId* with the Id of your adapter component.

@@ -8,7 +8,7 @@ A discovery against the data source of an RDBMS adapter requires you to specify 
 
 ## RDBMS query string
 
-The string of the **query** parameter must contain string items in the following form: <br>`QueryId=Tanks;IndexColumn=SAMPLETIME;SelectColumn=ASSET;InitialTime=6/11/2021 4:29:12 PM` <br><br>
+The string of the **query** parameter must contain string items in the following format: <br>`QueryId=Tanks;IndexColumn=SAMPLETIME;SelectColumn=ASSET;InitialTime=MM/dd/yyyy h:mm:ss a`
 
 | String item      | Required | Description |
 |------------------|----------|-------------|
