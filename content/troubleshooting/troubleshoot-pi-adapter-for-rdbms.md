@@ -15,7 +15,7 @@ Incorrect configurations can interrupt data flow and cause errors in values and 
     * **ConnectString** - All properties in the ConnectString are correct. If properties are incorrect, the adapter cannot connect to the data source.
     * **UTC** - Set to `true` if the timestamps on the data source are UTC timestamps, or `false` if the timestamps on the data source are in the same timezone as the adapter. If this is incorrect, the adapter might not read any data at all, depending on the timestamps in the query.
     * **DataProvider** - The value of this property is `SQLServer` if the data source is a Microsoft SQL Server, otherwise the value is `ODBC`. If using `ODBC`, verify that an appropriate ODBC driver is installed and working properly on the machine your adapter is running on.
-    * **WindowsUser and WindowsPassword** - Your data source supports Windows authentication. If so, make sure these values are correct and that the account has read access to the database.
+    * **WindowsUser and WindowsPassword** - If the data source supports Windows authentication, make sure these values are correct and that the account has read access to the database.
 
 2. Navigate to [data selection configuration](xref:PIAdapterForRDBMSDataSelectionConfiguration) and verify the following for each configured data selection item below:
 

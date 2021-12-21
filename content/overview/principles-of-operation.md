@@ -15,36 +15,20 @@ For the RDBMS adapter to start data collection, configure the following items:
 - Queries: List SQL queries to execute against the data source
 - Logging: Set up the logging attributes to manage the adapter logging behavior
 
-For more details, see [PI Adapter for RDBMS data source configuration](xref:PIAdapterForRDBMSDataSourceConfiguration) and [PI Adapter for RDBMS data selection configuration](xref:PIAdapterForRDBMSDataSelectionConfiguration).
+For more information, see [PI Adapter for RDBMS data source configuration](xref:PIAdapterForRDBMSDataSourceConfiguration) and [PI Adapter for RDBMS data selection configuration](xref:PIAdapterForRDBMSDataSelectionConfiguration).
 
-## Connection
+## Data connection
 
 PI Adapter for RDBMS can retrieve data from:
 
-* SQL Server, using the .NET Data Provider for SQL Server
-* Other relational databases, using the .NET Data Provider for ODBC (Open Database Connectivity)
+- SQL Server, using the .NET Data Provider for SQL Server
+- Other relational databases, using the .NET Data Provider for ODBC (Open Database Connectivity)
 
-When collecting data through ODBC, you must install and configure an appropriate ODBC driver for the data source before configuring the adapter. 
-
-When collecting data from a SQL Server, additional driver installation is not necessary.
-
-For more information on ODBC drivers, refer to [Microsoft's ODBC Programmers Reference](https://docs.microsoft.com/en-us/sql/odbc/reference/odbc-programmer-s-reference?view=sql-server-ver15) and the manual for the ODBC driver you are using.
-
-The following ODBC drivers have been tested and work with this adapter. This is not a comprehensive list of ODBC drivers that work with this adapter. Most recent ODBC drivers should work, but it is not guaranteed. 
-
-- [Microsoft ODBC Driver for SQL Server Version 17.8.1.1](https://docs.microsoft.com/en-us/sql/connect/odbc/microsoft-odbc-driver-for-sql-server?view=sql-server-ver15)
-- [MariaDB Connector/ODBC 3.1 Series](https://downloads.mariadb.org/connector-odbc/)
-- [MySQL Connector/ODBC Version 8.0.26](https://dev.mysql.com/downloads/connector/odbc/)
-- [Oracle Instant Client ODBC Version 19.00.00.00](https://www.oracle.com/database/technologies/releasenote-odbc-ic.html)
-
-The following versions of SQL Server have been tested and work with this adapter. Again, this is not a comprehensive list. Most recent SQL Server versions should work, but it is not guaranteed.
-
-- [Microsoft SQL Server 2019](https://www.microsoft.com/en-us/sql-server/sql-server-2019)
-- [Microsoft SQL Server 2017](https://www.microsoft.com/en-us/sql-server/sql-server-2017)
+For more information, see the [Data Connectivity](xref:SystemRequirements#data-connectivity).
 
 ## Data collection
 
-The adapter collects data for each DataSelection item at an interval defined using the `ScheduleId` property, which you can set in the schedule configuration. 
+The adapter collects data for each DataSelection item at an interval defined using the `ScheduleId` property, which you can set in the schedule configuration.
 
 When the schedule runs, the adapter executes all queries that are referenced by a DataSelection item in the schedule. The adapter parses the results of that query and sends data to the corresponding streams.
 
