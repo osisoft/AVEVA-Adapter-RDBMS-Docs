@@ -17,7 +17,7 @@ Alternatively, you can use tar.gz files with binaries to build your own custom i
 
 ## Data connectivity
 
-When collecting data through ODBC (Open Database Connectivity), PI Adapter for RDBMS requires that the appropriate ODBC driver for your data source is properly installed and configured. For more information on ODBC drivers, refer to [Microsoft's ODBC Programmers Reference](https://docs.microsoft.com/en-us/sql/odbc/reference/odbc-programmer-s-reference?view=sql-server-ver15) and the manual for the ODBC driver you are using.
+When collecting data through Open Database Connectivity (ODBC), PI Adapter for RDBMS requires that the appropriate ODBC driver for your data source is properly installed and configured. For more information on ODBC drivers, refer to [Microsoft's ODBC Programmers Reference](https://docs.microsoft.com/en-us/sql/odbc/reference/odbc-programmer-s-reference?view=sql-server-ver15) and the manual for the ODBC driver you are using.
 
 When collecting data from a SQL Server, additional driver installation is not necessary.
 
@@ -37,4 +37,4 @@ The following versions of SQL Server have been tested and work with this adapter
 
 ## PI Web API compatibility
 
-This version of PI Adapter for RDBMS is compatible with PI Web API 2021 and later.
+This version of [!include[product](../_includes/inline/product-name.md)] is compatible with PI Web API 2021 and later. 
