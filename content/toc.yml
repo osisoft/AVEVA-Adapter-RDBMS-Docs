@@ -11,6 +11,7 @@
   - topicUid: UninstallTheAdapter
 - topicUid: Configuration
   items:
+  - topicUid: PIAdapterForRDBMSSecurity
   - topicUid: ConfigurationTools
   - topicUid: PIAdapterForRDBMSSystemComponentsConfiguration
     items:
