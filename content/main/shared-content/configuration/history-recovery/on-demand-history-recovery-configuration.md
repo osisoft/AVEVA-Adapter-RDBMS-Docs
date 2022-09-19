@@ -14,7 +14,7 @@ The PI adapter supports performing history recovery on-demand by specifying star
     Example using `curl`:
 
     ```bash
-    curl -d "{ \"Id\":\"TestRecovery\", \"startTime\":\"2021-03-29T14:00:30Z\", \"endTime\":\"2021-03-29T15:00:15Z\"  }" -X POST "http://localhost:5590/api/v1/configuration/<ComponentId>/HistoryRecoveries"
+    curl -d "{ \"Id\":\"TestRecovery\", \"startTime\":\"2021-03-29T14:00:30Z\", \"endTime\":\"2021-03-29T15:00:15Z\"  }" -H "Content-Type: application/json" -X POST "http://localhost:5590/api/v1/configuration/<ComponentId>/HistoryRecoveries"
     ```
 
     **Note:**
