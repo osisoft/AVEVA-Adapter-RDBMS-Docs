@@ -9,7 +9,7 @@ Adapter framework [!include[framework-version](../main/shared-content/_includes/
 
 ## Overview
 
-Version  [!include[product-version](../main/shared-content/_includes/inline/product-version.md)] represents the initial release for PI Adapter for RDBMS. This product collects time-series data and sends it to configured OSIsoft Message Format (OMF) endpoints in OSIsoft Cloud Services or PI Servers. The time-series data can originate from any RDBMS that supports Open Database Connectivity (ODBC) drivers.
+Version  [!include[product-version](../main/shared-content/_includes/inline/product-version.md)] represents the initial release for PI Adapter for RDBMS. This product collects time-series data and sends it to configured Open Message Format (OMF) endpoints in OSIsoft Cloud Services or PI Servers. The time-series data can originate from any RDBMS that supports Open Database Connectivity (ODBC) drivers.
 
 PI Adapter for RDBMS can also collect health and diagnostics information. It supports buffering, static and event data collection, automatic discovery of available data items on a data source.
 
