@@ -8,7 +8,7 @@
     <title>Troubleshoot PI Adapter for RDBMS </title>
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Troubleshoot PI Adapter for RDBMS ">
-    <meta name="generator" content="docfx 2.56.5.0">
+    <meta name="generator" content="docfx 2.59.1.0">
     
     <link rel="shortcut icon" href="../../favicon.ico">
     <link rel="stylesheet" href="../../styles/docfx.vendor.css">
@@ -87,15 +87,15 @@
 <li><strong>ConnectString</strong> - All properties in the ConnectString are correct. If properties are incorrect, the adapter cannot connect to the data source.</li>
 <li><strong>UTC</strong> - Set to <code>true</code> if the timestamps on the data source are UTC timestamps, or <code>false</code> if the timestamps on the data source are in the same timezone as the adapter. If this is incorrect, the adapter might not read any data at all, depending on the timestamps in the query.</li>
 <li><strong>DataProvider</strong> - The value of this property is <code>SQLServer</code> if the data source is a Microsoft SQL Server, otherwise the value is <code>ODBC</code>. If using <code>ODBC</code>, verify that an appropriate ODBC driver is installed and working properly on the machine your adapter is running on.</li>
-<li><strong>WindowsUser and WindowsPassword</strong> - Your data source supports Windows authentication. If so, make sure these values are correct and that the account has read access to the database.</li>
+<li><strong>WindowsUser and WindowsPassword</strong> - If the data source supports Windows authentication, make sure these values are correct and that the account has read access to the database.</li>
 </ul>
 </li>
 <li><p>Navigate to <a class="xref" href="../configuration/data-selection.html">data selection configuration</a> and verify the following for each configured data selection item below:</p>
 <ul>
 <li><strong>ValueColumn</strong> - The column exists in the database table and contains the desired data values.</li>
 <li><strong>IndexColumn</strong> - The column exists in the database table and contains the desired DateTime formatted timestamps.</li>
-<li><strong>IdColumn</strong> - The column exists in the database table and contains the values specified in the IdField property for each of the selection items.</li>
-<li><strong>IdField</strong> - The value exists in the IdColumn in the database and is in the row that contains the data for this selection item.</li>
+<li><strong>SelectColumn</strong> - The column exists in the database table and contains the values specified in the SelectValue property for each of the selection items.</li>
+<li><strong>SelectValue</strong> - The value exists in the SelectColumn in the database and is in the row that contains the data for this selection item.</li>
 <li><strong>QueryId</strong> - The query exists and is correct for the columns specified.</li>
 <li><strong>ScheduleId</strong> - The referenced schedule exists. <br> A non-existent referenced schedule uses a default schedule instead.</li>
 <li><strong>DataFilterId</strong> - If configured, the referenced data filter exists.<br> A non-existent or incorrect DataFilterId means that data filtering is not active.</li>
@@ -105,7 +105,7 @@
 </li>
 <li><p>Navigate to <a class="xref" href="../main/shared-content/configuration/egress-endpoints.html">egress endpoints configuration</a>. For each configured endpoint, verify that the <strong>Endpoint</strong> and authentication properties are correct.</p>
 <ul>
-<li>For a PI server or EDS endpoint, verify <strong>UserName</strong> and <strong>Password</strong>.</li>
+<li>For a PI server endpoint, verify <strong>UserName</strong> and <strong>Password</strong>.</li>
 <li>For an OCS endpoint, verify <strong>ClientId</strong> and <strong>ClientSecret</strong>.</li>
 </ul>
 </li>

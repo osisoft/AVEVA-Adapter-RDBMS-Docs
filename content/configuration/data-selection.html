@@ -8,7 +8,7 @@
     <title>Data selection </title>
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Data selection ">
-    <meta name="generator" content="docfx 2.56.5.0">
+    <meta name="generator" content="docfx 2.59.1.0">
     
     <link rel="shortcut icon" href="../../favicon.ico">
     <link rel="stylesheet" href="../../styles/docfx.vendor.css">
@@ -130,7 +130,7 @@
 </tr>
 <tr>
 <td><strong>ValueColumn</strong></td>
-<td>Required</td>
+<td>Required<sup>1</sup></td>
 <td><code>string</code></td>
 <td>The database column to read data values from.</td>
 </tr>
@@ -141,16 +141,16 @@
 <td>Column that contains the timestamp. If no column is specified, the timestamp will be the time that the adapter read the value.</td>
 </tr>
 <tr>
-<td><strong>IdColumn</strong></td>
+<td><strong>SelectColumn</strong></td>
 <td>Optional</td>
 <td><code>string</code></td>
-<td>Name of the column that contains the IdField. Used to identify which rows of the query results belong to the selection item.</td>
+<td>Name of the column that contains the SelectValue. Used to identify which rows of the query results belong to the selection item.</td>
 </tr>
 <tr>
-<td><strong>IdField</strong></td>
+<td><strong>SelectValue</strong></td>
 <td>Optional</td>
 <td><code>string</code></td>
-<td>The unique identifier of the source. This identifier is commonly found in the database column specified in <strong>IdColumn</strong>. Used to identify which rows of the query results belong to the selection item.</td>
+<td>The unique identifier of the source. This identifier is commonly found in the database column specified in <strong>SelectColumn</strong>. Used to identify which rows of the query results belong to the selection item.</td>
 </tr>
 <tr>
 <td><strong>Name</strong></td>
@@ -180,17 +180,24 @@
 <td><strong>StreamId</strong></td>
 <td>Optional</td>
 <td><code>string</code></td>
-<td>The custom identifier used to create the stream. If not specified, the RDBMS adapter generates a default value based on the <strong>DefaultStreamIdPattern</strong> in the <a class="xref" href="data-source.html">PI Adapter for RDBMS data source configuration</a>.</td>
+<td>The custom identifier used to create the stream. If not specified, the RDBMS adapter generates a default value based on the <strong>DefaultStreamIdPattern</strong> in the <a class="xref" href="data-source.html">PI Adapter for RDBMS data source configuration</a>.<br><br>For more information on how the adapter encodes special characters in the <strong>StreamId</strong>, see <a class="xref" href="../main/shared-content/configuration/egress-endpoints.html#special-characters-encoding">Egress endpoints</a>.</td>
+</tr>
+<tr>
+<td><strong>DataColumns</strong></td>
+<td>Required<sup>1</sup></td>
+<td><code>dictionary&lt;string, string&gt;</code></td>
+<td>A dictionary of values with key-value pairs. The keys are specific fields for a complex type and the values are the database column to read data values from.<br><br>Allowed keys: <code>Latitude</code>, <code>Longitude</code>, <code>x</code>, <code>y</code>, <code>z</code><br>Default value: <code>null</code></td>
 </tr>
 </tbody>
 </table>
+<p><sup>1</sup> <strong>ValueColumn</strong> and <strong>DataColumns</strong> are mutually exclusive. For example, if you specify <strong>ValueColumn</strong>, you cannot specify <strong>DataColumns</strong> and vice versa.</p>
 <h2 id="rdbms-data-selection-examples">RDBMS data selection examples</h2>
 <p>There are two ways to configure a selection item.</p>
 <ul>
 <li><strong>By Column:</strong> Uniquely identify a stream using the columns from the result set. This method is simplest.</li>
 <li><strong>By Row:</strong> Uniquely identify a stream using the rows from the result set. This method is more complex, but more common.</li>
 </ul>
-<p>The following are examples of valid RDBMS data selection configurations:</p>
+<p>The following sections contain examples of valid RDBMS data selection configurations.</p>
 <h3 id="column-as-an-identifier">Column as an identifier</h3>
 <p>Use this configuration when you have a table whose columns identify each stream in the result set. In the simplest of cases, there is one value column and one timestamp column; however, there could be multiple values and multiple timestamps. A separate data selection item needs to be defined for each timestamp value pair.</p>
 <p>Example data:</p>
@@ -251,8 +258,67 @@
     &quot;Selected&quot;: true
   }
 ]
+</code></pre><p>Example complex data:</p>
+<table>
+<thead>
+<tr>
+<th>Lat</th>
+<th>Lon</th>
+<th>X_Col</th>
+<th>Y_Col</th>
+<th>Z_Col</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>15.294533</td>
+<td>20.479839</td>
+<td>1.1</td>
+<td>2.2</td>
+<td>3.3</td>
+</tr>
+<tr>
+<td>36.33403</td>
+<td>-82.4019478</td>
+<td>4.1</td>
+<td>5.2</td>
+<td>6.4</td>
+</tr>
+<tr>
+<td>35.53565</td>
+<td>-82.5529333333333</td>
+<td>7.1</td>
+<td>8.2</td>
+<td>9.3</td>
+</tr>
+</tbody>
+</table>
+<p>Coordinates and Geolocation:</p>
+<pre><code class="lang-json">[    
+  {        
+    &quot;StreamId&quot;: &quot;ComplexQuery.Coordinates&quot;,        
+    &quot;DataColumns&quot;: {            
+        &quot;X&quot;: &quot;X_Col&quot;,            
+        &quot;Y&quot;: &quot;Y_Col&quot;,            
+        &quot;Z&quot;: &quot;Z_Col&quot;        
+    },        
+    &quot;ScheduleId&quot;: &quot;1&quot;,        
+    &quot;queryId&quot;: &quot;ComplexQuery&quot;,        
+    &quot;Selected&quot;: true    
+  },    
+  {        
+    &quot;StreamId&quot;: &quot;ComplexQuery.Geolocation&quot;,        
+    &quot;DataColumns&quot;: {            
+        &quot;Latitude&quot;: &quot;Lat&quot;,            
+        &quot;Longitude&quot;: &quot;Lon&quot;        
+    },        
+    &quot;ScheduleId&quot;: &quot;1&quot;,        
+    &quot;queryId&quot;: &quot;ComplexQuery&quot;,        
+    &quot;Selected&quot;: true    
+  }
+]
 </code></pre><h3 id="identifier-in-row">Identifier in Row</h3>
-<p>Use this configuration when each row of the result set contains information needed to identify each stream. In the simplest case, there could be one column for the identifier, one column for the timestamp, and one column for the value. However, result sets could contain multiple timestamp columns and multiple value columns. This configuration requires that the user specify the IdColumn and IdField properties.</p>
+<p>Use this configuration when each row of the result set contains information needed to identify each stream. In the simplest case, there could be one column for the identifier, one column for the timestamp, and one column for the value. However, result sets could contain multiple timestamp columns and multiple value columns. This configuration requires that the user specify the SelectColumn and SelectValue properties.</p>
 <p>Example Data:</p>
 <table>
 <thead>
@@ -315,8 +381,8 @@
     &quot;StreamId&quot;: &quot;Tank1.Temperature&quot;,
     &quot;ValueColumn&quot;: &quot;Temperature&quot;,
     &quot;IndexColumn&quot;: &quot;SampleTime&quot;,
-    &quot;IdColumn&quot;: &quot;Asset&quot;,
-    &quot;IdField&quot;: &quot;Tank1&quot;,
+    &quot;SelectColumn&quot;: &quot;Asset&quot;,
+    &quot;SelectValue&quot;: &quot;Tank1&quot;,
     &quot;ScheduleId&quot;: &quot;1min&quot;,
     &quot;QueryId&quot;: &quot;Tanks&quot;,
     &quot;Selected&quot;: true
@@ -328,8 +394,8 @@
     &quot;StreamId&quot;: &quot;Tank2.Temperature&quot;,
     &quot;ValueColumn&quot;: &quot;Temperature&quot;,
     &quot;IndexColumn&quot;: &quot;SampleTime&quot;,
-    &quot;IdColumn&quot;: &quot;Asset&quot;,
-    &quot;IdField&quot;: &quot;Tank2&quot;,
+    &quot;SelectColumn&quot;: &quot;Asset&quot;,
+    &quot;SelectValue&quot;: &quot;Tank2&quot;,
     &quot;ScheduleId&quot;: &quot;1min&quot;,
     &quot;QueryId&quot;: &quot;Tanks&quot;,
     &quot;Selected&quot;: true

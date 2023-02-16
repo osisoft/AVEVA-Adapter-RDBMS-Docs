@@ -1,0 +1,267 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Data source discovery </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Data source discovery ">
+    <meta name="generator" content="docfx 2.59.1.0">
+    
+    <link rel="shortcut icon" href="../../favicon.ico">
+    <link rel="stylesheet" href="../../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../../styles/docfx.css">
+    <link rel="stylesheet" href="../../styles/main.css">
+    <meta property="docfx:navrel" content="../../toc.html">
+    <meta property="docfx:tocrel" content="../toc.html">
+    
+    <meta property="docfx:rel" content="../../">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" href="../../content/index.html" width="46">
+                <img id="logo" src="../../content/main/shared-content/images/atlas_icon.png" height="46" width="46" alt="OSIsoft Edge System"> 
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+        
+        <div id="search-results">
+          <div class="search-list"></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination"></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="PIAdapterForRDBMSDataSourceDiscovery">
+<h1 id="data-source-discovery">Data source discovery</h1>
+
+<p>A discovery against the data source of an RDBMS adapter requires you to specify the <strong>query</strong> parameter. In the discovery query, you must specify the <code>QueryId</code>. For more information, see <a class="xref" href="queries.html">Queries</a>. This is the query that is executed against the data source. The adapter parses the result set for data selection items. To allow the adapter to create more accurate data selection items, you may also provide other key=value pairs. You can add the discovered items to the data selection.</p>
+<h2 id="rdbms-query-string">RDBMS query string</h2>
+<p>The string of the <strong>query</strong> parameter must contain string items in the following format: <br><code>QueryId=Tanks;IndexColumn=SAMPLETIME;SelectColumn=ASSET;InitialTime=MM/dd/yyyy h:mm:ss a</code></p>
+<table>
+<thead>
+<tr>
+<th>String item</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>QueryId</strong></td>
+<td>Required</td>
+<td>The identifier of the query to reference in the <code>Queries</code> configuration facet. The results of this query determine the discovery results.</td>
+</tr>
+<tr>
+<td><strong>IndexColumn</strong></td>
+<td>Optional</td>
+<td>Column containing the timestamp. The adapter will use this column to populate the <code>IndexColumn</code> property of newly discovered data selection items.<br><br> Default: empty string.</td>
+</tr>
+<tr>
+<td><strong>SelectColumn</strong></td>
+<td>Optional</td>
+<td>Column containing the SelectValue. The adapter will use this column to populate the <code>SelectColumn</code> property of the newly discovered selection item. The adapter will also use this column to distinguish selection items from unique rows in the result set. Default: empty string.</td>
+</tr>
+<tr>
+<td><strong>InitialTime</strong></td>
+<td>Optional</td>
+<td>The timestamp that is used to substitute the <code>?LST?</code> parameter (if used) in your query during discovery. Default is one hour earlier than current time.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="query-rules">Query rules</h3>
+<p>The following rules apply for specifying the query string:</p>
+<ul>
+<li>The query is made up of key=value pairs.</li>
+<li>Pairs are separated with a semicolon (<code>;</code>).</li>
+<li>Keys and values are separated with an equals (<code>=</code>).</li>
+<li>The discovery query must reference a defined query from the <code>Queries</code> configuration facet.</li>
+<li>Columns are case-insensitive.</li>
+</ul>
+<p><strong>Note:</strong> The data source might contain tens of thousands of metrics. Ensure that the query will only return data for the selection items you will be interested in.</p>
+<h2 id="discovery-query-example">Discovery query example</h2>
+<p>The query parameter must be specified in the following form:
+<code>QueryId=Tanks;IndexColumn=SAMPLETIME;SelectColumn=ASSET;InitialTime=11/11/2020 3:46:00 AM</code>.</p>
+<h3 id="example-result-set-from-tanks-query">Example result set from <code>Tanks</code> query</h3>
+<table>
+<thead>
+<tr>
+<th>Asset</th>
+<th>Temperature</th>
+<th>Pressure</th>
+<th>SampleTime</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Tank1</td>
+<td>25</td>
+<td>100</td>
+<td>11/11/2020 3:56:00 AM</td>
+</tr>
+<tr>
+<td>Tank2</td>
+<td>26.3</td>
+<td>100.2</td>
+<td>11/11/2020 3:56:00 AM</td>
+</tr>
+<tr>
+<td>Tank2</td>
+<td>26.5</td>
+<td>100</td>
+<td>11/11/2020 3:46:00 AM</td>
+</tr>
+<tr>
+<td>Tank1</td>
+<td>26.7</td>
+<td>99.8</td>
+<td>11/11/2020 3:46:00 AM</td>
+</tr>
+</tbody>
+</table>
+<h3 id="rdbms-data-source-discovery-initiation">RDBMS data source discovery initiation</h3>
+<pre><code class="lang-json">{
+  &quot;id&quot; : &quot;40&quot;,
+  &quot;query&quot; : &quot;QueryId=Tanks;IndexColumn=SampleTime;SelectColumn=Asset;InitialTime=11/11/2020 3:46:00 AM&quot;
+}
+</code></pre><h3 id="rdbms-data-source-discovery-results">RDBMS data source discovery results</h3>
+<pre><code class="lang-json">[
+  {
+    &quot;id&quot;: &quot;40&quot;,
+    &quot;query&quot;: &quot;Tanks/SampleTime/Asset&quot;,
+    &quot;startTime&quot;: &quot;2020-12-14T14:19:01.4383791-08:00&quot;,
+    &quot;endTime&quot;: &quot;2020-12-14T14:19:31.8549164-08:00&quot;,
+    &quot;progress&quot;: 30,
+    &quot;itemsFound&quot;: 700,
+    &quot;newItems&quot;: 200,
+    &quot;resultUri&quot;: &quot;http://127.0.0.1:5590/api/v1/Configuration/rdbmsComponentId/Discoveries/40/result&quot;,
+    &quot;autoSelect&quot;: false,
+    &quot;status&quot;: &quot;Complete&quot;,
+    &quot;errors&quot;: null
+  }
+]
+</code></pre><h3 id="rdbms-discovered-selection-items">RDBMS discovered selection items</h3>
+<pre><code class="lang-json">[
+  {
+    &quot;StreamId&quot;: &quot;Tank1.Temperature&quot;,
+    &quot;ValueColumn&quot;: &quot;Temperature&quot;,
+    &quot;IndexColumn&quot;: &quot;SampleTime&quot;,
+    &quot;SelectColumn&quot;: &quot;Asset&quot;,
+    &quot;SelectValue&quot;: &quot;Tank1&quot;,
+    &quot;ScheduleId&quot;: &quot;1&quot;,
+    &quot;QueryId&quot;: &quot;Tanks&quot;,
+    &quot;Selected&quot;: false
+  },
+  {
+    &quot;StreamId&quot;: &quot;Tank1.Pressure&quot;,
+    &quot;ValueColumn&quot;: &quot;Pressure&quot;,
+    &quot;IndexColumn&quot;: &quot;SampleTime&quot;,
+    &quot;SelectColumn&quot;: &quot;Asset&quot;,
+    &quot;SelectValue&quot;: &quot;Tank1&quot;,
+    &quot;ScheduleId&quot;: &quot;1&quot;,
+    &quot;QueryId&quot;: &quot;Tanks&quot;,
+    &quot;Selected&quot;: false
+  },
+  {
+    &quot;StreamId&quot;: &quot;Tank2.Temperature&quot;,
+    &quot;ValueColumn&quot;: &quot;Temperature&quot;,
+    &quot;IndexColumn&quot;: &quot;SampleTime&quot;,
+    &quot;SelectColumn&quot;: &quot;Asset&quot;,
+    &quot;SelectValue&quot;: &quot;Tank2&quot;,
+    &quot;ScheduleId&quot;: &quot;1&quot;,
+    &quot;QueryId&quot;: &quot;Tanks&quot;,
+    &quot;Selected&quot;: false
+  },
+  {
+    &quot;StreamId&quot;: &quot;Tank2.Pressure&quot;,
+    &quot;ValueColumn&quot;: &quot;Pressure&quot;,
+    &quot;IndexColumn&quot;: &quot;SampleTime&quot;,
+    &quot;SelectColumn&quot;: &quot;Asset&quot;,
+    &quot;SelectValue&quot;: &quot;Tank2&quot;,
+    &quot;ScheduleId&quot;: &quot;1&quot;,
+    &quot;QueryId&quot;: &quot;Tanks&quot;,
+    &quot;Selected&quot;: false
+  }
+]
+</code></pre></article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/osisoft/PI-Adapter-RDBMS-Docs/blob/main/content/configuration/data-source-discovery.md/#L1" class="contribution-link">Improve this Doc</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span><a href="https://www.osisoft.com/copyright/">© 2019 - 2021 OSIsoft, LLC. All rights reserved.</a></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../styles/main.js"></script>
+  </body>
+</html>

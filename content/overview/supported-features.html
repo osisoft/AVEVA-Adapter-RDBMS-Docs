@@ -8,7 +8,7 @@
     <title>Supported features </title>
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Supported features ">
-    <meta name="generator" content="docfx 2.56.5.0">
+    <meta name="generator" content="docfx 2.59.1.0">
     
     <link rel="shortcut icon" href="../../favicon.ico">
     <link rel="stylesheet" href="../../styles/docfx.vendor.css">
@@ -78,20 +78,21 @@
             <article class="content wrap" id="_content" data-uid="PIAdapterForRDBMSSupportedFeatures">
 <h1 id="supported-features">Supported features</h1>
 
-<h2 id="data-types">Data Types</h2>
-<p>Since relational databases may have custom types, the ODBC driver you choose will need to support type mapping to the following .NET types:</p>
+<h2 id="data-types">Data types</h2>
+<p>Because relational databases may have custom types, the ODBC driver you choose needs to support type mapping to the following .NET types:</p>
 <ul>
 <li>bool</li>
 <li>short</li>
-<li>int </li>
+<li>int</li>
 <li>uint</li>
 <li>float</li>
 <li>double</li>
 <li>string</li>
 </ul>
-<p>Refer to ODBC driver specific documentation for more details.</p>
-<h2 id="history-recovery">History Recovery</h2>
-<p>TODO: A future work item will address this section.</p>
+<p>For more details, see the ODBC driver-specific documentation.</p>
+<h2 id="history-recovery">History recovery</h2>
+<p>PI Adapter for RDBMS supports <a class="xref" href="../main/shared-content/configuration/history-recovery.html">History recovery</a>. The adapter creates history recovery intervals only on shutdown. Every item is historical by design and there is no automatic history recovery interval on a <code>bad</code> device status.</p>
+<p>Data source configuration properties <strong>MaxHistoryEventsPerSecond</strong>, <strong>RequestInterval</strong>, and <strong>DataCollectionMode</strong> impact history recovery depending on how they are configured. For more information, see <a class="xref" href="../configuration/data-source.html#rdbms-data-source-parameters">Data source - RDBMS data source parameters</a>.</p>
 </article>
           </div>
           

@@ -8,7 +8,7 @@
     <title>Principles of operation </title>
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Principles of operation ">
-    <meta name="generator" content="docfx 2.56.5.0">
+    <meta name="generator" content="docfx 2.59.1.0">
     
     <link rel="shortcut icon" href="../../favicon.ico">
     <link rel="stylesheet" href="../../styles/docfx.vendor.css">
@@ -87,18 +87,16 @@
 <li>Queries: List SQL queries to execute against the data source</li>
 <li>Logging: Set up the logging attributes to manage the adapter logging behavior</li>
 </ul>
-<p>For more details, see <a class="xref" href="../configuration/data-source.html">PI Adapter for RDBMS data source configuration</a> and <a class="xref" href="../configuration/data-selection.html">PI Adapter for RDBMS data selection configuration</a>.</p>
-<h2 id="connection">Connection</h2>
+<p>For more information, see <a class="xref" href="../configuration/data-source.html">PI Adapter for RDBMS data source configuration</a> and <a class="xref" href="../configuration/data-selection.html">PI Adapter for RDBMS data selection configuration</a>.</p>
+<h2 id="data-connection">Data connection</h2>
 <p>PI Adapter for RDBMS can retrieve data from:</p>
 <ul>
 <li>SQL Server, using the .NET Data Provider for SQL Server</li>
 <li>Other relational databases, using the .NET Data Provider for ODBC (Open Database Connectivity)</li>
 </ul>
-<p>When collecting data through ODBC, you must install and configure an appropriate ODBC driver for the data source before configuring the adapter. </p>
-<p>When collecting data from a SQL Server, additional driver installation is not necessary.</p>
-<p>For more information on ODBC drivers, refer to <a href="https://docs.microsoft.com/en-us/sql/odbc/reference/odbc-programmer-s-reference?view=sql-server-2017">Microsoft&#39;s ODBC Programmers Reference</a> and the manual for the ODBC driver you are using.</p>
+<p>For more information, see the <a class="xref" href="../main/shared-content/installation/system-requirements.html#data-connectivity">Data Connectivity</a>.</p>
 <h2 id="data-collection">Data collection</h2>
-<p>The adapter collects data for each DataSelection item at an interval defined using the <code>ScheduleId</code> property, which you can set in the schedule configuration. </p>
+<p>The adapter collects data for each DataSelection item at an interval defined using the <code>ScheduleId</code> property, which you can set in the schedule configuration.</p>
 <p>When the schedule runs, the adapter executes all queries that are referenced by a DataSelection item in the schedule. The adapter parses the results of that query and sends data to the corresponding streams.</p>
 <h2 id="stream-creation">Stream creation</h2>
 <p>The RDBMS adapter creates a stream with two properties for each selected RDBMS item. The properties are described in the following table.</p>
@@ -131,11 +129,11 @@
 <p>Metadata specific to the RDBMS adapter includes:</p>
 <ul>
 <li><strong>ScheduleId</strong>: Specifies the schedule used to collect data for the stream. For RDBMS, this value correlates to the ScheduleId property of the selection item. For example, <code>schedule1</code>.</li>
-<li><strong>SourceId</strong>: Specifies the information used to uniquely identify the stream on the source system. For RDBMS it is <code>{QueryId}.{IdField}.{ValueColumn}</code>. For example, <code>TankQuery.Tank1.Temperature</code>. If there is no IdField specified for a given selection item, IdField is omitted from the SourceId. For example, <code>Query1.Temperature</code>.</li>
+<li><strong>SourceId</strong>: Specifies the information used to uniquely identify the stream on the source system. For RDBMS it is <code>{QueryId}.{SelectValue}.{ValueColumn}</code>. For example, <code>TankQuery.Tank1.Temperature</code>. If there is no SelectValue specified for a given selection item, SelectValue is omitted from the SourceId. For example, <code>Query1.Temperature</code>.</li>
 </ul>
 <p>Each stream created for the selected measurement has a unique identifier (stream Id). If you specify a custom stream Id for the measurement in the data selection configuration, the adapter uses that stream Id to create the stream. Otherwise, the adapter constructs the stream Id using the following format:</p>
-<pre><code class="lang-code">&lt;AdapterComponentId&gt;.&lt;QueryId&gt;.&lt;ValueColumn&gt;
-</code></pre><p><strong>Note:</strong> Naming convention is affected by <code>StreamIdPrefix</code> and <code>DefaultStreamIdPattern</code> settings in the data source configuration. For more information, see <a class="xref" href="../configuration/data-source.html">PI Adapter for RDBMS data source configuration</a>.</p>
+<p><code>&lt;AdapterComponentId&gt;.&lt;QueryId&gt;.&lt;ValueColumn&gt;</code></p>
+<p><strong>Note:</strong> Naming convention is affected by <code>StreamIdPrefix</code> and <code>DefaultStreamIdPattern</code> settings in the data source configuration. For more information, see <a class="xref" href="../configuration/data-source.html">PI Adapter for RDBMS data source configuration</a>.</p>
 </article>
           </div>
           

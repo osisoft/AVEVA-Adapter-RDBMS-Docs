@@ -8,7 +8,7 @@
     <title>Configuration examples </title>
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Configuration examples ">
-    <meta name="generator" content="docfx 2.56.5.0">
+    <meta name="generator" content="docfx 2.59.1.0">
     
     <link rel="shortcut icon" href="../../favicon.ico">
     <link rel="stylesheet" href="../../styles/docfx.vendor.css">
@@ -105,9 +105,8 @@
       &quot;DataSource&quot;: [
         {
           &quot;DefaultStreamIdPattern&quot;: &quot;{QueryId}.{ValueColumn}&quot;,
-          &quot;ConnectString&quot;: &quot;Driver={ODBC Driver 17 for SQL Server}; Server=ServerName\\SQLEXPRESS; UID=[username]; PWD=[password]&quot;,
-          &quot;UserName&quot;: &quot;MyUser&quot;,
-          &quot;Password&quot;: &quot;MyPassword&quot;
+          &quot;ConnectString&quot;: &quot;Server=ServerName\\SQLEXPRESS; UID=[username]; PWD=[password]&quot;,
+          &quot;DataProvider&quot;: &quot;sqlServer&quot;
         }
       ],
       &quot;DataSelection&quot;: [
@@ -115,8 +114,8 @@
           &quot;StreamId&quot;: &quot;Tank1.Temperature&quot;,
           &quot;ValueColumn&quot;: &quot;Temperature&quot;,
           &quot;IndexColumn&quot;: &quot;SampleTime&quot;,
-          &quot;IdColumn&quot;: &quot;Asset&quot;,
-          &quot;IdField&quot;: &quot;Tank1&quot;,
+          &quot;SelectColumn&quot;: &quot;Asset&quot;,
+          &quot;SelectValue&quot;: &quot;Tank1&quot;,
           &quot;ScheduleId&quot;: &quot;1min&quot;,
           &quot;QueryId&quot;: &quot;Tanks&quot;,
           &quot;Selected&quot;: true
@@ -125,8 +124,8 @@
           &quot;StreamId&quot;: &quot;Tank2.Temperature&quot;,
           &quot;ValueColumn&quot;: &quot;Temperature&quot;,
           &quot;IndexColumn&quot;: &quot;SampleTime&quot;,
-          &quot;IdColumn&quot;: &quot;Asset&quot;,
-          &quot;IdField&quot;: &quot;Tank2&quot;,
+          &quot;SelectColumn&quot;: &quot;Asset&quot;,
+          &quot;SelectValue&quot;: &quot;Tank2&quot;,
           &quot;ScheduleId&quot;: &quot;1min&quot;,
           &quot;QueryId&quot;: &quot;Tanks&quot;,
           &quot;Selected&quot;: true
@@ -178,42 +177,36 @@
               &quot;endpoint&quot;: &quot;https://OCSEndpoint/omf&quot;,
               &quot;clientId&quot;: &quot;CLIENTID&quot;,
               &quot;clientSecret&quot;: &quot;CLIENTSECRET&quot;
-          },
-          {
-              &quot;Id&quot;: &quot;EDS&quot;,
-              &quot;Endpoint&quot;: &quot;http://localhost:/api/v1/tenants/default/namespaces/default/omf&quot;,
-              &quot;UserName&quot;: &quot;eds&quot;,
-              &quot;Password&quot;: &quot;eds&quot;
           }
       ]
   }
 }
 </code></pre><h2 id="data-source-configuration">Data source configuration</h2>
 <p>The following are examples of valid RDBMS data source configurations.</p>
-<h3 id="rdbms-minimum-data-source-configuration">RDBMS minimum data source configuration</h3>
+<h3 id="rdbms-minimum-data-source-configuration-for-odbc">RDBMS minimum data source configuration for ODBC</h3>
 <pre><code class="lang-json">[
   {
     &quot;DefaultStreamIdPattern&quot;: &quot;{QueryId}.{ValueColumn}&quot;,
-    &quot;ConnectString&quot;: &quot;DSN=MyDSN&quot;
+    &quot;ConnectString&quot;: &quot;DSN=MyDSN&quot;,
+    &quot;DataProvider&quot;: &quot;ODBC&quot;
   }
 ]
-</code></pre><h3 id="rdbms-data-source-configuration-with-username-and-password">RDBMS data source configuration with username and password</h3>
+</code></pre><h3 id="rdbms-minimum-data-source-configuration-for-sql-server">RDBMS minimum data source configuration for SQL Server</h3>
 <pre><code class="lang-json">[
   {
     &quot;DefaultStreamIdPattern&quot;: &quot;{QueryId}.{ValueColumn}&quot;,
-    &quot;ConnectString&quot;: &quot;Driver={ODBC Driver 17 for SQL Server}; Server=ServerName\\SQLEXPRESS; UID=[username]; PWD=[password]&quot;,
-    &quot;UserName&quot;: &quot;MyUser&quot;,
-    &quot;Password&quot;: &quot;MyPassword&quot;
+    &quot;ConnectString&quot;: &quot;Server=ServerName\\SQLEXPRESS; UID=[username]; PWD=[password]&quot;,
+    &quot;DataProvider&quot;: &quot;sqlServer&quot;
   }
 ]
-</code></pre><h3 id="rdbms-data-source-configuration-with-windows-authentication">RDBMS data source configuration with Windows authentication</h3>
+</code></pre><h3 id="rdbms-data-source-configuration-with-windows-authentication-for-sql-server">RDBMS data source configuration with Windows Authentication for SQL Server</h3>
 <pre><code class="lang-json">[
   {
     &quot;DefaultStreamIdPattern&quot;: &quot;{QueryId}.{ValueColumn}&quot;,
-    &quot;ConnectString&quot;: &quot;Driver={ODBC Driver 17 for SQL Server}; Server=ServerName\\SQLEXPRESS; trusted_connection=yes&quot;,
-    &quot;UserName&quot;: &quot;MyUser&quot;,
-    &quot;Password&quot;: &quot;MyPassword&quot;,
-    &quot;WindowsAuth&quot;: true
+    &quot;ConnectString&quot;: &quot;Server=ServerName\\SQLEXPRESS; Trusted_Connection=yes&quot;,
+    &quot;WindowsUser&quot;: &quot;domain\\MyUser&quot;,
+    &quot;WindowsPassword&quot;: &quot;MyPassword&quot;,
+    &quot;DataProvider&quot;: &quot;sqlServer&quot;
   }
 ]
 </code></pre><h2 id="data-selection-configuration">Data selection configuration</h2>
@@ -259,8 +252,8 @@
     &quot;StreamId&quot;: &quot;Tank1.Temperature&quot;,
     &quot;ValueColumn&quot;: &quot;Temperature&quot;,
     &quot;IndexColumn&quot;: &quot;SampleTime&quot;,
-    &quot;IdColumn&quot;: &quot;Asset&quot;,
-    &quot;IdField&quot;: &quot;Tank1&quot;,
+    &quot;SelectColumn&quot;: &quot;Asset&quot;,
+    &quot;SelectValue&quot;: &quot;Tank1&quot;,
     &quot;ScheduleId&quot;: &quot;1min&quot;,
     &quot;QueryId&quot;: &quot;Tanks&quot;,
     &quot;Selected&quot;: true
@@ -272,8 +265,8 @@
     &quot;StreamId&quot;: &quot;Tank2.Temperature&quot;,
     &quot;ValueColumn&quot;: &quot;Temperature&quot;,
     &quot;IndexColumn&quot;: &quot;SampleTime&quot;,
-    &quot;IdColumn&quot;: &quot;Asset&quot;,
-    &quot;IdField&quot;: &quot;Tank2&quot;,
+    &quot;SelectColumn&quot;: &quot;Asset&quot;,
+    &quot;SelectValue&quot;: &quot;Tank2&quot;,
     &quot;ScheduleId&quot;: &quot;1min&quot;,
     &quot;QueryId&quot;: &quot;Tanks&quot;,
     &quot;Selected&quot;: true
