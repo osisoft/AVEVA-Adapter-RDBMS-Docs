@@ -1,6 +1,6 @@
 # PI-Adapter-for-RDBMS-Docs
 
-PI Adapter for RDBMS is a data-collection component that transfers time-series data from source devices to Open Message Format (OMF) endpoints in OSIsoft Cloud Services or PI Servers.
+PI Adapter for RDBMS is a data-collection component that transfers time-series data from source devices to Open Message Format (OMF) endpoints in AVEVA Data Hub or AVEVA Servers.
 
 This repository contains the documentation for PI Adapter for RDBMS.
 
