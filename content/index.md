@@ -10,7 +10,7 @@ PI Adapter for RDBMS (relational database management system) is a data-collectio
 
 ## Adapter installation
 
-You can install the adapter with a download kit that you can obtain from the OSIsoft Customer Portal. You can install the adapter on devices running either Windows or Linux operating systems.
+You can install the adapter with a download kit that you can obtain from the AVEVA Customer Portal. You can install the adapter on devices running either Windows or Linux operating systems.
 
 ## Adapter configuration
 
