@@ -1,1 +1,1 @@
-PI Adapter for RDBMS
+AVEVA Adapter for RDBMS
