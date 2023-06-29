@@ -1,1 +1,1 @@
-PI-Adapter-for-RDBMS-1.0.0.123
+AVEVA-Adapter-for-RDBMS-1.0.0.123
