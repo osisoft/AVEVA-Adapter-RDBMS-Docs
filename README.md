@@ -1,4 +1,4 @@
-# PI-Adapter-for-RDBMS-Docs
+# AVEVA-Adapter-for-RDBMS-Docs
 
 AVEVA Adapter for RDBMS is a data-collection component that transfers time-series data from source devices to Open Message Format (OMF) endpoints in AVEVA Data Hub or AVEVA PI Servers.
 
