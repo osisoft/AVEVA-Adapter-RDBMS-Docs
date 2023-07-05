@@ -4,9 +4,9 @@ uid: PIAdapterForRDBMSOverview
 
 # Overview
 
-AVEVA Adapter for RDBMS (relational database management system) is a data-collection component that collects time-series data and sends it to configured Open Message Format (OMF) endpoints in AVEVA Data Hub or AVEVA PI Servers. The time-series data can originate from any relational database management system that supports Open Database Connectivity (ODBC) drivers.
+AVEVA Adapter for RDBMS (relational database management system) is a data-collection component that collects time-series data and sends it to configured Open Message Format (OMF) endpoints in AVEVA Data Hub (ADH) or AVEVA PI Servers. The time-series data can originate from any relational database management system that supports Open Database Connectivity (ODBC) drivers.
 
-![PI Adapter for RDBMS architecture](images/pi-adapter-for-rdbms-architecture-diagram.png)
+![AVEVA Adapter for RDBMS architecture](images/aveva-adapter-for-rdbms-architecture-diagram.png)
 
 ## Adapter installation
 
